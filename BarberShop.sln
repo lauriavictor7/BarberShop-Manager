@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberShopClasses", "BarberShopClasses\BarberShopClasses.csproj", "{CC748833-2BAC-47B0-BDB6-DC5FD28FCA73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberShopTelas", "BarberShopTelas\BarberShopTelas.csproj", "{77E37BA2-9439-4312-A421-207F7644D743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberShopService", "BarberShopService\BarberShopService.csproj", "{3E74E60A-9A08-4918-ACC0-91DFE94885A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC748833-2BAC-47B0-BDB6-DC5FD28FCA73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC748833-2BAC-47B0-BDB6-DC5FD28FCA73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC748833-2BAC-47B0-BDB6-DC5FD28FCA73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC748833-2BAC-47B0-BDB6-DC5FD28FCA73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E37BA2-9439-4312-A421-207F7644D743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E37BA2-9439-4312-A421-207F7644D743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E37BA2-9439-4312-A421-207F7644D743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E37BA2-9439-4312-A421-207F7644D743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E74E60A-9A08-4918-ACC0-91DFE94885A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E74E60A-9A08-4918-ACC0-91DFE94885A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E74E60A-9A08-4918-ACC0-91DFE94885A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E74E60A-9A08-4918-ACC0-91DFE94885A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
