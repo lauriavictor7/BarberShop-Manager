@@ -65,8 +65,6 @@ namespace BarberShopClasses.cliente
 
         public List<Cliente> ListarCliente()
         {
-           
-
           List<Cliente> retorno = new List<Cliente>();
           
             this.abrirConexao();
@@ -78,7 +76,6 @@ namespace BarberShopClasses.cliente
           
             while (DbReader.Read())
             {
-
                 Cliente c = new Cliente();
                 c.Cpf = DbReader.GetString(DbReader.GetOrdinal("cpf"));
                 c.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
@@ -86,12 +83,10 @@ namespace BarberShopClasses.cliente
                 retorno.Add(c);
             }
            
-                DbReader.Close();
-                cmd.Dispose();
+             DbReader.Close();
+             cmd.Dispose();
              this.fecharConexao();
              return retorno;
-
-
         }
 
         public void RemoverCLiente(Cliente c)

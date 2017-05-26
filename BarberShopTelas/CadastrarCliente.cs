@@ -87,8 +87,17 @@ namespace BarberShopTelas
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DadosCliente dc = new DadosCliente();
-            dataGridView1.DataSource = dc.ListarCliente();
+            try
+            {
+                localhost.Cliente c = new localhost.Cliente();
+
+                Service1 sv = new Service1();
+                dataGridView1.DataSource = sv.listarCliente();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro. " + ex.Message);
+            }   
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
