@@ -15,10 +15,20 @@ namespace BarberShopClasses.fachada
 {
     public class Fachada : InterfaceCliente, InterfaceCaixa, InterfaceNotaFiscal, InterfacePagamento, InterfaceProduto, InterfaceServico, InterfaceAgendamento
     {
+        public void AtualizarAgendamento(Agendamento a)
+        {
+            throw new NotImplementedException();
+        }
+
         public void AtualizarCliente(Cliente c)
         {
             NegocioCliente nC = new NegocioCliente();
             nC.AtualizarCliente(c);
+        }
+
+        public void CadastrarAgendamento(Agendamento a)
+        {
+            throw new NotImplementedException();
         }
 
         public void CadastrarCliente(Cliente c)
@@ -27,10 +37,20 @@ namespace BarberShopClasses.fachada
             nC.CadastrarCliente(c);
         }
 
+        public List<Agendamento> ListarAgendamento()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Cliente> ListarCliente()
         {
             NegocioCliente nC = new NegocioCliente();
             return nC.ListarCliente();
+        }
+
+        public void RemoverAgendamento(Agendamento a)
+        {
+            throw new NotImplementedException();
         }
 
         public void RemoverCLiente(Cliente c)

@@ -37,6 +37,7 @@
             this.testandoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testeDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.testesToolStripMenuItem,
             this.testeBDCONToolStripMenuItem,
-            this.clienteToolStripMenuItem});
+            this.clienteToolStripMenuItem,
+            this.testeDataToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
@@ -105,6 +107,13 @@
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
             // 
+            // testeDataToolStripMenuItem
+            // 
+            this.testeDataToolStripMenuItem.Name = "testeDataToolStripMenuItem";
+            this.testeDataToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.testeDataToolStripMenuItem.Text = "TesteData";
+            this.testeDataToolStripMenuItem.Click += new System.EventHandler(this.testeDataToolStripMenuItem_Click);
+            // 
             // BarberShopHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,6 +142,7 @@
         private System.Windows.Forms.ToolStripMenuItem testandoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testeDataToolStripMenuItem;
     }
 }
 

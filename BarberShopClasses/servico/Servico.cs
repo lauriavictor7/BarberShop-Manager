@@ -8,6 +8,7 @@ namespace BarberShopClasses.servico
 {
     public class Servico
     {
+        private int cod_serv;
         private double preco;
         private string descricao;
 
@@ -34,6 +35,19 @@ namespace BarberShopClasses.servico
             set
             {
                 descricao = value;
+            }
+        }
+
+        public int Cod_serv
+        {
+            get
+            {
+                return cod_serv;
+            }
+
+            set
+            {
+                cod_serv = value;
             }
         }
     }

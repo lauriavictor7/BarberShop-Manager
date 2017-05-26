@@ -11,6 +11,7 @@ namespace BarberShopClasses.pagamento
 {
     public class Pagamento
     {
+        private int cod_pag;
         private NotaFiscal NotaF;
         private Produto produto;
         private Cliente cliente;
@@ -79,6 +80,19 @@ namespace BarberShopClasses.pagamento
             set
             {
                 hora = value;
+            }
+        }
+
+        public int Cod_pag
+        {
+            get
+            {
+                return cod_pag;
+            }
+
+            set
+            {
+                cod_pag = value;
             }
         }
     }

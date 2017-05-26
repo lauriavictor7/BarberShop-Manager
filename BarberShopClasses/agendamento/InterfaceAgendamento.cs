@@ -8,5 +8,9 @@ namespace BarberShopClasses.agendamento
 {
     public interface InterfaceAgendamento
     {
+        void CadastrarAgendamento(Agendamento a);
+        void AtualizarAgendamento(Agendamento a);
+        void RemoverAgendamento(Agendamento a);
+        List<Agendamento> ListarAgendamento();
     }
 }

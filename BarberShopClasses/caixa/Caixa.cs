@@ -9,6 +9,7 @@ namespace BarberShopClasses.caixa
 {
     public class Caixa
     {
+        private int cod_caixa;
         private Pagamento pagamento;
         private double valor_inicial;
         private double valor_final;
@@ -63,6 +64,19 @@ namespace BarberShopClasses.caixa
             set
             {
                 valor_atual = value;
+            }
+        }
+
+        public int Cod_caixa
+        {
+            get
+            {
+                return cod_caixa;
+            }
+
+            set
+            {
+                cod_caixa = value;
             }
         }
     }

@@ -11,6 +11,7 @@ namespace BarberShopClasses.notaFiscal
 {
     public class NotaFiscal
     {
+        private int cod_nf;
         private Servico servico;
         private Produto produto;
         private Cliente cliente;
@@ -93,6 +94,19 @@ namespace BarberShopClasses.notaFiscal
             set
             {
                 Metodo = value;
+            }
+        }
+
+        public int Cod_nf
+        {
+            get
+            {
+                return cod_nf;
+            }
+
+            set
+            {
+                cod_nf = value;
             }
         }
     }

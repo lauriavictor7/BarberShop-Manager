@@ -8,6 +8,7 @@ namespace BarberShopClasses.produto
 {
     public class Produto
     {
+        private int cod_prod;
         private double preco;
         private string descricao;
 
@@ -34,6 +35,19 @@ namespace BarberShopClasses.produto
             set
             {
                 descricao = value;
+            }
+        }
+
+        public int Cod_prod
+        {
+            get
+            {
+                return cod_prod;
+            }
+
+            set
+            {
+                cod_prod = value;
             }
         }
     }

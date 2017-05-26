@@ -10,6 +10,7 @@ namespace BarberShopClasses.agendamento
 {
     public class Agendamento
     {
+        private int cod_ag;
         private DateTime data;
         private DateTime hora;
         private Cliente cliente;
@@ -64,6 +65,19 @@ namespace BarberShopClasses.agendamento
             set
             {
                 servico = value;
+            }
+        }
+
+        public int Cod_ag
+        {
+            get
+            {
+                return cod_ag;
+            }
+
+            set
+            {
+                cod_ag = value;
             }
         }
     }

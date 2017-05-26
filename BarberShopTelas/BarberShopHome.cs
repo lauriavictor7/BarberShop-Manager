@@ -1,4 +1,5 @@
-﻿using BarberShopClasses.conexao;
+﻿using BarberShopClasses.agendamento;
+using BarberShopClasses.conexao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,12 @@ namespace BarberShopTelas
         {
             CadastrarCliente cc = new CadastrarCliente();
             cc.Show();
+        }
+
+        private void testeDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            
         }
     }
 }
