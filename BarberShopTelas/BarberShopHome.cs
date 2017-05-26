@@ -20,17 +20,17 @@ namespace BarberShopTelas
 
         private void testeWCF1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            localhost.Service1 sv = new localhost.Service1();
+           /* localhost.Service1 sv = new localhost.Service1();
             string mensagem = sv.pegarTexto();
-            MessageBox.Show(mensagem);
+            MessageBox.Show(mensagem); */
 
         }
 
         private void testeWCF2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            localhost.Service1 sv = new localhost.Service1();
+           /* localhost.Service1 sv = new localhost.Service1();
             string mensagem = sv.retornarAAA();
-            MessageBox.Show(mensagem);
+            MessageBox.Show(mensagem); */
         }
 
         private void testandoToolStripMenuItem_Click(object sender, EventArgs e)

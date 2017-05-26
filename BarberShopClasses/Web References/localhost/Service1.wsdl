@@ -5,18 +5,6 @@
       <xsd:import schemaLocation="http://localhost:65410/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_pegarTexto_InputMessage">
-    <wsdl:part name="parameters" element="tns:pegarTexto" />
-  </wsdl:message>
-  <wsdl:message name="IService1_pegarTexto_OutputMessage">
-    <wsdl:part name="parameters" element="tns:pegarTextoResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_retornarAAA_InputMessage">
-    <wsdl:part name="parameters" element="tns:retornarAAA" />
-  </wsdl:message>
-  <wsdl:message name="IService1_retornarAAA_OutputMessage">
-    <wsdl:part name="parameters" element="tns:retornarAAAResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_inserirCliente_InputMessage">
     <wsdl:part name="parameters" element="tns:inserirCliente" />
   </wsdl:message>
@@ -35,15 +23,13 @@
   <wsdl:message name="IService1_atualizarCLiente_OutputMessage">
     <wsdl:part name="parameters" element="tns:atualizarCLienteResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_listarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_listarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarClienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="pegarTexto">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/pegarTexto" message="tns:IService1_pegarTexto_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/pegarTextoResponse" message="tns:IService1_pegarTexto_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="retornarAAA">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/retornarAAA" message="tns:IService1_retornarAAA_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/retornarAAAResponse" message="tns:IService1_retornarAAA_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="inserirCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/inserirCliente" message="tns:IService1_inserirCliente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/inserirClienteResponse" message="tns:IService1_inserirCliente_OutputMessage" />
@@ -56,27 +42,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/atualizarCLiente" message="tns:IService1_atualizarCLiente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/atualizarCLienteResponse" message="tns:IService1_atualizarCLiente_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="listarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/listarCliente" message="tns:IService1_listarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/listarClienteResponse" message="tns:IService1_listarCliente_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="pegarTexto">
-      <soap:operation soapAction="http://tempuri.org/IService1/pegarTexto" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="retornarAAA">
-      <soap:operation soapAction="http://tempuri.org/IService1/retornarAAA" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="inserirCliente">
       <soap:operation soapAction="http://tempuri.org/IService1/inserirCliente" style="document" />
       <wsdl:input>
@@ -97,6 +69,15 @@
     </wsdl:operation>
     <wsdl:operation name="atualizarCLiente">
       <soap:operation soapAction="http://tempuri.org/IService1/atualizarCLiente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarCliente">
+      <soap:operation soapAction="http://tempuri.org/IService1/listarCliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

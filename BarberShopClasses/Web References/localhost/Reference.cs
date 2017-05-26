@@ -29,15 +29,13 @@ namespace BarberShopClasses.localhost {
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
-        private System.Threading.SendOrPostCallback pegarTextoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback retornarAAAOperationCompleted;
-        
         private System.Threading.SendOrPostCallback inserirClienteOperationCompleted;
         
         private System.Threading.SendOrPostCallback removerClienteOperationCompleted;
         
         private System.Threading.SendOrPostCallback atualizarCLienteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback listarClienteOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -78,12 +76,6 @@ namespace BarberShopClasses.localhost {
         }
         
         /// <remarks/>
-        public event pegarTextoCompletedEventHandler pegarTextoCompleted;
-        
-        /// <remarks/>
-        public event retornarAAACompletedEventHandler retornarAAACompleted;
-        
-        /// <remarks/>
         public event inserirClienteCompletedEventHandler inserirClienteCompleted;
         
         /// <remarks/>
@@ -93,58 +85,7 @@ namespace BarberShopClasses.localhost {
         public event atualizarCLienteCompletedEventHandler atualizarCLienteCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/pegarTexto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string pegarTexto() {
-            object[] results = this.Invoke("pegarTexto", new object[0]);
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void pegarTextoAsync() {
-            this.pegarTextoAsync(null);
-        }
-        
-        /// <remarks/>
-        public void pegarTextoAsync(object userState) {
-            if ((this.pegarTextoOperationCompleted == null)) {
-                this.pegarTextoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnpegarTextoOperationCompleted);
-            }
-            this.InvokeAsync("pegarTexto", new object[0], this.pegarTextoOperationCompleted, userState);
-        }
-        
-        private void OnpegarTextoOperationCompleted(object arg) {
-            if ((this.pegarTextoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.pegarTextoCompleted(this, new pegarTextoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/retornarAAA", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string retornarAAA() {
-            object[] results = this.Invoke("retornarAAA", new object[0]);
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void retornarAAAAsync() {
-            this.retornarAAAAsync(null);
-        }
-        
-        /// <remarks/>
-        public void retornarAAAAsync(object userState) {
-            if ((this.retornarAAAOperationCompleted == null)) {
-                this.retornarAAAOperationCompleted = new System.Threading.SendOrPostCallback(this.OnretornarAAAOperationCompleted);
-            }
-            this.InvokeAsync("retornarAAA", new object[0], this.retornarAAAOperationCompleted, userState);
-        }
-        
-        private void OnretornarAAAOperationCompleted(object arg) {
-            if ((this.retornarAAACompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.retornarAAACompleted(this, new retornarAAACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
+        public event listarClienteCompletedEventHandler listarClienteCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/inserirCliente", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -231,6 +172,33 @@ namespace BarberShopClasses.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/listarCliente", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Cliente[] listarCliente() {
+            object[] results = this.Invoke("listarCliente", new object[0]);
+            return ((Cliente[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void listarClienteAsync() {
+            this.listarClienteAsync(null);
+        }
+        
+        /// <remarks/>
+        public void listarClienteAsync(object userState) {
+            if ((this.listarClienteOperationCompleted == null)) {
+                this.listarClienteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnlistarClienteOperationCompleted);
+            }
+            this.InvokeAsync("listarCliente", new object[0], this.listarClienteOperationCompleted, userState);
+        }
+        
+        private void OnlistarClienteOperationCompleted(object arg) {
+            if ((this.listarClienteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.listarClienteCompleted(this, new listarClienteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -296,58 +264,6 @@ namespace BarberShopClasses.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void pegarTextoCompletedEventHandler(object sender, pegarTextoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class pegarTextoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal pegarTextoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void retornarAAACompletedEventHandler(object sender, retornarAAACompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class retornarAAACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal retornarAAACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void inserirClienteCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
@@ -357,6 +273,32 @@ namespace BarberShopClasses.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void atualizarCLienteCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void listarClienteCompletedEventHandler(object sender, listarClienteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class listarClienteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal listarClienteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Cliente[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Cliente[])(this.results[0]));
+            }
+        }
+    }
 }
 
 #pragma warning restore 1591

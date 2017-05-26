@@ -15,12 +15,7 @@ namespace BarberShopService
     public interface IService1
     {
 
-        [OperationContract]
-        string pegarTexto();
-
-        [OperationContract]
-        string retornarAAA();
-
+        #region Métodos referentes a Cliente.
         [OperationContract]
         void inserirCliente(Cliente c);
 
@@ -29,7 +24,11 @@ namespace BarberShopService
 
         [OperationContract]
         void atualizarCLiente(Cliente c);
-        
+
+        [OperationContract]
+        List<Cliente> listarCliente();
+        #endregion
+
     }
 
 }
