@@ -23,6 +23,18 @@
   <wsdl:message name="IService1_inserirCliente_OutputMessage">
     <wsdl:part name="parameters" element="tns:inserirClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_removerCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:removerCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_removerCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removerClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_atualizarCLiente_InputMessage">
+    <wsdl:part name="parameters" element="tns:atualizarCLiente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_atualizarCLiente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:atualizarCLienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="pegarTexto">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/pegarTexto" message="tns:IService1_pegarTexto_InputMessage" />
@@ -35,6 +47,14 @@
     <wsdl:operation name="inserirCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/inserirCliente" message="tns:IService1_inserirCliente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/inserirClienteResponse" message="tns:IService1_inserirCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removerCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/removerCliente" message="tns:IService1_removerCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/removerClienteResponse" message="tns:IService1_removerCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="atualizarCLiente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/atualizarCLiente" message="tns:IService1_atualizarCLiente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/atualizarCLienteResponse" message="tns:IService1_atualizarCLiente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -59,6 +79,24 @@
     </wsdl:operation>
     <wsdl:operation name="inserirCliente">
       <soap:operation soapAction="http://tempuri.org/IService1/inserirCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removerCliente">
+      <soap:operation soapAction="http://tempuri.org/IService1/removerCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="atualizarCLiente">
+      <soap:operation soapAction="http://tempuri.org/IService1/atualizarCLiente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

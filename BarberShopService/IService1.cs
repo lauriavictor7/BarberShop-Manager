@@ -23,6 +23,12 @@ namespace BarberShopService
 
         [OperationContract]
         void inserirCliente(Cliente c);
+
+        [OperationContract]
+        void removerCliente(Cliente c);
+
+        [OperationContract]
+        void atualizarCLiente(Cliente c);
         
     }
 

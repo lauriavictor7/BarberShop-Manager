@@ -29,22 +29,6 @@ namespace BarberShopTelas
 
         private void button1_Click(object sender, EventArgs e)
         {
-          /*  try
-            {
-                Cliente c = new Cliente();
-                c.Cpf = textBox1.Text;
-                c.Nome = textBox2.Text;
-                c.Telefone = textBox3.Text;
-
-                DadosCliente dc = new DadosCliente();
-                dc.CadastrarCliente(c);
-
-                MessageBox.Show("Sucesso!");
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
-
             try
             {
                 localhost.Cliente c = new localhost.Cliente();
@@ -59,46 +43,46 @@ namespace BarberShopTelas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro" + ex.Message);
+                MessageBox.Show("Erro. " + ex.Message);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-          /*  try
+            try
             {
-                Cliente c = new Cliente();
+                localhost.Cliente c = new localhost.Cliente();
                 c.Cpf = textBox1.Text;
 
-                DadosCliente dc = new DadosCliente();
-                dc.RemoverCLiente(c);
+                Service1 sv = new Service1();
+                sv.removerCliente(c);
 
                 MessageBox.Show("Sucesso!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-            } */
+                MessageBox.Show("Erro. " + ex.Message);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-          /*  try
+          try
             {
-                Cliente c = new Cliente();
+                localhost.Cliente c = new localhost.Cliente();
                 c.Cpf = textBox1.Text;
                 c.Nome = textBox2.Text;
                 c.Telefone = textBox3.Text;
 
-                DadosCliente dc = new DadosCliente();
-                dc.AtualizarCliente(c);
+                Service1 sv = new Service1();
+                sv.atualizarCLiente(c);
 
                 MessageBox.Show("Sucesso!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-            } */
+                MessageBox.Show("Erro. " + ex.Message);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

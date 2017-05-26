@@ -35,6 +35,10 @@ namespace BarberShopClasses.localhost {
         
         private System.Threading.SendOrPostCallback inserirClienteOperationCompleted;
         
+        private System.Threading.SendOrPostCallback removerClienteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback atualizarCLienteOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -81,6 +85,12 @@ namespace BarberShopClasses.localhost {
         
         /// <remarks/>
         public event inserirClienteCompletedEventHandler inserirClienteCompleted;
+        
+        /// <remarks/>
+        public event removerClienteCompletedEventHandler removerClienteCompleted;
+        
+        /// <remarks/>
+        public event atualizarCLienteCompletedEventHandler atualizarCLienteCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/pegarTexto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -161,6 +171,62 @@ namespace BarberShopClasses.localhost {
             if ((this.inserirClienteCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.inserirClienteCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/removerCliente", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void removerCliente(Cliente c) {
+            this.Invoke("removerCliente", new object[] {
+                        c});
+        }
+        
+        /// <remarks/>
+        public void removerClienteAsync(Cliente c) {
+            this.removerClienteAsync(c, null);
+        }
+        
+        /// <remarks/>
+        public void removerClienteAsync(Cliente c, object userState) {
+            if ((this.removerClienteOperationCompleted == null)) {
+                this.removerClienteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoverClienteOperationCompleted);
+            }
+            this.InvokeAsync("removerCliente", new object[] {
+                        c}, this.removerClienteOperationCompleted, userState);
+        }
+        
+        private void OnremoverClienteOperationCompleted(object arg) {
+            if ((this.removerClienteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.removerClienteCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/atualizarCLiente", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void atualizarCLiente(Cliente c) {
+            this.Invoke("atualizarCLiente", new object[] {
+                        c});
+        }
+        
+        /// <remarks/>
+        public void atualizarCLienteAsync(Cliente c) {
+            this.atualizarCLienteAsync(c, null);
+        }
+        
+        /// <remarks/>
+        public void atualizarCLienteAsync(Cliente c, object userState) {
+            if ((this.atualizarCLienteOperationCompleted == null)) {
+                this.atualizarCLienteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnatualizarCLienteOperationCompleted);
+            }
+            this.InvokeAsync("atualizarCLiente", new object[] {
+                        c}, this.atualizarCLienteOperationCompleted, userState);
+        }
+        
+        private void OnatualizarCLienteOperationCompleted(object arg) {
+            if ((this.atualizarCLienteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.atualizarCLienteCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -283,6 +349,14 @@ namespace BarberShopClasses.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void inserirClienteCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void removerClienteCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void atualizarCLienteCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591
