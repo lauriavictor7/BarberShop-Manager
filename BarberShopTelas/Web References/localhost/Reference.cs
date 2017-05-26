@@ -190,6 +190,42 @@ namespace BarberShopTelas.localhost {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class Cliente {
+        
+        private string cpfField;
+        
+        private string nomeField;
+        
+        private string telefoneField;
+        
+        /// <remarks/>
+        public string Cpf {
+            get {
+                return this.cpfField;
+            }
+            set {
+                this.cpfField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Nome {
+            get {
+                return this.nomeField;
+            }
+            set {
+                this.nomeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Telefone {
+            get {
+                return this.telefoneField;
+            }
+            set {
+                this.telefoneField = value;
+            }
+        }
     }
     
     /// <remarks/>

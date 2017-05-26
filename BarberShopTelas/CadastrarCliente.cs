@@ -1,4 +1,6 @@
-﻿using BarberShopClasses.cliente;
+﻿
+using BarberShopClasses.cliente;
+using BarberShopTelas.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace BarberShopTelas
 {
@@ -26,7 +29,7 @@ namespace BarberShopTelas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+          /*  try
             {
                 Cliente c = new Cliente();
                 c.Cpf = textBox1.Text;
@@ -40,12 +43,29 @@ namespace BarberShopTelas
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }*/
+
+            try
+            {
+                localhost.Cliente c = new localhost.Cliente();
+                c.Cpf = textBox1.Text;
+                c.Nome = textBox2.Text;
+                c.Telefone = textBox3.Text;
+
+                Service1 sv = new Service1();
+                sv.inserirCliente(c);
+
+                MessageBox.Show("Sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro" + ex.Message);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
+          /*  try
             {
                 Cliente c = new Cliente();
                 c.Cpf = textBox1.Text;
@@ -58,12 +78,12 @@ namespace BarberShopTelas
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            } */
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            try
+          /*  try
             {
                 Cliente c = new Cliente();
                 c.Cpf = textBox1.Text;
@@ -78,7 +98,7 @@ namespace BarberShopTelas
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            } */
         }
 
         private void button4_Click(object sender, EventArgs e)
