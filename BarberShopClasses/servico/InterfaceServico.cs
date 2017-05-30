@@ -8,5 +8,9 @@ namespace BarberShopClasses.servico
 {
     public interface InterfaceServico
     {
+        void CadastrarServico(Servico s);
+        void AtualizarServico(Servico s);
+        void RemoverServico(Servico s);
+        List<Servico> ListarServico();
     }
 }

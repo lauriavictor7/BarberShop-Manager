@@ -58,5 +58,17 @@ namespace BarberShopTelas
             
             
         }
+
+        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CadastrarProduto cp = new CadastrarProduto();
+            cp.Show();
+        }
+
+        private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            CadastrarServico cs = new CadastrarServico();
+            cs.Show();
+        }
     }
 }

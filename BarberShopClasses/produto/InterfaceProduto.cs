@@ -8,5 +8,9 @@ namespace BarberShopClasses.produto
 {
     public interface InterfaceProduto
     {
+        void CadastrarProduto(Produto p);
+        void AtualizarProduto(Produto p);
+        void RemoverProduto(Produto p);
+        List<Produto> ListarProduto();
     }
 }

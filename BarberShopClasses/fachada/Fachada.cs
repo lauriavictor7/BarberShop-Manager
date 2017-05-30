@@ -26,6 +26,16 @@ namespace BarberShopClasses.fachada
             nC.AtualizarCliente(c);
         }
 
+        public void AtualizarProduto(Produto p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AtualizarServico(Servico s)
+        {
+            throw new NotImplementedException();
+        }
+
         public void CadastrarAgendamento(Agendamento a)
         {
             throw new NotImplementedException();
@@ -35,6 +45,16 @@ namespace BarberShopClasses.fachada
         {
             NegocioCliente nC = new NegocioCliente();
             nC.CadastrarCliente(c);
+        }
+
+        public void CadastrarProduto(Produto p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CadastrarServico(Servico s)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Agendamento> ListarAgendamento()
@@ -48,6 +68,17 @@ namespace BarberShopClasses.fachada
             return nC.ListarCliente();
         }
 
+        public List<Produto> ListarProduto()
+        {
+            NegocioProduto nP = new NegocioProduto();
+            return nP.ListarProduto();          
+        }
+
+        public List<Servico> ListarServico()
+        {
+            throw new NotImplementedException();
+        }
+
         public void RemoverAgendamento(Agendamento a)
         {
             throw new NotImplementedException();
@@ -57,6 +88,16 @@ namespace BarberShopClasses.fachada
         {
             NegocioCliente nC = new NegocioCliente();
             nC.RemoverCLiente(c);
+        }
+
+        public void RemoverProduto(Produto p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoverServico(Servico s)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -9,6 +9,8 @@ using BarberShopClasses.cliente;
 using BarberShopClasses.conexao;
 using System.Data.SqlClient;
 using System.Data;
+using BarberShopClasses.produto;
+using BarberShopClasses.servico;
 
 namespace BarberShopService
 {
@@ -39,6 +41,58 @@ namespace BarberShopService
         {
             NegocioCliente nc = new NegocioCliente();
             return nc.ListarCliente();
+        }
+        #endregion
+
+        #region Métodos referentes a Produto.
+        public void inserirProduto(Produto p)
+        {
+            NegocioProduto np = new NegocioProduto();
+            np.CadastrarProduto(p);
+        }
+
+        public void removerProduto(Produto p)
+        {
+            NegocioProduto np = new NegocioProduto();
+            np.RemoverProduto(p);
+        }
+
+        public void atualizarProduto(Produto p)
+        {
+            NegocioProduto np = new NegocioProduto();
+            np.AtualizarProduto(p);
+        }
+
+        public List<Produto> listarProduto()
+        {
+            NegocioProduto np = new NegocioProduto();
+            return np.ListarProduto();
+        }
+        #endregion
+
+        #region Métodos referentes a Serviço.
+        public void inserirServico(Servico s)
+        {
+            NegocioServico ns = new NegocioServico();
+            ns.CadastrarServico(s);
+        }
+
+        public void removerServico(Servico s)
+        {
+            NegocioServico ns = new NegocioServico();
+            ns.RemoverServico(s);
+        }
+
+        public void atualizarServico(Servico s)
+        {
+            NegocioServico ns = new NegocioServico();
+            ns.AtualizarServico(s);
+        }
+
+        public List<Servico> listarServico()
+        {
+            NegocioServico ns = new NegocioServico();
+            return ns.ListarServico();
         }
         #endregion
     }

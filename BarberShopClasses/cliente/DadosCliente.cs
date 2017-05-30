@@ -14,24 +14,31 @@ namespace BarberShopClasses.cliente
     {
         public void AtualizarCliente(Cliente c)
         {
-            this.abrirConexao();
+            try
+            {
+                this.abrirConexao();
 
-            string sql = "UPDATE cliente SET nome = @nome, telefone = @telefone WHERE cpf = @cpf";
+                string sql = "UPDATE cliente SET nome = @nome, telefone = @telefone WHERE cpf = @cpf";
 
-            SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+                SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-            cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
-            cmd.Parameters.Add("@nome", SqlDbType.VarChar);
-            cmd.Parameters.Add("@telefone", SqlDbType.VarChar);
+                cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
+                cmd.Parameters.Add("@nome", SqlDbType.VarChar);
+                cmd.Parameters.Add("@telefone", SqlDbType.VarChar);
 
-            cmd.Parameters["@cpf"].Value = c.Cpf;
-            cmd.Parameters["@nome"].Value = c.Nome;
-            cmd.Parameters["@telefone"].Value = c.Telefone;
+                cmd.Parameters["@cpf"].Value = c.Cpf;
+                cmd.Parameters["@nome"].Value = c.Nome;
+                cmd.Parameters["@telefone"].Value = c.Telefone;
 
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
 
-            this.fecharConexao();
+                this.fecharConexao();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception ("Erro ao atualizar! " + ex.Message);
+            }
         }
 
         public void CadastrarCliente(Cliente c)
@@ -65,46 +72,60 @@ namespace BarberShopClasses.cliente
 
         public List<Cliente> ListarCliente()
         {
-          List<Cliente> retorno = new List<Cliente>();
-          
-            this.abrirConexao();
-            string sql = "select cpf, nome, telefone from cliente";
-
-            SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
-
-            SqlDataReader DbReader = cmd.ExecuteReader();
-          
-            while (DbReader.Read())
+            try
             {
-                Cliente c = new Cliente();
-                c.Cpf = DbReader.GetString(DbReader.GetOrdinal("cpf"));
-                c.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
-                c.Telefone = DbReader.GetString(DbReader.GetOrdinal("telefone"));
-                retorno.Add(c);
+                List<Cliente> retorno = new List<Cliente>();
+
+                this.abrirConexao();
+                string sql = "select cpf, nome, telefone from cliente";
+
+                SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+
+                SqlDataReader DbReader = cmd.ExecuteReader();
+
+                while (DbReader.Read())
+                {
+                    Cliente c = new Cliente();
+                    c.Cpf = DbReader.GetString(DbReader.GetOrdinal("cpf"));
+                    c.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
+                    c.Telefone = DbReader.GetString(DbReader.GetOrdinal("telefone"));
+                    retorno.Add(c);
+                }
+
+                DbReader.Close();
+                cmd.Dispose();
+                this.fecharConexao();
+                return retorno;
             }
-           
-             DbReader.Close();
-             cmd.Dispose();
-             this.fecharConexao();
-             return retorno;
+            catch (Exception ex)
+            {
+                throw new Exception ("Erro ao listar! " + ex.Message);
+            }
         }
 
         public void RemoverCLiente(Cliente c)
         {
-            this.abrirConexao();
+            try
+            {
+                this.abrirConexao();
 
-            string sql = "DELETE FROM cliente WHERE cpf = @cpf";
+                string sql = "DELETE FROM cliente WHERE cpf = @cpf";
 
-            SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+                SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-            cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
+                cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
 
-            cmd.Parameters["@cpf"].Value = c.Cpf;
+                cmd.Parameters["@cpf"].Value = c.Cpf;
 
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
 
-            this.fecharConexao();
+                this.fecharConexao();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception ("Erro ao remover!" + ex.Message);
+            }
         }
 
 

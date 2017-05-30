@@ -1,43 +1,35 @@
-﻿
-using BarberShopClasses.cliente;
+﻿using BarberShopClasses.produto;
 using BarberShopTelas.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace BarberShopTelas
 {
-    public partial class CadastrarCliente : Form
+    public partial class CadastrarProduto : Form
     {
-        public CadastrarCliente()
+        public CadastrarProduto()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                localhost.Cliente c = new localhost.Cliente();
-                c.Cpf = textBox1.Text;
-                c.Nome = textBox2.Text;
-                c.Telefone = textBox3.Text;
+                localhost.Produto p = new localhost.Produto();
+                p.Cod_prod = Convert.ToInt32(textBox1.Text);
+                p.Preco = Convert.ToInt32(textBox2.Text);
+                p.Descricao = textBox3.Text;
 
                 Service1 sv = new Service1();
-                sv.inserirCliente(c);
+                sv.inserirProduto(p);
 
                 MessageBox.Show("Sucesso!");
             }
@@ -51,11 +43,11 @@ namespace BarberShopTelas
         {
             try
             {
-                localhost.Cliente c = new localhost.Cliente();
-                c.Cpf = textBox1.Text;
+                localhost.Produto p = new localhost.Produto();
+                p.Cod_prod = Convert.ToInt32(textBox1.Text);
 
                 Service1 sv = new Service1();
-                sv.removerCliente(c);
+                sv.removerProduto(p);
 
                 MessageBox.Show("Sucesso!");
             }
@@ -67,15 +59,15 @@ namespace BarberShopTelas
 
         private void button3_Click(object sender, EventArgs e)
         {
-          try
+            try
             {
-                localhost.Cliente c = new localhost.Cliente();
-                c.Cpf = textBox1.Text;
-                c.Nome = textBox2.Text;
-                c.Telefone = textBox3.Text;
+                localhost.Produto p = new localhost.Produto();
+                p.Cod_prod = Convert.ToInt32(textBox1.Text);
+                p.Preco = Convert.ToInt32(textBox2.Text);
+                p.Descricao = textBox3.Text;
 
                 Service1 sv = new Service1();
-                sv.atualizarCLiente(c);
+                sv.atualizarProduto(p);
 
                 MessageBox.Show("Sucesso!");
             }
@@ -86,24 +78,19 @@ namespace BarberShopTelas
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {
+        {          
             try
             {
-                //Instância não necessária. Clientes são listados mesmo sem ela.
-                localhost.Cliente c = new localhost.Cliente();
+                //Instância não necessária. Produtos são listados mesmo sem ela.
+                localhost.Produto p = new localhost.Produto();
 
                 Service1 sv = new Service1();
-                dataGridView1.DataSource = sv.listarCliente();
+                dataGridView1.DataSource = sv.listarProduto();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro. " + ex.Message);
-            }   
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+            }
         }
     }
 }

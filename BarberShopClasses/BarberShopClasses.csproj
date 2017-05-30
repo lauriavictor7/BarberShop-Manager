@@ -112,6 +112,9 @@
     <None Include="Web References\localhost\Cliente.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\localhost\Produto.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\localhost\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -119,6 +122,9 @@
     <None Include="Web References\localhost\Service1.wsdl" />
     <None Include="Web References\localhost\Service1.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\localhost\Servico.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
