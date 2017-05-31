@@ -55,7 +55,8 @@ namespace BarberShopTelas
 
         private void testeDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            CadastrarAgendamento ca = new CadastrarAgendamento();
+            ca.Show();
             
         }
 

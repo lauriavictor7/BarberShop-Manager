@@ -77,6 +77,30 @@
   <wsdl:message name="IService1_listarServico_OutputMessage">
     <wsdl:part name="parameters" element="tns:listarServicoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_CadastrarAgendamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarAgendamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarAgendamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarAgendamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AtualizarAgendamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarAgendamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AtualizarAgendamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarAgendamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoverAgendamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverAgendamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoverAgendamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverAgendamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarAgendamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAgendamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarAgendamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAgendamentoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="inserirCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/inserirCliente" message="tns:IService1_inserirCliente_InputMessage" />
@@ -125,6 +149,22 @@
     <wsdl:operation name="listarServico">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/listarServico" message="tns:IService1_listarServico_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/listarServicoResponse" message="tns:IService1_listarServico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarAgendamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CadastrarAgendamento" message="tns:IService1_CadastrarAgendamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CadastrarAgendamentoResponse" message="tns:IService1_CadastrarAgendamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarAgendamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AtualizarAgendamento" message="tns:IService1_AtualizarAgendamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AtualizarAgendamentoResponse" message="tns:IService1_AtualizarAgendamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoverAgendamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoverAgendamento" message="tns:IService1_RemoverAgendamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoverAgendamentoResponse" message="tns:IService1_RemoverAgendamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAgendamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarAgendamento" message="tns:IService1_ListarAgendamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarAgendamentoResponse" message="tns:IService1_ListarAgendamento_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -230,6 +270,42 @@
     </wsdl:operation>
     <wsdl:operation name="listarServico">
       <soap:operation soapAction="http://tempuri.org/IService1/listarServico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarAgendamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/CadastrarAgendamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarAgendamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/AtualizarAgendamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoverAgendamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/RemoverAgendamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAgendamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarAgendamento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1,4 +1,5 @@
-﻿using BarberShopClasses.cliente;
+﻿using BarberShopClasses.agendamento;
+using BarberShopClasses.cliente;
 using BarberShopClasses.produto;
 using BarberShopClasses.servico;
 using System;
@@ -59,6 +60,16 @@ namespace BarberShopService
         List<Servico> listarServico();
         #endregion
 
+        #region Métodos Referentes a Agendamento
+        [OperationContract]
+        void CadastrarAgendamento(Agendamento a);
+        [OperationContract]
+        void AtualizarAgendamento(Agendamento a);
+        [OperationContract]
+        void RemoverAgendamento(Agendamento a);
+        [OperationContract]
+        List<Agendamento> ListarAgendamento();
+        #endregion
     }
 
 }

@@ -69,6 +69,12 @@
     <Compile Include="BarberShopHome.Designer.cs">
       <DependentUpon>BarberShopHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastrarAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarAgendamento.Designer.cs">
+      <DependentUpon>CadastrarAgendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastrarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     <EmbeddedResource Include="BarberShopHome.resx">
       <DependentUpon>BarberShopHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CadastrarAgendamento.resx">
+      <DependentUpon>CadastrarAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastrarCliente.resx">
       <DependentUpon>CadastrarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +133,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Web References\localhost\Agendamento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\localhost\Cliente.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>

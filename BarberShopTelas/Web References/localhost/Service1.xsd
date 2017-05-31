@@ -12,6 +12,9 @@
       <xs:element minOccurs="0" maxOccurs="1" name="Cpf" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Nome" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Telefone" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Bairro" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Endereco" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sexo" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="inserirClienteResponse">
@@ -154,6 +157,60 @@
   <xs:complexType name="ArrayOfServico">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Servico" nillable="true" type="tns:Servico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CadastrarAgendamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="a" type="tns:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Agendamento">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Data" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Hora" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cliente" type="tns:Cliente" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Servico" type="tns:Servico" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Cod_ag" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CadastrarAgendamentoResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="AtualizarAgendamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="a" type="tns:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarAgendamentoResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="RemoverAgendamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="a" type="tns:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverAgendamentoResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ListarAgendamento">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ListarAgendamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ListarAgendamentoResult" type="tns:ArrayOfAgendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfAgendamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Agendamento" nillable="true" type="tns:Agendamento" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

@@ -35,7 +35,7 @@ namespace BarberShopTelas
                 c.Cpf = textBox1.Text;
                 c.Nome = textBox2.Text;
                 c.Telefone = textBox3.Text;
-
+                
                 Service1 sv = new Service1();
                 sv.inserirCliente(c);
 

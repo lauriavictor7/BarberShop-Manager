@@ -16,6 +16,12 @@ namespace BarberShopClasses.agendamento
         private Cliente cliente;
         private Servico servico;
 
+        public Agendamento()
+        {
+            new Cliente();
+            new Servico();
+        }
+
         public DateTime Data
         {
             get

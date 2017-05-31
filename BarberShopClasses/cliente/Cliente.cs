@@ -11,6 +11,9 @@ namespace BarberShopClasses.cliente
         private string cpf;
         private string nome;
         private string telefone;
+        private string bairro;
+        private string endereco;
+        private string sexo;
 
         public string Cpf
         {
@@ -48,6 +51,45 @@ namespace BarberShopClasses.cliente
             set
             {
                 telefone = value;
+            }
+        }
+
+        public string Bairro
+        {
+            get
+            {
+                return bairro;
+            }
+
+            set
+            {
+                bairro = value;
+            }
+        }
+
+        public string Endereco
+        {
+            get
+            {
+                return endereco;
+            }
+
+            set
+            {
+                endereco = value;
+            }
+        }
+
+        public string Sexo
+        {
+            get
+            {
+                return sexo;
+            }
+
+            set
+            {
+                sexo = value;
             }
         }
     }

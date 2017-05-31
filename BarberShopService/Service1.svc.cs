@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Data;
 using BarberShopClasses.produto;
 using BarberShopClasses.servico;
+using BarberShopClasses.agendamento;
 
 namespace BarberShopService
 {
@@ -95,5 +96,33 @@ namespace BarberShopService
             return ns.ListarServico();
         }
         #endregion
+
+        #region Métodos Referentes a Agendamento
+        public void CadastrarAgendamento(Agendamento a)
+        {
+            NegocioAgendamento nA = new NegocioAgendamento();
+            nA.CadastrarAgendamento(a);
+
+        }
+
+        public void AtualizarAgendamento(Agendamento a)
+        {
+            NegocioAgendamento nA = new NegocioAgendamento();
+            nA.AtualizarAgendamento(a);
+        }
+
+        public void RemoverAgendamento(Agendamento a)
+        {
+            NegocioAgendamento nA = new NegocioAgendamento();
+            nA.RemoverAgendamento(a);
+        }
+
+        public List<Agendamento> ListarAgendamento()
+        {
+            NegocioAgendamento nA = new NegocioAgendamento();
+            return nA.ListarAgendamento();
+        }
+        #endregion
+
     }
 }
