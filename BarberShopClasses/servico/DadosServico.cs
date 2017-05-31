@@ -76,7 +76,7 @@ namespace BarberShopClasses.servico
                 List<Servico> retorno = new List<Servico>();
 
                 this.abrirConexao();
-                string sql = "SELECT cod, preco, descricao FROM produto";
+                string sql = "SELECT cod, preco, descricao FROM servico";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 

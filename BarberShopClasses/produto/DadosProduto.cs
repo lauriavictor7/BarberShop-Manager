@@ -81,21 +81,21 @@ namespace BarberShopClasses.produto
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                SqlDataReader DbReader = cmd.ExecuteReader();
+                 SqlDataReader DbReader = cmd.ExecuteReader();
 
-                while (DbReader.Read())
-                {
-                    Produto p = new Produto();
-                    p.Cod_prod = DbReader.GetInt32(DbReader.GetOrdinal("cod"));
-                    p.Preco = DbReader.GetInt32(DbReader.GetOrdinal("preco"));
-                    p.Descricao = DbReader.GetString(DbReader.GetOrdinal("descricao"));
-                    retorno.Add(p);
-                }
+                 while (DbReader.Read())
+                 {
+                     Produto p = new Produto();
+                     p.Cod_prod = DbReader.GetInt32(DbReader.GetOrdinal("cod"));
+                     p.Preco = DbReader.GetInt32(DbReader.GetOrdinal("preco"));
+                     p.Descricao = DbReader.GetString(DbReader.GetOrdinal("descricao"));
+                     retorno.Add(p);
+                 }
 
-                DbReader.Close();
-                cmd.Dispose();
-                this.fecharConexao();
-                return retorno;
+                 DbReader.Close();
+                 cmd.Dispose();
+                 this.fecharConexao();
+                 return retorno; 
             }
             catch (Exception ex)
             {

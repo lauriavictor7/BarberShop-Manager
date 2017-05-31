@@ -1,4 +1,5 @@
 ﻿using BarberShopTelas.localhost;
+using BarberShopClasses.servico;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
