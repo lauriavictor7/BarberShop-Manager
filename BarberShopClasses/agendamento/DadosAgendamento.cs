@@ -104,6 +104,36 @@ namespace BarberShopClasses.agendamento
             }
         }
 
+        public void AtualizarAgendamento(Agendamento a)
+        {
+            try
+            {
+                this.abrirConexao();
+
+                string sql = "UPDATE Agendamento SET cod_serv = @cod_serv, data = @data, hora = @hora WHERE cpf = @cpf";
+
+                SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+
+                cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
+                cmd.Parameters.Add("@cod_serv", SqlDbType.Int);
+                cmd.Parameters.Add("@data", SqlDbType.Date);
+                cmd.Parameters.Add("@hora", SqlDbType.DateTime);
+                /*
+                cmd.Parameters["@cpf"].Value = c.Cpf;
+                cmd.Parameters["@nome"].Value = c.Nome;
+                cmd.Parameters["@telefone"].Value = c.Telefone;
+                */
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
+                this.fecharConexao();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao atualizar! " + ex.Message);
+            }
+        }
+
 
     }
 }

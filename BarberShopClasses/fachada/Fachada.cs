@@ -36,6 +36,11 @@ namespace BarberShopClasses.fachada
             throw new NotImplementedException();
         }
 
+        public Servico buscarValor(string cpf)
+        {
+            throw new NotImplementedException();
+        }
+
         public void CadastrarAgendamento(Agendamento a)
         {
             throw new NotImplementedException();
@@ -45,6 +50,11 @@ namespace BarberShopClasses.fachada
         {
             NegocioCliente nC = new NegocioCliente();
             nC.CadastrarCliente(c);
+        }
+
+        public void CadastrarPagamento(Pagamento p)
+        {
+            throw new NotImplementedException();
         }
 
         public void CadastrarProduto(Produto p)

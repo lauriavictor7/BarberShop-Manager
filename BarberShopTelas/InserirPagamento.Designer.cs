@@ -109,6 +109,7 @@
             this.buttonPagamento.TabIndex = 8;
             this.buttonPagamento.Text = "Finalizar";
             this.buttonPagamento.UseVisualStyleBackColor = true;
+            this.buttonPagamento.Click += new System.EventHandler(this.buttonPagamento_Click);
             // 
             // timer1
             // 

@@ -68,6 +68,8 @@ namespace BarberShopService
         void RemoverAgendamento(Agendamento a);
         [OperationContract]
         List<Agendamento> ListarAgendamento();
+        [OperationContract]
+        void atualizarAgendamento(Agendamento a);
         #endregion
 
         #region Métodos Referentes a Pagamento

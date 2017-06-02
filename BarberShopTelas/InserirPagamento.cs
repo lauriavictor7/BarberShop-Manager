@@ -53,5 +53,50 @@ namespace BarberShopTelas
                 MessageBox.Show("Error " + ex.Message);
             }
         }
+
+        private void buttonPagamento_Click(object sender, EventArgs e)
+        {
+            Pagamento p = new Pagamento();
+            if(maskedTextBox1.Equals(" "))
+            {
+                MessageBox.Show("Informe o CPF, e click no Check !");
+            }
+            if(textBoxValorPg.Enabled == true)
+            {
+                MessageBox.Show("Por favor de um check no cpf, os campos preencheram automaticamente !");
+            }
+            if(comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Escolha o tipo de pagamento!");
+            }
+            if(comboBox1.SelectedIndex == 0)
+            {
+                p.Metodo = "Db";
+                p.Valor = Convert.ToDouble(textBoxValorPg.Text);
+                p.Hora = Convert.ToDateTime(textBoxHoraPg.Text);
+                p.Data = Convert.ToDateTime(textBoxDataPg.Text);
+                Service1 sv = new Service1();
+                sv.CadastrarPagamento(p);
+            }
+            if(comboBox1.SelectedIndex == 1)
+            {
+                p.Metodo = "Cd";
+                p.Valor = Convert.ToDouble(textBoxValorPg.Text);
+                p.Hora = Convert.ToDateTime(textBoxHoraPg.Text);
+                p.Data = Convert.ToDateTime(textBoxDataPg.Text);
+                Service1 sv = new Service1();
+                sv.CadastrarPagamento(p);
+            }
+            if(comboBox1.SelectedIndex == 2)
+            {
+                p.Metodo = "Av";
+                p.Valor = Convert.ToDouble(textBoxValorPg.Text);
+                p.Hora = Convert.ToDateTime(textBoxHoraPg.Text);
+                p.Data = Convert.ToDateTime(textBoxDataPg.Text);
+                Service1 sv = new Service1();
+                sv.CadastrarPagamento(p);
+            }
+            
+        }
     }
 }

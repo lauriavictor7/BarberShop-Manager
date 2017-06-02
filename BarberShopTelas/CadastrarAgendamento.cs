@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using BarberShopClasses.agendamento;
 using BarberShopTelas.localhost;
 
+
 namespace BarberShopTelas
 {
     public partial class CadastrarAgendamento : Form
@@ -32,12 +33,12 @@ namespace BarberShopTelas
                 localhost.Agendamento a = new localhost.Agendamento();
                 a.Cliente = new Cliente();
                 a.Servico = new Servico();
+                
                 a.Cliente.Cpf = maskedTextBox1.Text;
                 a.Servico.Cod_serv = Convert.ToInt16(textBoxServiAg.Text);
                 a.Data = Convert.ToDateTime(maskedTextBoxDataAg.Text);
                 a.Hora = Convert.ToDateTime(maskedTextBoxHoraAg.Text);
-                
-
+   
                 Service1 sv = new Service1();
                 sv.CadastrarAgendamento(a);
                 MessageBox.Show("Cadastrou!");

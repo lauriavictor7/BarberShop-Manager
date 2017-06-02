@@ -14,7 +14,7 @@ namespace BarberShopClasses.pagamento
         {
             
             DadosPagamento dp = new DadosPagamento();
-            if (cpf == "   .   .   -  ")
+            if (cpf == " ")
             {
                 throw new Exception("Por favor preencha o cpf");
             }
@@ -24,7 +24,12 @@ namespace BarberShopClasses.pagamento
 
         public void CadastrarPagamento(Pagamento p)
         {
-            
+            if (p.Metodo == " ")
+            {
+                throw new Exception("Por favor Escolha um metodo de pagamento");
+            }
+            DadosPagamento dP = new DadosPagamento();
+            dP.CadastrarPagamento(p);
         }
     }
 

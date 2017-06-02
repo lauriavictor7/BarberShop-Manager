@@ -178,16 +178,6 @@
   <xs:element name="CadastrarAgendamentoResponse">
     <xs:complexType />
   </xs:element>
-  <xs:element name="AtualizarAgendamento">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="1" name="a" type="tns:Agendamento" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AtualizarAgendamentoResponse">
-    <xs:complexType />
-  </xs:element>
   <xs:element name="RemoverAgendamento">
     <xs:complexType>
       <xs:sequence>
@@ -213,6 +203,16 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Agendamento" nillable="true" type="tns:Agendamento" />
     </xs:sequence>
   </xs:complexType>
+  <xs:element name="atualizarAgendamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="a" type="tns:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="atualizarAgendamentoResponse">
+    <xs:complexType />
+  </xs:element>
   <xs:element name="buscarValor">
     <xs:complexType>
       <xs:sequence>
@@ -236,23 +236,11 @@
   </xs:element>
   <xs:complexType name="Pagamento">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="NotaF1" type="tns:NotaFiscal" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Produto" type="tns:Produto" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Cliente" type="tns:Cliente" />
       <xs:element minOccurs="1" maxOccurs="1" name="Data" type="xs:dateTime" />
       <xs:element minOccurs="1" maxOccurs="1" name="Hora" type="xs:dateTime" />
       <xs:element minOccurs="1" maxOccurs="1" name="Cod_pag" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="NotaFiscal">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="Servico" type="tns:Servico" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Produto" type="tns:Produto" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Cliente" type="tns:Cliente" />
-      <xs:element minOccurs="1" maxOccurs="1" name="Data" type="xs:dateTime" />
-      <xs:element minOccurs="1" maxOccurs="1" name="Hora" type="xs:dateTime" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Metodo1" type="xs:string" />
-      <xs:element minOccurs="1" maxOccurs="1" name="Cod_nf" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Metodo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Valor" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CadastrarPagamentoResponse">

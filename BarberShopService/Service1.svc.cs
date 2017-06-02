@@ -130,7 +130,8 @@ namespace BarberShopService
 
         public void CadastrarPagamento(Pagamento p)
         {
-            
+            NegocioPagamento nP = new NegocioPagamento();
+            nP.CadastrarPagamento(p);
         }
 
         public void RemoverPagamento(Pagamento p)
@@ -139,6 +140,11 @@ namespace BarberShopService
         }
 
         public List<Pagamento> ListarPagamento()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void atualizarAgendamento(Agendamento a)
         {
             throw new NotImplementedException();
         }

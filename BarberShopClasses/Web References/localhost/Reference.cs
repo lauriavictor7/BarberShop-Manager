@@ -55,11 +55,11 @@ namespace BarberShopClasses.localhost {
         
         private System.Threading.SendOrPostCallback CadastrarAgendamentoOperationCompleted;
         
-        private System.Threading.SendOrPostCallback AtualizarAgendamentoOperationCompleted;
-        
         private System.Threading.SendOrPostCallback RemoverAgendamentoOperationCompleted;
         
         private System.Threading.SendOrPostCallback ListarAgendamentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback atualizarAgendamentoOperationCompleted;
         
         private System.Threading.SendOrPostCallback buscarValorOperationCompleted;
         
@@ -147,13 +147,13 @@ namespace BarberShopClasses.localhost {
         public event CadastrarAgendamentoCompletedEventHandler CadastrarAgendamentoCompleted;
         
         /// <remarks/>
-        public event AtualizarAgendamentoCompletedEventHandler AtualizarAgendamentoCompleted;
-        
-        /// <remarks/>
         public event RemoverAgendamentoCompletedEventHandler RemoverAgendamentoCompleted;
         
         /// <remarks/>
         public event ListarAgendamentoCompletedEventHandler ListarAgendamentoCompleted;
+        
+        /// <remarks/>
+        public event atualizarAgendamentoCompletedEventHandler atualizarAgendamentoCompleted;
         
         /// <remarks/>
         public event buscarValorCompletedEventHandler buscarValorCompleted;
@@ -529,34 +529,6 @@ namespace BarberShopClasses.localhost {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/AtualizarAgendamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void AtualizarAgendamento(Agendamento a) {
-            this.Invoke("AtualizarAgendamento", new object[] {
-                        a});
-        }
-        
-        /// <remarks/>
-        public void AtualizarAgendamentoAsync(Agendamento a) {
-            this.AtualizarAgendamentoAsync(a, null);
-        }
-        
-        /// <remarks/>
-        public void AtualizarAgendamentoAsync(Agendamento a, object userState) {
-            if ((this.AtualizarAgendamentoOperationCompleted == null)) {
-                this.AtualizarAgendamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAtualizarAgendamentoOperationCompleted);
-            }
-            this.InvokeAsync("AtualizarAgendamento", new object[] {
-                        a}, this.AtualizarAgendamentoOperationCompleted, userState);
-        }
-        
-        private void OnAtualizarAgendamentoOperationCompleted(object arg) {
-            if ((this.AtualizarAgendamentoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.AtualizarAgendamentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/RemoverAgendamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public void RemoverAgendamento(Agendamento a) {
             this.Invoke("RemoverAgendamento", new object[] {
@@ -608,6 +580,34 @@ namespace BarberShopClasses.localhost {
             if ((this.ListarAgendamentoCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ListarAgendamentoCompleted(this, new ListarAgendamentoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/atualizarAgendamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void atualizarAgendamento(Agendamento a) {
+            this.Invoke("atualizarAgendamento", new object[] {
+                        a});
+        }
+        
+        /// <remarks/>
+        public void atualizarAgendamentoAsync(Agendamento a) {
+            this.atualizarAgendamentoAsync(a, null);
+        }
+        
+        /// <remarks/>
+        public void atualizarAgendamentoAsync(Agendamento a, object userState) {
+            if ((this.atualizarAgendamentoOperationCompleted == null)) {
+                this.atualizarAgendamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnatualizarAgendamentoOperationCompleted);
+            }
+            this.InvokeAsync("atualizarAgendamento", new object[] {
+                        a}, this.atualizarAgendamentoOperationCompleted, userState);
+        }
+        
+        private void OnatualizarAgendamentoOperationCompleted(object arg) {
+            if ((this.atualizarAgendamentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.atualizarAgendamentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -829,51 +829,17 @@ namespace BarberShopClasses.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class NotaFiscal {
-        
-        private Servico servicoField;
-        
-        private Produto produtoField;
-        
-        private Cliente clienteField;
+    public partial class Pagamento {
         
         private System.DateTime dataField;
         
         private System.DateTime horaField;
         
-        private string metodo1Field;
+        private int cod_pagField;
         
-        private int cod_nfField;
+        private string metodoField;
         
-        /// <remarks/>
-        public Servico Servico {
-            get {
-                return this.servicoField;
-            }
-            set {
-                this.servicoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Produto Produto {
-            get {
-                return this.produtoField;
-            }
-            set {
-                this.produtoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Cliente Cliente {
-            get {
-                return this.clienteField;
-            }
-            set {
-                this.clienteField = value;
-            }
-        }
+        private double valorField;
         
         /// <remarks/>
         public System.DateTime Data {
@@ -896,22 +862,101 @@ namespace BarberShopClasses.localhost {
         }
         
         /// <remarks/>
-        public string Metodo1 {
+        public int Cod_pag {
             get {
-                return this.metodo1Field;
+                return this.cod_pagField;
             }
             set {
-                this.metodo1Field = value;
+                this.cod_pagField = value;
             }
         }
         
         /// <remarks/>
-        public int Cod_nf {
+        public string Metodo {
             get {
-                return this.cod_nfField;
+                return this.metodoField;
             }
             set {
-                this.cod_nfField = value;
+                this.metodoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Agendamento {
+        
+        private System.DateTime dataField;
+        
+        private System.DateTime horaField;
+        
+        private Cliente clienteField;
+        
+        private Servico servicoField;
+        
+        private int cod_agField;
+        
+        /// <remarks/>
+        public System.DateTime Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Hora {
+            get {
+                return this.horaField;
+            }
+            set {
+                this.horaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Cliente Cliente {
+            get {
+                return this.clienteField;
+            }
+            set {
+                this.clienteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Servico Servico {
+            get {
+                return this.servicoField;
+            }
+            set {
+                this.servicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Cod_ag {
+            get {
+                return this.cod_agField;
+            }
+            set {
+                this.cod_agField = value;
             }
         }
     }
@@ -1002,156 +1047,6 @@ namespace BarberShopClasses.localhost {
             }
             set {
                 this.cod_prodField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Pagamento {
-        
-        private NotaFiscal notaF1Field;
-        
-        private Produto produtoField;
-        
-        private Cliente clienteField;
-        
-        private System.DateTime dataField;
-        
-        private System.DateTime horaField;
-        
-        private int cod_pagField;
-        
-        /// <remarks/>
-        public NotaFiscal NotaF1 {
-            get {
-                return this.notaF1Field;
-            }
-            set {
-                this.notaF1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Produto Produto {
-            get {
-                return this.produtoField;
-            }
-            set {
-                this.produtoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Cliente Cliente {
-            get {
-                return this.clienteField;
-            }
-            set {
-                this.clienteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Data {
-            get {
-                return this.dataField;
-            }
-            set {
-                this.dataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Hora {
-            get {
-                return this.horaField;
-            }
-            set {
-                this.horaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Cod_pag {
-            get {
-                return this.cod_pagField;
-            }
-            set {
-                this.cod_pagField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Agendamento {
-        
-        private System.DateTime dataField;
-        
-        private System.DateTime horaField;
-        
-        private Cliente clienteField;
-        
-        private Servico servicoField;
-        
-        private int cod_agField;
-        
-        /// <remarks/>
-        public System.DateTime Data {
-            get {
-                return this.dataField;
-            }
-            set {
-                this.dataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Hora {
-            get {
-                return this.horaField;
-            }
-            set {
-                this.horaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Cliente Cliente {
-            get {
-                return this.clienteField;
-            }
-            set {
-                this.clienteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Servico Servico {
-            get {
-                return this.servicoField;
-            }
-            set {
-                this.servicoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Cod_ag {
-            get {
-                return this.cod_agField;
-            }
-            set {
-                this.cod_agField = value;
             }
         }
     }
@@ -1276,10 +1171,6 @@ namespace BarberShopClasses.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
-    public delegate void AtualizarAgendamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void RemoverAgendamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
@@ -1307,6 +1198,10 @@ namespace BarberShopClasses.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void atualizarAgendamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
