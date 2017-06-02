@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarberShopClasses.genericas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,18 @@ using System.Threading.Tasks;
 
 namespace BarberShopClasses.cliente
 {
-    public class Cliente
+    public class Cliente : Endereco
     {
         private string cpf;
         private string nome;
         private string telefone;
-        private string bairro;
-        private string endereco;
         private string sexo;
+        private Endereco endereco;
+    
+        public Cliente ()
+        {
+            this.endereco = new Endereco();
+        }
 
         public string Cpf
         {
@@ -54,32 +59,6 @@ namespace BarberShopClasses.cliente
             }
         }
 
-        public string Bairro
-        {
-            get
-            {
-                return bairro;
-            }
-
-            set
-            {
-                bairro = value;
-            }
-        }
-
-        public string Endereco
-        {
-            get
-            {
-                return endereco;
-            }
-
-            set
-            {
-                endereco = value;
-            }
-        }
-
         public string Sexo
         {
             get
@@ -92,5 +71,19 @@ namespace BarberShopClasses.cliente
                 sexo = value;
             }
         }
+
+        public Endereco Endereco
+        {
+            get
+            {
+                return endereco;
+            }
+
+            set
+            {
+                endereco = value;
+            }
+        }
     }
 }
+

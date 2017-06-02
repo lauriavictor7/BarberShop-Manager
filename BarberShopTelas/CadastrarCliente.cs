@@ -1,5 +1,6 @@
 ﻿
 using BarberShopClasses.cliente;
+using BarberShopClasses.genericas;
 using BarberShopTelas.localhost;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace BarberShopTelas
 {
@@ -32,9 +32,14 @@ namespace BarberShopTelas
             try
             {
                 localhost.Cliente c = new localhost.Cliente();
+               // c.Endereco = new Endereco();
+
                 c.Cpf = textBox1.Text;
                 c.Nome = textBox2.Text;
                 c.Telefone = textBox3.Text;
+                
+                
+
                 
                 Service1 sv = new Service1();
                 sv.inserirCliente(c);
@@ -104,6 +109,11 @@ namespace BarberShopTelas
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
