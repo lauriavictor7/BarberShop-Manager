@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BarberShopClasses.cliente;
+using BarberShopClasses.servico;
 
 namespace BarberShopClasses.agendamento
 {
@@ -37,6 +39,7 @@ namespace BarberShopClasses.agendamento
         {
             try
             {
+                
                 this.abrirConexao();
 
                 string sql = "INSERT INTO Agendamento (cpf, data, hora, cod_serv) values (@cpf, @data, @hora, @cod_serv)";
@@ -46,12 +49,12 @@ namespace BarberShopClasses.agendamento
                 cmd.Parameters.Add("@data", SqlDbType.DateTime);
                 cmd.Parameters.Add("@hora", SqlDbType.DateTime);
                 cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
-                cmd.Parameters.Add("@servico", SqlDbType.VarChar);
+                cmd.Parameters.Add("@cod_serv", SqlDbType.VarChar);
 
                 cmd.Parameters["@data"].Value = a.Data;
                 cmd.Parameters["@hora"].Value = a.Hora;
                 cmd.Parameters["@cpf"].Value = a.Cliente.Cpf;
-                cmd.Parameters["@servico"].Value = a.Servico.Cod_serv;
+                cmd.Parameters["@cod_serv"].Value = a.Servico.Cod_serv;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -59,7 +62,7 @@ namespace BarberShopClasses.agendamento
                 this.fecharConexao();
             }catch(Exception ex)
             {
-                throw new Exception("Error" + ex.Message);
+               throw new Exception("Error" + ex.Message);
             }
 
         }
@@ -70,17 +73,20 @@ namespace BarberShopClasses.agendamento
             {
                 List<Agendamento> retorno = new List<Agendamento>();
                 this.abrirConexao();
-                string sql = "select cod_ag, cpf, data, hora, cod_serv from Agendamento";
+                string sql = "select cod_ag, cpf, data, hora, cod_serv from agendamento;";
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
                 {
                     Agendamento a = new Agendamento();
+                    a.Cliente = new Cliente();
+                    a.Servico = new Servico();
                     a.Cod_ag = DbReader.GetInt32(DbReader.GetOrdinal("cod_ag"));
                     a.Cliente.Cpf = DbReader.GetString(DbReader.GetOrdinal("cpf"));
                     a.Data = DbReader.GetDateTime(DbReader.GetOrdinal("data"));
                     a.Hora = DbReader.GetDateTime(DbReader.GetOrdinal("hora"));
                     a.Servico.Cod_serv = DbReader.GetInt32(DbReader.GetOrdinal("cod_serv"));
+                    
                     retorno.Add(a);
                 }
                 DbReader.Close();
@@ -111,5 +117,7 @@ namespace BarberShopClasses.agendamento
                 throw new Exception("Error " + ex.Message);
             }
         }
+
+        
     }
 }

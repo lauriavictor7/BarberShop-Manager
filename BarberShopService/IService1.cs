@@ -70,6 +70,11 @@ namespace BarberShopService
         [OperationContract]
         List<Agendamento> ListarAgendamento();
         #endregion
+
+        #region Métodos Referentes a Pagamento
+        [OperationContract]
+        Servico buscarValor(string cpf);
+        #endregion
     }
 
 }

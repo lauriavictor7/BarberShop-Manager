@@ -53,12 +53,6 @@ namespace BarberShopTelas
             cc.Show();
         }
 
-        private void testeDataToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CadastrarAgendamento ca = new CadastrarAgendamento();
-            ca.Show();
-            
-        }
 
         private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -70,6 +64,30 @@ namespace BarberShopTelas
         {
             CadastrarServico cs = new CadastrarServico();
             cs.Show();
+        }
+
+        private void agendarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastrarAgendamento ca = new CadastrarAgendamento();
+            ca.Show();
+        }
+
+        private void listaDeAgendamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaAgendamento la = new ListaAgendamento();
+            la.Show();
+        }
+
+        private void removerAgendamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteAgendamento da = new DeleteAgendamento();
+            da.Show();
+        }
+
+        private void pagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserirPagamento iP = new InserirPagamento();
+            iP.Show();
         }
     }
 }

@@ -101,6 +101,12 @@
   <wsdl:message name="IService1_ListarAgendamento_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarAgendamentoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_buscarValor_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarValor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_buscarValor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarValorResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="inserirCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/inserirCliente" message="tns:IService1_inserirCliente_InputMessage" />
@@ -165,6 +171,10 @@
     <wsdl:operation name="ListarAgendamento">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarAgendamento" message="tns:IService1_ListarAgendamento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarAgendamentoResponse" message="tns:IService1_ListarAgendamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarValor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/buscarValor" message="tns:IService1_buscarValor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/buscarValorResponse" message="tns:IService1_buscarValor_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -306,6 +316,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarAgendamento">
       <soap:operation soapAction="http://tempuri.org/IService1/ListarAgendamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarValor">
+      <soap:operation soapAction="http://tempuri.org/IService1/buscarValor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

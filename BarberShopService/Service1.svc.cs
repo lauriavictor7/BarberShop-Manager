@@ -12,6 +12,7 @@ using System.Data;
 using BarberShopClasses.produto;
 using BarberShopClasses.servico;
 using BarberShopClasses.agendamento;
+using BarberShopClasses.pagamento;
 
 namespace BarberShopService
 {
@@ -121,6 +122,16 @@ namespace BarberShopService
         {
             NegocioAgendamento nA = new NegocioAgendamento();
             return nA.ListarAgendamento();
+        }
+
+
+        #endregion
+
+        #region Métodos Referentes a Pagamentos
+        public Servico buscarValor(string cpf)
+        {
+            DadosPagamento dP = new DadosPagamento();
+            return dP.buscarValor(cpf);
         }
         #endregion
 

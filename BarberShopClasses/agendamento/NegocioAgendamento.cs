@@ -17,7 +17,7 @@ namespace BarberShopClasses.agendamento
             {
                 throw new Exception("Data invalida! ");
             }
-            if(a.Hora == Convert.ToDateTime( "  :  :  "))
+            if(a.Hora.Equals( "  :  :  ") == true)
             {
                 throw new Exception("Por favor preencha o campo de Hora");
             }
@@ -41,22 +41,27 @@ namespace BarberShopClasses.agendamento
             {
                 throw new Exception("Data invalida! ");
             }
-            if (a.Hora == Convert.ToDateTime("  :  :  "))
+            if (a.Hora.ToString().Equals("  :  :  ") == true)
             {
                 throw new Exception("Por favor preencha o campo de Hora");
             }
-            if (a.Data == Convert.ToDateTime("  /  /  "))
+            if (a.Data.ToString().Equals("  /  /  ") == true)
             {
                 throw new Exception("Por favor preencha o campo de hora");
+            }
+            if (a.Servico == null)
+            {
+                throw new Exception("Por favor coloque um id valido");
             }
             if (a.Servico.Cod_serv < 0)
             {
                 throw new Exception("Por favor coloque um id valido");
             }
-            if (a.Cliente.Cpf == "   .   .   -  ")
+            if (a.Cliente == null)
             {
                 throw new Exception("Por favor preencha o cpf");
             }
+            
             DadosAgendamento dA = new DadosAgendamento();
             dA.CadastrarAgendamento(a);
 

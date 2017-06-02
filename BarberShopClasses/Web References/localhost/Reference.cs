@@ -61,6 +61,8 @@ namespace BarberShopClasses.localhost {
         
         private System.Threading.SendOrPostCallback ListarAgendamentoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback buscarValorOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -146,6 +148,9 @@ namespace BarberShopClasses.localhost {
         
         /// <remarks/>
         public event ListarAgendamentoCompletedEventHandler ListarAgendamentoCompleted;
+        
+        /// <remarks/>
+        public event buscarValorCompletedEventHandler buscarValorCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/inserirCliente", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -592,6 +597,35 @@ namespace BarberShopClasses.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/buscarValor", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Servico buscarValor(string cpf) {
+            object[] results = this.Invoke("buscarValor", new object[] {
+                        cpf});
+            return ((Servico)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void buscarValorAsync(string cpf) {
+            this.buscarValorAsync(cpf, null);
+        }
+        
+        /// <remarks/>
+        public void buscarValorAsync(string cpf, object userState) {
+            if ((this.buscarValorOperationCompleted == null)) {
+                this.buscarValorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnbuscarValorOperationCompleted);
+            }
+            this.InvokeAsync("buscarValor", new object[] {
+                        cpf}, this.buscarValorOperationCompleted, userState);
+        }
+        
+        private void OnbuscarValorOperationCompleted(object arg) {
+            if ((this.buscarValorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.buscarValorCompleted(this, new buscarValorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -998,6 +1032,32 @@ namespace BarberShopClasses.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Agendamento[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void buscarValorCompletedEventHandler(object sender, buscarValorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class buscarValorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal buscarValorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Servico Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Servico)(this.results[0]));
             }
         }
     }

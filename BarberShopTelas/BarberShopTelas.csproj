@@ -93,6 +93,24 @@
     <Compile Include="CadastrarServico.Designer.cs">
       <DependentUpon>CadastrarServico.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteAgendamento.Designer.cs">
+      <DependentUpon>DeleteAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserirPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserirPagamento.Designer.cs">
+      <DependentUpon>InserirPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaAgendamento.Designer.cs">
+      <DependentUpon>ListaAgendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web References\localhost\Reference.cs">
@@ -114,6 +132,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadastrarServico.resx">
       <DependentUpon>CadastrarServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteAgendamento.resx">
+      <DependentUpon>DeleteAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserirPagamento.resx">
+      <DependentUpon>InserirPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaAgendamento.resx">
+      <DependentUpon>ListaAgendamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

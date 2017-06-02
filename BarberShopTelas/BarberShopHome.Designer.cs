@@ -37,11 +37,16 @@
             this.testandoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testeDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.servicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.agendamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDeAgendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removerAgendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,9 +56,10 @@
             this.testesToolStripMenuItem,
             this.testeBDCONToolStripMenuItem,
             this.clienteToolStripMenuItem,
-            this.testeDataToolStripMenuItem,
             this.produtoToolStripMenuItem,
-            this.servicoToolStripMenuItem});
+            this.servicoToolStripMenuItem,
+            this.agendamentoToolStripMenuItem,
+            this.financeiroToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
@@ -113,13 +119,6 @@
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
             // 
-            // testeDataToolStripMenuItem
-            // 
-            this.testeDataToolStripMenuItem.Name = "testeDataToolStripMenuItem";
-            this.testeDataToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.testeDataToolStripMenuItem.Text = "TesteData";
-            this.testeDataToolStripMenuItem.Click += new System.EventHandler(this.testeDataToolStripMenuItem_Click);
-            // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -150,6 +149,52 @@
             this.cadastrarToolStripMenuItem2.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem2.Click += new System.EventHandler(this.cadastrarToolStripMenuItem2_Click);
             // 
+            // agendamentoToolStripMenuItem
+            // 
+            this.agendamentoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agendarToolStripMenuItem,
+            this.listaDeAgendamentosToolStripMenuItem,
+            this.removerAgendamentosToolStripMenuItem});
+            this.agendamentoToolStripMenuItem.Name = "agendamentoToolStripMenuItem";
+            this.agendamentoToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.agendamentoToolStripMenuItem.Text = "Agendamento";
+            // 
+            // agendarToolStripMenuItem
+            // 
+            this.agendarToolStripMenuItem.Name = "agendarToolStripMenuItem";
+            this.agendarToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.agendarToolStripMenuItem.Text = "Agendar";
+            this.agendarToolStripMenuItem.Click += new System.EventHandler(this.agendarToolStripMenuItem_Click);
+            // 
+            // listaDeAgendamentosToolStripMenuItem
+            // 
+            this.listaDeAgendamentosToolStripMenuItem.Name = "listaDeAgendamentosToolStripMenuItem";
+            this.listaDeAgendamentosToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.listaDeAgendamentosToolStripMenuItem.Text = "Lista de Agendamentos";
+            this.listaDeAgendamentosToolStripMenuItem.Click += new System.EventHandler(this.listaDeAgendamentosToolStripMenuItem_Click);
+            // 
+            // removerAgendamentosToolStripMenuItem
+            // 
+            this.removerAgendamentosToolStripMenuItem.Name = "removerAgendamentosToolStripMenuItem";
+            this.removerAgendamentosToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.removerAgendamentosToolStripMenuItem.Text = "Remover Agendamentos";
+            this.removerAgendamentosToolStripMenuItem.Click += new System.EventHandler(this.removerAgendamentosToolStripMenuItem_Click);
+            // 
+            // financeiroToolStripMenuItem
+            // 
+            this.financeiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pagamentoToolStripMenuItem});
+            this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
+            this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.financeiroToolStripMenuItem.Text = "Financeiro";
+            // 
+            // pagamentoToolStripMenuItem
+            // 
+            this.pagamentoToolStripMenuItem.Name = "pagamentoToolStripMenuItem";
+            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pagamentoToolStripMenuItem.Text = "Pagamento";
+            this.pagamentoToolStripMenuItem.Click += new System.EventHandler(this.pagamentoToolStripMenuItem_Click);
+            // 
             // BarberShopHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,11 +224,16 @@
         private System.Windows.Forms.ToolStripMenuItem testandoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem testeDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem servicoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem agendamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agendarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDeAgendamentosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removerAgendamentosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem financeiroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagamentoToolStripMenuItem;
     }
 }
 
