@@ -30,6 +30,7 @@ namespace BarberShopTelas
                 a.Cliente.Cpf = maskedTextBox1.Text;
                 Service1 sv = new Service1();
                 sv.RemoverAgendamento(a);
+                MessageBox.Show("Agendamento Apagado com Sucesso !");
             }catch(Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);

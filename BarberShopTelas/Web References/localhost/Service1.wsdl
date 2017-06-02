@@ -107,6 +107,24 @@
   <wsdl:message name="IService1_buscarValor_OutputMessage">
     <wsdl:part name="parameters" element="tns:buscarValorResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_CadastrarPagamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarPagamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarPagamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarPagamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoverPagamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverPagamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoverPagamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverPagamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarPagamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPagamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarPagamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPagamentoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="inserirCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/inserirCliente" message="tns:IService1_inserirCliente_InputMessage" />
@@ -175,6 +193,18 @@
     <wsdl:operation name="buscarValor">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/buscarValor" message="tns:IService1_buscarValor_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/buscarValorResponse" message="tns:IService1_buscarValor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarPagamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CadastrarPagamento" message="tns:IService1_CadastrarPagamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CadastrarPagamentoResponse" message="tns:IService1_CadastrarPagamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoverPagamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoverPagamento" message="tns:IService1_RemoverPagamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoverPagamentoResponse" message="tns:IService1_RemoverPagamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPagamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarPagamento" message="tns:IService1_ListarPagamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarPagamentoResponse" message="tns:IService1_ListarPagamento_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -325,6 +355,33 @@
     </wsdl:operation>
     <wsdl:operation name="buscarValor">
       <soap:operation soapAction="http://tempuri.org/IService1/buscarValor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarPagamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/CadastrarPagamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoverPagamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/RemoverPagamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPagamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarPagamento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

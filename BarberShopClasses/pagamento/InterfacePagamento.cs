@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarberShopClasses.servico;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,8 @@ namespace BarberShopClasses.pagamento
 {
     public interface InterfacePagamento
     {
+        void CadastrarPagamento(Pagamento p);
+        Servico buscarValor(string cpf);
+
     }
 }

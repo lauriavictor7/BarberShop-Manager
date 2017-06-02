@@ -22,10 +22,18 @@ namespace BarberShopTelas
         private void buttonAgendamento_Click(object sender, EventArgs e)
         {
             try
-            {
-                
+            {                
                 Service1 sv = new Service1();
-                dataGridViewAgendamento.DataSource = sv.ListarAgendamento();
+                foreach (localhost.Agendamento agendamento in sv.ListarAgendamento())
+                {
+                    ListViewItem linha = listViewAg.Items.Add(agendamento.Cod_ag.ToString());
+                    linha.SubItems.Add(agendamento.Cliente.Cpf);
+                    linha.SubItems.Add(agendamento.Cliente.Nome);
+                    linha.SubItems.Add(agendamento.Servico.Descricao);
+                    linha.SubItems.Add(agendamento.Data.ToString());
+                    linha.SubItems.Add(agendamento.Hora.ToString());
+                }
+
             }catch(Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);

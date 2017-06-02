@@ -63,6 +63,12 @@ namespace BarberShopTelas.localhost {
         
         private System.Threading.SendOrPostCallback buscarValorOperationCompleted;
         
+        private System.Threading.SendOrPostCallback CadastrarPagamentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback RemoverPagamentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ListarPagamentoOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -151,6 +157,15 @@ namespace BarberShopTelas.localhost {
         
         /// <remarks/>
         public event buscarValorCompletedEventHandler buscarValorCompleted;
+        
+        /// <remarks/>
+        public event CadastrarPagamentoCompletedEventHandler CadastrarPagamentoCompleted;
+        
+        /// <remarks/>
+        public event RemoverPagamentoCompletedEventHandler RemoverPagamentoCompleted;
+        
+        /// <remarks/>
+        public event ListarPagamentoCompletedEventHandler ListarPagamentoCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/inserirCliente", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -626,6 +641,89 @@ namespace BarberShopTelas.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/CadastrarPagamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void CadastrarPagamento(Pagamento p) {
+            this.Invoke("CadastrarPagamento", new object[] {
+                        p});
+        }
+        
+        /// <remarks/>
+        public void CadastrarPagamentoAsync(Pagamento p) {
+            this.CadastrarPagamentoAsync(p, null);
+        }
+        
+        /// <remarks/>
+        public void CadastrarPagamentoAsync(Pagamento p, object userState) {
+            if ((this.CadastrarPagamentoOperationCompleted == null)) {
+                this.CadastrarPagamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCadastrarPagamentoOperationCompleted);
+            }
+            this.InvokeAsync("CadastrarPagamento", new object[] {
+                        p}, this.CadastrarPagamentoOperationCompleted, userState);
+        }
+        
+        private void OnCadastrarPagamentoOperationCompleted(object arg) {
+            if ((this.CadastrarPagamentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CadastrarPagamentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/RemoverPagamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void RemoverPagamento(Pagamento p) {
+            this.Invoke("RemoverPagamento", new object[] {
+                        p});
+        }
+        
+        /// <remarks/>
+        public void RemoverPagamentoAsync(Pagamento p) {
+            this.RemoverPagamentoAsync(p, null);
+        }
+        
+        /// <remarks/>
+        public void RemoverPagamentoAsync(Pagamento p, object userState) {
+            if ((this.RemoverPagamentoOperationCompleted == null)) {
+                this.RemoverPagamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRemoverPagamentoOperationCompleted);
+            }
+            this.InvokeAsync("RemoverPagamento", new object[] {
+                        p}, this.RemoverPagamentoOperationCompleted, userState);
+        }
+        
+        private void OnRemoverPagamentoOperationCompleted(object arg) {
+            if ((this.RemoverPagamentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RemoverPagamentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarPagamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Pagamento[] ListarPagamento() {
+            object[] results = this.Invoke("ListarPagamento", new object[0]);
+            return ((Pagamento[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ListarPagamentoAsync() {
+            this.ListarPagamentoAsync(null);
+        }
+        
+        /// <remarks/>
+        public void ListarPagamentoAsync(object userState) {
+            if ((this.ListarPagamentoOperationCompleted == null)) {
+                this.ListarPagamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListarPagamentoOperationCompleted);
+            }
+            this.InvokeAsync("ListarPagamento", new object[0], this.ListarPagamentoOperationCompleted, userState);
+        }
+        
+        private void OnListarPagamentoOperationCompleted(object arg) {
+            if ((this.ListarPagamentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ListarPagamentoCompleted(this, new ListarPagamentoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -731,17 +829,51 @@ namespace BarberShopTelas.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Agendamento {
+    public partial class NotaFiscal {
+        
+        private Servico servicoField;
+        
+        private Produto produtoField;
+        
+        private Cliente clienteField;
         
         private System.DateTime dataField;
         
         private System.DateTime horaField;
         
-        private Cliente clienteField;
+        private string metodo1Field;
         
-        private Servico servicoField;
+        private int cod_nfField;
         
-        private int cod_agField;
+        /// <remarks/>
+        public Servico Servico {
+            get {
+                return this.servicoField;
+            }
+            set {
+                this.servicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Produto Produto {
+            get {
+                return this.produtoField;
+            }
+            set {
+                this.produtoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Cliente Cliente {
+            get {
+                return this.clienteField;
+            }
+            set {
+                this.clienteField = value;
+            }
+        }
         
         /// <remarks/>
         public System.DateTime Data {
@@ -764,32 +896,22 @@ namespace BarberShopTelas.localhost {
         }
         
         /// <remarks/>
-        public Cliente Cliente {
+        public string Metodo1 {
             get {
-                return this.clienteField;
+                return this.metodo1Field;
             }
             set {
-                this.clienteField = value;
+                this.metodo1Field = value;
             }
         }
         
         /// <remarks/>
-        public Servico Servico {
+        public int Cod_nf {
             get {
-                return this.servicoField;
+                return this.cod_nfField;
             }
             set {
-                this.servicoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Cod_ag {
-            get {
-                return this.cod_agField;
-            }
-            set {
-                this.cod_agField = value;
+                this.cod_nfField = value;
             }
         }
     }
@@ -880,6 +1002,156 @@ namespace BarberShopTelas.localhost {
             }
             set {
                 this.cod_prodField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Pagamento {
+        
+        private NotaFiscal notaF1Field;
+        
+        private Produto produtoField;
+        
+        private Cliente clienteField;
+        
+        private System.DateTime dataField;
+        
+        private System.DateTime horaField;
+        
+        private int cod_pagField;
+        
+        /// <remarks/>
+        public NotaFiscal NotaF1 {
+            get {
+                return this.notaF1Field;
+            }
+            set {
+                this.notaF1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Produto Produto {
+            get {
+                return this.produtoField;
+            }
+            set {
+                this.produtoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Cliente Cliente {
+            get {
+                return this.clienteField;
+            }
+            set {
+                this.clienteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Hora {
+            get {
+                return this.horaField;
+            }
+            set {
+                this.horaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Cod_pag {
+            get {
+                return this.cod_pagField;
+            }
+            set {
+                this.cod_pagField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Agendamento {
+        
+        private System.DateTime dataField;
+        
+        private System.DateTime horaField;
+        
+        private Cliente clienteField;
+        
+        private Servico servicoField;
+        
+        private int cod_agField;
+        
+        /// <remarks/>
+        public System.DateTime Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Hora {
+            get {
+                return this.horaField;
+            }
+            set {
+                this.horaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Cliente Cliente {
+            get {
+                return this.clienteField;
+            }
+            set {
+                this.clienteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Servico Servico {
+            get {
+                return this.servicoField;
+            }
+            set {
+                this.servicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Cod_ag {
+            get {
+                return this.cod_agField;
+            }
+            set {
+                this.cod_agField = value;
             }
         }
     }
@@ -1058,6 +1330,40 @@ namespace BarberShopTelas.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Servico)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void CadastrarPagamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void RemoverPagamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void ListarPagamentoCompletedEventHandler(object sender, ListarPagamentoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ListarPagamentoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ListarPagamentoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Pagamento[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Pagamento[])(this.results[0]));
             }
         }
     }

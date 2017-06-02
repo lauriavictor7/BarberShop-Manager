@@ -37,5 +37,37 @@ namespace BarberShopClasses.pagamento
             this.fecharConexao();
             return s;
             }
+        public void CadastrarPagamento(Pagamento p)
+        {
+            try
+            {
+
+                this.abrirConexao();
+
+                string sql = "INSERT INTO Pagamento (valor, data, hora, metodo) values (@valor, @data, @hora, @metodo)";
+
+                SqlCommand cmd = new SqlCommand(sql, sqlConn);
+
+                cmd.Parameters.Add("@data", SqlDbType.DateTime);
+                cmd.Parameters.Add("@hora", SqlDbType.DateTime);
+                cmd.Parameters.Add("@valor", SqlDbType.Decimal);
+                cmd.Parameters.Add("@metodo", SqlDbType.VarChar);
+
+                cmd.Parameters["@data"].Value = p.Data;
+                cmd.Parameters["@hora"].Value = p.Hora;
+                cmd.Parameters["@valor"].Value = p.Valor;
+                cmd.Parameters["@metodo"].Value = p.Metodo;
+
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
+                this.fecharConexao();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error" + ex.Message);
+            }
+
+        }
     }
 }

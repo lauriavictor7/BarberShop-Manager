@@ -28,22 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewAgendamento = new System.Windows.Forms.DataGridView();
             this.buttonAgendamento = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAgendamento)).BeginInit();
+            this.listViewAg = new System.Windows.Forms.ListView();
+            this.Cod_Agendamento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CPF = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Servico = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Hora = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // dataGridViewAgendamento
-            // 
-            this.dataGridViewAgendamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAgendamento.Location = new System.Drawing.Point(12, 21);
-            this.dataGridViewAgendamento.Name = "dataGridViewAgendamento";
-            this.dataGridViewAgendamento.Size = new System.Drawing.Size(381, 150);
-            this.dataGridViewAgendamento.TabIndex = 0;
             // 
             // buttonAgendamento
             // 
-            this.buttonAgendamento.Location = new System.Drawing.Point(164, 187);
+            this.buttonAgendamento.Location = new System.Drawing.Point(232, 196);
             this.buttonAgendamento.Name = "buttonAgendamento";
             this.buttonAgendamento.Size = new System.Drawing.Size(75, 23);
             this.buttonAgendamento.TabIndex = 1;
@@ -51,24 +48,69 @@
             this.buttonAgendamento.UseVisualStyleBackColor = true;
             this.buttonAgendamento.Click += new System.EventHandler(this.buttonAgendamento_Click);
             // 
+            // listViewAg
+            // 
+            this.listViewAg.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Cod_Agendamento,
+            this.CPF,
+            this.Nome,
+            this.Servico,
+            this.Data,
+            this.Hora});
+            this.listViewAg.FullRowSelect = true;
+            this.listViewAg.Location = new System.Drawing.Point(12, 39);
+            this.listViewAg.Name = "listViewAg";
+            this.listViewAg.Size = new System.Drawing.Size(629, 135);
+            this.listViewAg.TabIndex = 2;
+            this.listViewAg.UseCompatibleStateImageBehavior = false;
+            this.listViewAg.View = System.Windows.Forms.View.Details;
+            // 
+            // Cod_Agendamento
+            // 
+            this.Cod_Agendamento.Text = "Cod_Agendamento";
+            // 
+            // CPF
+            // 
+            this.CPF.Text = "CPF";
+            // 
+            // Nome
+            // 
+            this.Nome.Text = "Nome";
+            // 
+            // Servico
+            // 
+            this.Servico.Text = "Servico";
+            // 
+            // Data
+            // 
+            this.Data.Text = "Data";
+            // 
+            // Hora
+            // 
+            this.Hora.Text = "Hora";
+            // 
             // ListaAgendamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(405, 231);
+            this.ClientSize = new System.Drawing.Size(656, 241);
+            this.Controls.Add(this.listViewAg);
             this.Controls.Add(this.buttonAgendamento);
-            this.Controls.Add(this.dataGridViewAgendamento);
             this.Name = "ListaAgendamento";
             this.Text = "ListaAgendamento";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAgendamento)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridViewAgendamento;
         private System.Windows.Forms.Button buttonAgendamento;
+        private System.Windows.Forms.ListView listViewAg;
+        private System.Windows.Forms.ColumnHeader Cod_Agendamento;
+        private System.Windows.Forms.ColumnHeader CPF;
+        private System.Windows.Forms.ColumnHeader Nome;
+        private System.Windows.Forms.ColumnHeader Servico;
+        private System.Windows.Forms.ColumnHeader Data;
+        private System.Windows.Forms.ColumnHeader Hora;
     }
 }

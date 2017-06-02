@@ -106,12 +106,6 @@ namespace BarberShopService
 
         }
 
-        public void AtualizarAgendamento(Agendamento a)
-        {
-            NegocioAgendamento nA = new NegocioAgendamento();
-            nA.AtualizarAgendamento(a);
-        }
-
         public void RemoverAgendamento(Agendamento a)
         {
             NegocioAgendamento nA = new NegocioAgendamento();
@@ -130,9 +124,25 @@ namespace BarberShopService
         #region Métodos Referentes a Pagamentos
         public Servico buscarValor(string cpf)
         {
-            DadosPagamento dP = new DadosPagamento();
-            return dP.buscarValor(cpf);
+            NegocioPagamento nP = new NegocioPagamento();
+            return nP.buscarValor(cpf);
         }
+
+        public void CadastrarPagamento(Pagamento p)
+        {
+            
+        }
+
+        public void RemoverPagamento(Pagamento p)
+        {
+            
+        }
+
+        public List<Pagamento> ListarPagamento()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
     }

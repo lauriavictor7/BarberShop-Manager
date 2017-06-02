@@ -18,8 +18,8 @@ namespace BarberShopClasses.agendamento
 
         public Agendamento()
         {
-            new Cliente();
-            new Servico();
+            this.cliente = new Cliente();
+            this.servico = new Servico();
         }
 
         public DateTime Data

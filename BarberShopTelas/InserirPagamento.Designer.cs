@@ -160,7 +160,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(553, 424);
+            this.ClientSize = new System.Drawing.Size(362, 341);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonCheckPg);
             this.Controls.Add(this.maskedTextBox1);

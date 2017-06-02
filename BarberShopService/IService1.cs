@@ -1,5 +1,6 @@
 ﻿using BarberShopClasses.agendamento;
 using BarberShopClasses.cliente;
+using BarberShopClasses.pagamento;
 using BarberShopClasses.produto;
 using BarberShopClasses.servico;
 using System;
@@ -64,8 +65,6 @@ namespace BarberShopService
         [OperationContract]
         void CadastrarAgendamento(Agendamento a);
         [OperationContract]
-        void AtualizarAgendamento(Agendamento a);
-        [OperationContract]
         void RemoverAgendamento(Agendamento a);
         [OperationContract]
         List<Agendamento> ListarAgendamento();
@@ -74,6 +73,12 @@ namespace BarberShopService
         #region Métodos Referentes a Pagamento
         [OperationContract]
         Servico buscarValor(string cpf);
+        [OperationContract]
+        void CadastrarPagamento(Pagamento p);
+        [OperationContract]
+        void RemoverPagamento(Pagamento p);
+        [OperationContract]
+        List<Pagamento> ListarPagamento();
         #endregion
     }
 

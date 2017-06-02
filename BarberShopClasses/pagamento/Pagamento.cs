@@ -12,50 +12,10 @@ namespace BarberShopClasses.pagamento
     public class Pagamento
     {
         private int cod_pag;
-        private NotaFiscal NotaF;
-        private Produto produto;
-        private Cliente cliente;
+        private double valor;
+        private string metodo;
         private DateTime data;
         private DateTime hora;
-
-        public NotaFiscal NotaF1
-        {
-            get
-            {
-                return NotaF;
-            }
-
-            set
-            {
-                NotaF = value;
-            }
-        }
-
-        public Produto Produto
-        {
-            get
-            {
-                return produto;
-            }
-
-            set
-            {
-                produto = value;
-            }
-        }
-
-        public Cliente Cliente
-        {
-            get
-            {
-                return cliente;
-            }
-
-            set
-            {
-                cliente = value;
-            }
-        }
 
         public DateTime Data
         {
@@ -93,6 +53,32 @@ namespace BarberShopClasses.pagamento
             set
             {
                 cod_pag = value;
+            }
+        }
+
+        public string Metodo
+        {
+            get
+            {
+                return metodo;
+            }
+
+            set
+            {
+                metodo = value;
+            }
+        }
+
+        public double Valor
+        {
+            get
+            {
+                return valor;
+            }
+
+            set
+            {
+                valor = value;
             }
         }
     }

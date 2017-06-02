@@ -9,29 +9,6 @@ namespace BarberShopClasses.agendamento
 {
     public class NegocioAgendamento : InterfaceAgendamento
     {
-        public void AtualizarAgendamento(Agendamento a)
-        {
-            string datastr= DateTime.Now.ToShortDateString();
-            DateTime data = Convert.ToDateTime(datastr);
-            if(a.Data.CompareTo(data) < 0)
-            {
-                throw new Exception("Data invalida! ");
-            }
-            if(a.Hora.Equals( "  :  :  ") == true)
-            {
-                throw new Exception("Por favor preencha o campo de Hora");
-            }
-            if (a.Data == Convert.ToDateTime("  /  /  "))
-            {
-                throw new Exception("Por favor preencha o campo de hora");
-            }
-            if(a.Servico.Cod_serv < 0)
-            {
-                throw new Exception("Por favor coloque um id valido");
-            }
-            DadosAgendamento dA = new DadosAgendamento();
-            dA.AtualizarAgendamento(a);
-        }
 
         public void CadastrarAgendamento(Agendamento a)
         {
@@ -39,7 +16,7 @@ namespace BarberShopClasses.agendamento
             DateTime data = Convert.ToDateTime(datastr);
             if (a.Data.CompareTo(data) < 0)
             {
-                throw new Exception("Data invalida! ");
+                throw new Exception("Data Atrasada ");
             }
             if (a.Hora.ToString().Equals("  :  :  ") == true)
             {
@@ -51,11 +28,11 @@ namespace BarberShopClasses.agendamento
             }
             if (a.Servico == null)
             {
-                throw new Exception("Por favor coloque um id valido");
+                throw new Exception("Informe um codigo de serviço valido");
             }
             if (a.Servico.Cod_serv < 0)
             {
-                throw new Exception("Por favor coloque um id valido");
+                throw new Exception("Informe um codigo de serviço valido");
             }
             if (a.Cliente == null)
             {

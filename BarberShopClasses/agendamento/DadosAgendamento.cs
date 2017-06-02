@@ -13,33 +13,12 @@ namespace BarberShopClasses.agendamento
 {
     public class DadosAgendamento : Dados, InterfaceAgendamento
     {
-        public void AtualizarAgendamento(Agendamento a)
-        {
-            this.abrirConexao();
-            string sql = "UPDATE Agendamento SET data = @data, hora = @hora, Cod_Serv = @servico WHERE cpf = @cpf";
-
-            SqlCommand cmd = new SqlCommand(sql, sqlConn);
-
-            cmd.Parameters.Add("@data", SqlDbType.DateTime);
-            cmd.Parameters.Add("@hora", SqlDbType.DateTime);
-            cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
-            cmd.Parameters.Add("@servico", SqlDbType.VarChar);
-
-            cmd.Parameters["@data"].Value = a.Data;
-            cmd.Parameters["@hora"].Value = a.Hora;
-            cmd.Parameters["@cpf"].Value = a.Cliente.Cpf;
-            cmd.Parameters["@servico"].Value = a.Servico.Cod_serv;
-
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            this.fecharConexao();
-        }
 
         public void CadastrarAgendamento(Agendamento a)
         {
             try
             {
-                
+
                 this.abrirConexao();
 
                 string sql = "INSERT INTO Agendamento (cpf, data, hora, cod_serv) values (@cpf, @data, @hora, @cod_serv)";
@@ -60,9 +39,10 @@ namespace BarberShopClasses.agendamento
                 cmd.Dispose();
 
                 this.fecharConexao();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-               throw new Exception("Error" + ex.Message);
+                throw new Exception("Error" + ex.Message);
             }
 
         }
@@ -73,7 +53,11 @@ namespace BarberShopClasses.agendamento
             {
                 List<Agendamento> retorno = new List<Agendamento>();
                 this.abrirConexao();
-                string sql = "select cod_ag, cpf, data, hora, cod_serv from agendamento;";
+                string sql = "select a.cod_ag, c.cpf, c.nome, a.data, a.hora, s.descricao from Agendamento as a   ";
+                sql += " inner join Cliente as c on a.CPF = c.CPF ";
+                sql += " inner join Servico as s on a.Cod_serv = s.Cod_serv;;";
+
+
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
@@ -82,18 +66,19 @@ namespace BarberShopClasses.agendamento
                     a.Cliente = new Cliente();
                     a.Servico = new Servico();
                     a.Cod_ag = DbReader.GetInt32(DbReader.GetOrdinal("cod_ag"));
-                    a.Cliente.Cpf = DbReader.GetString(DbReader.GetOrdinal("cpf"));
+                    a.Cliente.Cpf = DbReader.GetString(DbReader.GetOrdinal("CPF"));
                     a.Data = DbReader.GetDateTime(DbReader.GetOrdinal("data"));
                     a.Hora = DbReader.GetDateTime(DbReader.GetOrdinal("hora"));
-                    a.Servico.Cod_serv = DbReader.GetInt32(DbReader.GetOrdinal("cod_serv"));
-                    
+                    a.Servico.Descricao = DbReader.GetString(DbReader.GetOrdinal("descricao"));
+                    a.Cliente.Nome = DbReader.GetString(DbReader.GetOrdinal("Nome"));
                     retorno.Add(a);
                 }
                 DbReader.Close();
                 cmd.Dispose();
                 this.fecharConexao();
                 return retorno;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception("Error " + ex.Message);
             }
@@ -102,7 +87,7 @@ namespace BarberShopClasses.agendamento
 
         public void RemoverAgendamento(Agendamento a)
         {
-           try
+            try
             {
                 this.abrirConexao();
                 string sql = "DELETE FROM Agendamento Where cpf = @cpf";
@@ -112,12 +97,13 @@ namespace BarberShopClasses.agendamento
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
                 this.fecharConexao();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception("Error " + ex.Message);
             }
         }
 
-        
+
     }
 }
