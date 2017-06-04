@@ -1,7 +1,6 @@
 ﻿using BarberShopClasses.agendamento;
 using BarberShopClasses.cliente;
 using BarberShopClasses.pagamento;
-using BarberShopClasses.produto;
 using BarberShopClasses.servico;
 using System;
 using System.Collections.Generic;
@@ -31,20 +30,6 @@ namespace BarberShopService
 
         [OperationContract]
         List<Cliente> listarCliente();
-        #endregion
-
-        #region Métodos referentes a Produto.
-        [OperationContract]
-        void inserirProduto(Produto p);
-
-        [OperationContract]
-        void removerProduto(Produto p);
-
-        [OperationContract]
-        void atualizarProduto(Produto p);
-
-        [OperationContract]
-        List<Produto> listarProduto();
         #endregion
 
         #region Métodos referentes a Serviço.

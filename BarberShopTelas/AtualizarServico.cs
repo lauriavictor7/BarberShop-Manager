@@ -1,5 +1,4 @@
 ﻿using BarberShopTelas.localhost;
-using BarberShopClasses.servico;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +11,9 @@ using System.Windows.Forms;
 
 namespace BarberShopTelas
 {
-    public partial class CadastrarServico : Form
+    public partial class AtualizarServico : Form
     {
-        public CadastrarServico()
+        public AtualizarServico()
         {
             InitializeComponent();
         }
@@ -29,7 +28,7 @@ namespace BarberShopTelas
                 s.Descricao = textBox3.Text;
 
                 Service1 sv = new Service1();
-                sv.inserirServico(s);
+                sv.atualizarServico(s);
 
                 MessageBox.Show("Sucesso!");
             }
@@ -40,4 +39,3 @@ namespace BarberShopTelas
         }
     }
 }
-

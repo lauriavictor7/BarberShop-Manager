@@ -19,45 +19,10 @@ namespace BarberShopTelas
             InitializeComponent();
         }
 
-        private void testeWCF1ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           /* localhost.Service1 sv = new localhost.Service1();
-            string mensagem = sv.pegarTexto();
-            MessageBox.Show(mensagem); */
-
-        }
-
-        private void testeWCF2ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           /* localhost.Service1 sv = new localhost.Service1();
-            string mensagem = sv.retornarAAA();
-            MessageBox.Show(mensagem); */
-        }
-
-        private void testandoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Dados conn = new Dados();
-                conn.abrirConexao();
-                MessageBox.Show("Funfou!");
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastrarCliente cc = new CadastrarCliente();
             cc.Show();
-        }
-
-
-        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            CadastrarProduto cp = new CadastrarProduto();
-            cp.Show();
         }
 
         private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -100,6 +65,47 @@ namespace BarberShopTelas
         {
             AlterarAgendamento aA = new AlterarAgendamento();
             aA.Show();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void removerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoverCliente rc = new RemoverCliente();
+            rc.Show();
+        }
+
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarCliente lc = new ListarCliente();
+            lc.Show();
+        }
+
+        private void alterarClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AtualizarCliente ac = new AtualizarCliente();
+            ac.Show();
+        }
+
+        private void removerServiçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoverServico rs = new RemoverServico();
+            rs.Show();
+        }
+
+        private void listaDeServiçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarServico ls = new ListarServico();
+            ls.Show();
+        }
+
+        private void alterarServiçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AtualizarServico aS = new AtualizarServico();
+            aS.Show();
         }
     }
 }

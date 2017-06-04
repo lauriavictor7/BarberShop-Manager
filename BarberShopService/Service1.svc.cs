@@ -9,7 +9,6 @@ using BarberShopClasses.cliente;
 using BarberShopClasses.conexao;
 using System.Data.SqlClient;
 using System.Data;
-using BarberShopClasses.produto;
 using BarberShopClasses.servico;
 using BarberShopClasses.agendamento;
 using BarberShopClasses.pagamento;
@@ -43,32 +42,6 @@ namespace BarberShopService
         {
             NegocioCliente nc = new NegocioCliente();
             return nc.ListarCliente();
-        }
-        #endregion
-
-        #region Métodos referentes a Produto.
-        public void inserirProduto(Produto p)
-        {
-            NegocioProduto np = new NegocioProduto();
-            np.CadastrarProduto(p);
-        }
-
-        public void removerProduto(Produto p)
-        {
-            NegocioProduto np = new NegocioProduto();
-            np.RemoverProduto(p);
-        }
-
-        public void atualizarProduto(Produto p)
-        {
-            NegocioProduto np = new NegocioProduto();
-            np.AtualizarProduto(p);
-        }
-
-        public List<Produto> listarProduto()
-        {
-            NegocioProduto np = new NegocioProduto();
-            return np.ListarProduto();
         }
         #endregion
 

@@ -1,5 +1,4 @@
 ﻿using BarberShopTelas.localhost;
-using BarberShopClasses.servico;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,24 +11,22 @@ using System.Windows.Forms;
 
 namespace BarberShopTelas
 {
-    public partial class CadastrarServico : Form
+    public partial class RemoverCliente : Form
     {
-        public CadastrarServico()
+        public RemoverCliente()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonRemoverCliente_Click(object sender, EventArgs e)
         {
             try
             {
-                localhost.Servico s = new localhost.Servico();
-                s.Cod_serv = Convert.ToInt32(textBox1.Text);
-                s.Preco = Convert.ToInt32(textBox2.Text);
-                s.Descricao = textBox3.Text;
+                localhost.Cliente c = new localhost.Cliente();
+                c.Cpf = maskedTextBox1.Text;
 
                 Service1 sv = new Service1();
-                sv.inserirServico(s);
+                sv.removerCliente(c);
 
                 MessageBox.Show("Sucesso!");
             }
@@ -40,4 +37,3 @@ namespace BarberShopTelas
         }
     }
 }
-

@@ -68,58 +68,6 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Cliente" nillable="true" type="tns:Cliente" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="inserirProduto">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="1" name="p" type="tns:Produto" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:complexType name="Produto">
-    <xs:sequence>
-      <xs:element minOccurs="1" maxOccurs="1" name="Preco" type="xs:double" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Descricao" type="xs:string" />
-      <xs:element minOccurs="1" maxOccurs="1" name="Cod_prod" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="inserirProdutoResponse">
-    <xs:complexType />
-  </xs:element>
-  <xs:element name="removerProduto">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="1" name="p" type="tns:Produto" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="removerProdutoResponse">
-    <xs:complexType />
-  </xs:element>
-  <xs:element name="atualizarProduto">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="1" name="p" type="tns:Produto" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="atualizarProdutoResponse">
-    <xs:complexType />
-  </xs:element>
-  <xs:element name="listarProduto">
-    <xs:complexType />
-  </xs:element>
-  <xs:element name="listarProdutoResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="1" name="listarProdutoResult" type="tns:ArrayOfProduto" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:complexType name="ArrayOfProduto">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Produto" nillable="true" type="tns:Produto" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:element name="inserirServico">
     <xs:complexType>
       <xs:sequence>

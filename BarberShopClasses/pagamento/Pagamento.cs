@@ -1,6 +1,5 @@
 ﻿using BarberShopClasses.cliente;
 using BarberShopClasses.notaFiscal;
-using BarberShopClasses.produto;
 using System;
 using System.Collections.Generic;
 using System.Linq;

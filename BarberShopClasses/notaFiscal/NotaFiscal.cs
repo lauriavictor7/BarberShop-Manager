@@ -1,5 +1,4 @@
 ﻿using BarberShopClasses.cliente;
-using BarberShopClasses.produto;
 using BarberShopClasses.servico;
 using System;
 using System.Collections.Generic;
@@ -13,7 +12,6 @@ namespace BarberShopClasses.notaFiscal
     {
         private int cod_nf;
         private Servico servico;
-        private Produto produto;
         private Cliente cliente;
         private DateTime data;
         private DateTime hora;
@@ -29,19 +27,6 @@ namespace BarberShopClasses.notaFiscal
             set
             {
                 servico = value;
-            }
-        }
-
-        public Produto Produto
-        {
-            get
-            {
-                return produto;
-            }
-
-            set
-            {
-                produto = value;
             }
         }
 

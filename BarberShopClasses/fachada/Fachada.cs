@@ -7,13 +7,12 @@ using BarberShopClasses.cliente;
 using BarberShopClasses.caixa;
 using BarberShopClasses.notaFiscal;
 using BarberShopClasses.pagamento;
-using BarberShopClasses.produto;
 using BarberShopClasses.servico;
 using BarberShopClasses.agendamento;
 
 namespace BarberShopClasses.fachada
 {
-    public class Fachada : InterfaceCliente, InterfaceCaixa, InterfaceNotaFiscal, InterfacePagamento, InterfaceProduto, InterfaceServico, InterfaceAgendamento
+    public class Fachada : InterfaceCliente, InterfaceCaixa, InterfaceNotaFiscal, InterfacePagamento, InterfaceServico, InterfaceAgendamento
     {
         public void AtualizarAgendamento(Agendamento a)
         {
@@ -24,11 +23,6 @@ namespace BarberShopClasses.fachada
         {
             NegocioCliente nC = new NegocioCliente();
             nC.AtualizarCliente(c);
-        }
-
-        public void AtualizarProduto(Produto p)
-        {
-            throw new NotImplementedException();
         }
 
         public void AtualizarServico(Servico s)
@@ -57,11 +51,6 @@ namespace BarberShopClasses.fachada
             throw new NotImplementedException();
         }
 
-        public void CadastrarProduto(Produto p)
-        {
-            throw new NotImplementedException();
-        }
-
         public void CadastrarServico(Servico s)
         {
             throw new NotImplementedException();
@@ -78,12 +67,6 @@ namespace BarberShopClasses.fachada
             return nC.ListarCliente();
         }
 
-        public List<Produto> ListarProduto()
-        {
-            NegocioProduto nP = new NegocioProduto();
-            return nP.ListarProduto();          
-        }
-
         public List<Servico> ListarServico()
         {
             throw new NotImplementedException();
@@ -98,11 +81,6 @@ namespace BarberShopClasses.fachada
         {
             NegocioCliente nC = new NegocioCliente();
             nC.RemoverCLiente(c);
-        }
-
-        public void RemoverProduto(Produto p)
-        {
-            throw new NotImplementedException();
         }
 
         public void RemoverServico(Servico s)

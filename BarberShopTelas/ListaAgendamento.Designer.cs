@@ -98,6 +98,7 @@
             this.Controls.Add(this.listViewAg);
             this.Controls.Add(this.buttonAgendamento);
             this.Name = "ListaAgendamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListaAgendamento";
             this.ResumeLayout(false);
 

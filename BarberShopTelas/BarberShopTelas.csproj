@@ -69,6 +69,18 @@
     <Compile Include="AlterarAgendamento.Designer.cs">
       <DependentUpon>AlterarAgendamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="AtualizarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtualizarCliente.Designer.cs">
+      <DependentUpon>AtualizarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtualizarServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtualizarServico.Designer.cs">
+      <DependentUpon>AtualizarServico.cs</DependentUpon>
+    </Compile>
     <Compile Include="BarberShopHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,12 +98,6 @@
     </Compile>
     <Compile Include="CadastrarCliente.Designer.cs">
       <DependentUpon>CadastrarCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CadastrarProduto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CadastrarProduto.Designer.cs">
-      <DependentUpon>CadastrarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="CadastrarServico.cs">
       <SubType>Form</SubType>
@@ -117,14 +123,38 @@
     <Compile Include="ListaAgendamento.Designer.cs">
       <DependentUpon>ListaAgendamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarCliente.Designer.cs">
+      <DependentUpon>ListarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListarPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListarPagamento.Designer.cs">
       <DependentUpon>ListarPagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListarServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarServico.Designer.cs">
+      <DependentUpon>ListarServico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoverCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoverCliente.Designer.cs">
+      <DependentUpon>RemoverCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RemoverServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoverServico.Designer.cs">
+      <DependentUpon>RemoverServico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Web References\localhost\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,6 +162,12 @@
     </Compile>
     <EmbeddedResource Include="AlterarAgendamento.resx">
       <DependentUpon>AlterarAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtualizarCliente.resx">
+      <DependentUpon>AtualizarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtualizarServico.resx">
+      <DependentUpon>AtualizarServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BarberShopHome.resx">
       <DependentUpon>BarberShopHome.cs</DependentUpon>
@@ -141,9 +177,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadastrarCliente.resx">
       <DependentUpon>CadastrarCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CadastrarProduto.resx">
-      <DependentUpon>CadastrarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastrarServico.resx">
       <DependentUpon>CadastrarServico.cs</DependentUpon>
@@ -157,8 +190,14 @@
     <EmbeddedResource Include="ListaAgendamento.resx">
       <DependentUpon>ListaAgendamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListarCliente.resx">
+      <DependentUpon>ListarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListarPagamento.resx">
       <DependentUpon>ListarPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarServico.resx">
+      <DependentUpon>ListarServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,6 +208,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RemoverCliente.resx">
+      <DependentUpon>RemoverCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoverServico.resx">
+      <DependentUpon>RemoverServico.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -185,9 +230,6 @@
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\localhost\Pagamento.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\localhost\Produto.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\localhost\Reference.map">
