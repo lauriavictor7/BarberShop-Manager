@@ -70,6 +70,8 @@ namespace BarberShopService
         List<Agendamento> ListarAgendamento();
         [OperationContract]
         void atualizarAgendamento(Agendamento a);
+        [OperationContract]
+        Agendamento buscarAgendamento(string cpf);
         #endregion
 
         #region Métodos Referentes a Pagamento
@@ -77,8 +79,6 @@ namespace BarberShopService
         Servico buscarValor(string cpf);
         [OperationContract]
         void CadastrarPagamento(Pagamento p);
-        [OperationContract]
-        void RemoverPagamento(Pagamento p);
         [OperationContract]
         List<Pagamento> ListarPagamento();
         #endregion

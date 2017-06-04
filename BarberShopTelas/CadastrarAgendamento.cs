@@ -36,8 +36,8 @@ namespace BarberShopTelas
                 
                 a.Cliente.Cpf = maskedTextBox1.Text;
                 a.Servico.Cod_serv = Convert.ToInt16(textBoxServiAg.Text);
-                a.Data = Convert.ToDateTime(maskedTextBoxDataAg.Text);
-                a.Hora = Convert.ToDateTime(maskedTextBoxHoraAg.Text);
+                a.Data = maskedTextBoxDataAg.Text;
+                a.Hora = maskedTextBoxHoraAg.Text;
    
                 Service1 sv = new Service1();
                 sv.CadastrarAgendamento(a);

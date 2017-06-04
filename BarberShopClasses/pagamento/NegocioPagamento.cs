@@ -31,6 +31,11 @@ namespace BarberShopClasses.pagamento
             DadosPagamento dP = new DadosPagamento();
             dP.CadastrarPagamento(p);
         }
+        public List<Pagamento> ListarPagamento()
+        {
+            DadosPagamento dP = new DadosPagamento();
+            return dP.ListarPagamento();
+        }
     }
 
 }

@@ -101,6 +101,12 @@
   <wsdl:message name="IService1_atualizarAgendamento_OutputMessage">
     <wsdl:part name="parameters" element="tns:atualizarAgendamentoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_buscarAgendamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarAgendamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_buscarAgendamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarAgendamentoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_buscarValor_InputMessage">
     <wsdl:part name="parameters" element="tns:buscarValor" />
   </wsdl:message>
@@ -112,12 +118,6 @@
   </wsdl:message>
   <wsdl:message name="IService1_CadastrarPagamento_OutputMessage">
     <wsdl:part name="parameters" element="tns:CadastrarPagamentoResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_RemoverPagamento_InputMessage">
-    <wsdl:part name="parameters" element="tns:RemoverPagamento" />
-  </wsdl:message>
-  <wsdl:message name="IService1_RemoverPagamento_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RemoverPagamentoResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_ListarPagamento_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarPagamento" />
@@ -190,6 +190,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/atualizarAgendamento" message="tns:IService1_atualizarAgendamento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/atualizarAgendamentoResponse" message="tns:IService1_atualizarAgendamento_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="buscarAgendamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/buscarAgendamento" message="tns:IService1_buscarAgendamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/buscarAgendamentoResponse" message="tns:IService1_buscarAgendamento_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="buscarValor">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/buscarValor" message="tns:IService1_buscarValor_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/buscarValorResponse" message="tns:IService1_buscarValor_OutputMessage" />
@@ -197,10 +201,6 @@
     <wsdl:operation name="CadastrarPagamento">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CadastrarPagamento" message="tns:IService1_CadastrarPagamento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CadastrarPagamentoResponse" message="tns:IService1_CadastrarPagamento_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="RemoverPagamento">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoverPagamento" message="tns:IService1_RemoverPagamento_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoverPagamentoResponse" message="tns:IService1_RemoverPagamento_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListarPagamento">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarPagamento" message="tns:IService1_ListarPagamento_InputMessage" />
@@ -353,6 +353,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="buscarAgendamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/buscarAgendamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="buscarValor">
       <soap:operation soapAction="http://tempuri.org/IService1/buscarValor" style="document" />
       <wsdl:input>
@@ -364,15 +373,6 @@
     </wsdl:operation>
     <wsdl:operation name="CadastrarPagamento">
       <soap:operation soapAction="http://tempuri.org/IService1/CadastrarPagamento" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="RemoverPagamento">
-      <soap:operation soapAction="http://tempuri.org/IService1/RemoverPagamento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -89,5 +89,17 @@ namespace BarberShopTelas
             InserirPagamento iP = new InserirPagamento();
             iP.Show();
         }
+
+        private void listaDePagamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarPagamento lP = new ListarPagamento();
+            lP.Show();
+        }
+
+        private void atualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlterarAgendamento aA = new AlterarAgendamento();
+            aA.Show();
+        }
     }
 }

@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlterarAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlterarAgendamento.Designer.cs">
+      <DependentUpon>AlterarAgendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="BarberShopHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,12 @@
     <Compile Include="ListaAgendamento.Designer.cs">
       <DependentUpon>ListaAgendamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListarPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarPagamento.Designer.cs">
+      <DependentUpon>ListarPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web References\localhost\Reference.cs">
@@ -118,6 +130,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlterarAgendamento.resx">
+      <DependentUpon>AlterarAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BarberShopHome.resx">
       <DependentUpon>BarberShopHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaAgendamento.resx">
       <DependentUpon>ListaAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarPagamento.resx">
+      <DependentUpon>ListarPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

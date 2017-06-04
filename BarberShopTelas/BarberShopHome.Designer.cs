@@ -45,8 +45,10 @@
             this.agendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeAgendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removerAgendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDePagamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,7 +156,8 @@
             this.agendamentoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agendarToolStripMenuItem,
             this.listaDeAgendamentosToolStripMenuItem,
-            this.removerAgendamentosToolStripMenuItem});
+            this.removerAgendamentosToolStripMenuItem,
+            this.atualizarToolStripMenuItem});
             this.agendamentoToolStripMenuItem.Name = "agendamentoToolStripMenuItem";
             this.agendamentoToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.agendamentoToolStripMenuItem.Text = "Agendamento";
@@ -180,10 +183,18 @@
             this.removerAgendamentosToolStripMenuItem.Text = "Remover Agendamentos";
             this.removerAgendamentosToolStripMenuItem.Click += new System.EventHandler(this.removerAgendamentosToolStripMenuItem_Click);
             // 
+            // atualizarToolStripMenuItem
+            // 
+            this.atualizarToolStripMenuItem.Name = "atualizarToolStripMenuItem";
+            this.atualizarToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.atualizarToolStripMenuItem.Text = "Alterar Agendamento";
+            this.atualizarToolStripMenuItem.Click += new System.EventHandler(this.atualizarToolStripMenuItem_Click);
+            // 
             // financeiroToolStripMenuItem
             // 
             this.financeiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pagamentoToolStripMenuItem});
+            this.pagamentoToolStripMenuItem,
+            this.listaDePagamentosToolStripMenuItem});
             this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
             this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.financeiroToolStripMenuItem.Text = "Financeiro";
@@ -191,9 +202,16 @@
             // pagamentoToolStripMenuItem
             // 
             this.pagamentoToolStripMenuItem.Name = "pagamentoToolStripMenuItem";
-            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.pagamentoToolStripMenuItem.Text = "Pagamento";
             this.pagamentoToolStripMenuItem.Click += new System.EventHandler(this.pagamentoToolStripMenuItem_Click);
+            // 
+            // listaDePagamentosToolStripMenuItem
+            // 
+            this.listaDePagamentosToolStripMenuItem.Name = "listaDePagamentosToolStripMenuItem";
+            this.listaDePagamentosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.listaDePagamentosToolStripMenuItem.Text = "Lista de Pagamentos";
+            this.listaDePagamentosToolStripMenuItem.Click += new System.EventHandler(this.listaDePagamentosToolStripMenuItem_Click);
             // 
             // BarberShopHome
             // 
@@ -234,6 +252,8 @@
         private System.Windows.Forms.ToolStripMenuItem removerAgendamentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem financeiroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atualizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDePagamentosToolStripMenuItem;
     }
 }
 

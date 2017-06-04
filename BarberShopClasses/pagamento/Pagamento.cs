@@ -12,12 +12,14 @@ namespace BarberShopClasses.pagamento
     public class Pagamento
     {
         private int cod_pag;
-        private double valor;
+        private decimal valor;
         private string metodo;
-        private DateTime data;
-        private DateTime hora;
+        private string data;
+        private string hora;
+        private Cliente cliente;
 
-        public DateTime Data
+
+        public string Data
         {
             get
             {
@@ -30,7 +32,7 @@ namespace BarberShopClasses.pagamento
             }
         }
 
-        public DateTime Hora
+        public string Hora
         {
             get
             {
@@ -69,7 +71,7 @@ namespace BarberShopClasses.pagamento
             }
         }
 
-        public double Valor
+        public decimal Valor
         {
             get
             {
@@ -79,6 +81,19 @@ namespace BarberShopClasses.pagamento
             set
             {
                 valor = value;
+            }
+        }
+
+        public Cliente Cliente
+        {
+            get
+            {
+                return cliente;
+            }
+
+            set
+            {
+                cliente = value;
             }
         }
     }

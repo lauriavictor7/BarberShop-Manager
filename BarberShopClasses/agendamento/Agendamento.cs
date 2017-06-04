@@ -11,8 +11,8 @@ namespace BarberShopClasses.agendamento
     public class Agendamento
     {
         private int cod_ag;
-        private DateTime data;
-        private DateTime hora;
+        private string data;
+        private string hora;
         private Cliente cliente;
         private Servico servico;
 
@@ -22,7 +22,7 @@ namespace BarberShopClasses.agendamento
             this.servico = new Servico();
         }
 
-        public DateTime Data
+        public string Data
         {
             get
             {
@@ -35,7 +35,7 @@ namespace BarberShopClasses.agendamento
             }
         }
 
-        public DateTime Hora
+        public string Hora
         {
             get
             {

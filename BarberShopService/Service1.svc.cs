@@ -117,7 +117,17 @@ namespace BarberShopService
             NegocioAgendamento nA = new NegocioAgendamento();
             return nA.ListarAgendamento();
         }
-
+        public Agendamento buscarAgendamento(string cpf)
+        {
+            NegocioAgendamento nA = new NegocioAgendamento();
+            return nA.buscarAgendamento(cpf);
+            
+        }
+        public void atualizarAgendamento(Agendamento a)
+        {
+            NegocioAgendamento nA = new NegocioAgendamento();
+            nA.atualizarAgendamento(a);
+        }
 
         #endregion
 
@@ -133,20 +143,11 @@ namespace BarberShopService
             NegocioPagamento nP = new NegocioPagamento();
             nP.CadastrarPagamento(p);
         }
-
-        public void RemoverPagamento(Pagamento p)
-        {
-            
-        }
-
+        
         public List<Pagamento> ListarPagamento()
         {
-            throw new NotImplementedException();
-        }
-
-        public void atualizarAgendamento(Agendamento a)
-        {
-            throw new NotImplementedException();
+            NegocioPagamento nP = new NegocioPagamento();
+            return nP.ListarPagamento();
         }
 
         #endregion

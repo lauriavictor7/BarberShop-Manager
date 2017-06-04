@@ -11,7 +11,8 @@ namespace BarberShopClasses.conexao
     {
         public SqlConnection sqlConn;
         private const string local = @"LAPTOP-48L2GN15\SQLSERVER";
-        private const string banco = "BarberShop";
+        private const string banco = "BarberShop1";
+        //private const string banco = "BarberShop";
         private const string user = "luizd";
         private const string pw = "556248";
 

@@ -17,7 +17,7 @@ namespace BarberShopTelas
         {
             InitializeComponent();
         }
-
+       
         private void InserirPagamento_Load(object sender, EventArgs e)
         {
            
@@ -57,6 +57,8 @@ namespace BarberShopTelas
         private void buttonPagamento_Click(object sender, EventArgs e)
         {
             Pagamento p = new Pagamento();
+            
+            
             if(maskedTextBox1.Equals(" "))
             {
                 MessageBox.Show("Informe o CPF, e click no Check !");
@@ -71,32 +73,42 @@ namespace BarberShopTelas
             }
             if(comboBox1.SelectedIndex == 0)
             {
+                p.Cliente = new Cliente();
                 p.Metodo = "Db";
-                p.Valor = Convert.ToDouble(textBoxValorPg.Text);
-                p.Hora = Convert.ToDateTime(textBoxHoraPg.Text);
-                p.Data = Convert.ToDateTime(textBoxDataPg.Text);
+                p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
+                string horastr = textBoxHoraPg.Text.ToString();
+                p.Hora = horastr;
+                p.Data = textBoxDataPg.Text;
+                p.Cliente.Cpf = Convert.ToString(maskedTextBox1.Text);
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
             }
             if(comboBox1.SelectedIndex == 1)
             {
+                p.Cliente = new Cliente();
                 p.Metodo = "Cd";
-                p.Valor = Convert.ToDouble(textBoxValorPg.Text);
-                p.Hora = Convert.ToDateTime(textBoxHoraPg.Text);
-                p.Data = Convert.ToDateTime(textBoxDataPg.Text);
+                p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
+                string horastr = textBoxHoraPg.Text.ToString();
+                p.Hora = horastr;
+                p.Data = textBoxDataPg.Text;
+                p.Cliente.Cpf = Convert.ToString(maskedTextBox1.Text);
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
             }
             if(comboBox1.SelectedIndex == 2)
             {
+                p.Cliente = new Cliente();
                 p.Metodo = "Av";
-                p.Valor = Convert.ToDouble(textBoxValorPg.Text);
-                p.Hora = Convert.ToDateTime(textBoxHoraPg.Text);
-                p.Data = Convert.ToDateTime(textBoxDataPg.Text);
+                p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
+                string horastr = textBoxHoraPg.Text.ToString();
+                p.Hora = horastr;
+                p.Data = textBoxDataPg.Text;
+                p.Cliente.Cpf = Convert.ToString(maskedTextBox1.Text);
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
             }
-            
+            MessageBox.Show("Sucesso !");
+
         }
     }
 }

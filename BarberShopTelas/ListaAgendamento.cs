@@ -30,7 +30,7 @@ namespace BarberShopTelas
                     linha.SubItems.Add(agendamento.Cliente.Cpf);
                     linha.SubItems.Add(agendamento.Cliente.Nome);
                     linha.SubItems.Add(agendamento.Servico.Descricao);
-                    linha.SubItems.Add(agendamento.Data.ToString());
+                    linha.SubItems.Add(agendamento.Data);
                     linha.SubItems.Add(agendamento.Hora.ToString());
                 }
 

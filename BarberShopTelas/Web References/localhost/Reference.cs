@@ -61,11 +61,11 @@ namespace BarberShopTelas.localhost {
         
         private System.Threading.SendOrPostCallback atualizarAgendamentoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback buscarAgendamentoOperationCompleted;
+        
         private System.Threading.SendOrPostCallback buscarValorOperationCompleted;
         
         private System.Threading.SendOrPostCallback CadastrarPagamentoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback RemoverPagamentoOperationCompleted;
         
         private System.Threading.SendOrPostCallback ListarPagamentoOperationCompleted;
         
@@ -156,13 +156,13 @@ namespace BarberShopTelas.localhost {
         public event atualizarAgendamentoCompletedEventHandler atualizarAgendamentoCompleted;
         
         /// <remarks/>
+        public event buscarAgendamentoCompletedEventHandler buscarAgendamentoCompleted;
+        
+        /// <remarks/>
         public event buscarValorCompletedEventHandler buscarValorCompleted;
         
         /// <remarks/>
         public event CadastrarPagamentoCompletedEventHandler CadastrarPagamentoCompleted;
-        
-        /// <remarks/>
-        public event RemoverPagamentoCompletedEventHandler RemoverPagamentoCompleted;
         
         /// <remarks/>
         public event ListarPagamentoCompletedEventHandler ListarPagamentoCompleted;
@@ -612,6 +612,35 @@ namespace BarberShopTelas.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/buscarAgendamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Agendamento buscarAgendamento(string cpf) {
+            object[] results = this.Invoke("buscarAgendamento", new object[] {
+                        cpf});
+            return ((Agendamento)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void buscarAgendamentoAsync(string cpf) {
+            this.buscarAgendamentoAsync(cpf, null);
+        }
+        
+        /// <remarks/>
+        public void buscarAgendamentoAsync(string cpf, object userState) {
+            if ((this.buscarAgendamentoOperationCompleted == null)) {
+                this.buscarAgendamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnbuscarAgendamentoOperationCompleted);
+            }
+            this.InvokeAsync("buscarAgendamento", new object[] {
+                        cpf}, this.buscarAgendamentoOperationCompleted, userState);
+        }
+        
+        private void OnbuscarAgendamentoOperationCompleted(object arg) {
+            if ((this.buscarAgendamentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.buscarAgendamentoCompleted(this, new buscarAgendamentoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/buscarValor", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public Servico buscarValor(string cpf) {
             object[] results = this.Invoke("buscarValor", new object[] {
@@ -669,34 +698,6 @@ namespace BarberShopTelas.localhost {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/RemoverPagamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void RemoverPagamento(Pagamento p) {
-            this.Invoke("RemoverPagamento", new object[] {
-                        p});
-        }
-        
-        /// <remarks/>
-        public void RemoverPagamentoAsync(Pagamento p) {
-            this.RemoverPagamentoAsync(p, null);
-        }
-        
-        /// <remarks/>
-        public void RemoverPagamentoAsync(Pagamento p, object userState) {
-            if ((this.RemoverPagamentoOperationCompleted == null)) {
-                this.RemoverPagamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRemoverPagamentoOperationCompleted);
-            }
-            this.InvokeAsync("RemoverPagamento", new object[] {
-                        p}, this.RemoverPagamentoOperationCompleted, userState);
-        }
-        
-        private void OnRemoverPagamentoOperationCompleted(object arg) {
-            if ((this.RemoverPagamentoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.RemoverPagamentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarPagamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public Pagamento[] ListarPagamento() {
             object[] results = this.Invoke("ListarPagamento", new object[0]);
@@ -748,7 +749,7 @@ namespace BarberShopTelas.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Cliente {
+    public partial class Cliente : Endereco {
         
         private string cpfField;
         
@@ -756,11 +757,9 @@ namespace BarberShopTelas.localhost {
         
         private string telefoneField;
         
-        private string bairroField;
-        
-        private string enderecoField;
-        
         private string sexoField;
+        
+        private Endereco endereco1Field;
         
         /// <remarks/>
         public string Cpf {
@@ -793,6 +792,79 @@ namespace BarberShopTelas.localhost {
         }
         
         /// <remarks/>
+        public string Sexo {
+            get {
+                return this.sexoField;
+            }
+            set {
+                this.sexoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Endereco")]
+        public Endereco Endereco1 {
+            get {
+                return this.endereco1Field;
+            }
+            set {
+                this.endereco1Field = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Cliente))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Endereco {
+        
+        private string cepField;
+        
+        private string ruaField;
+        
+        private int numeroField;
+        
+        private string bairroField;
+        
+        private string cidadeField;
+        
+        private string ufField;
+        
+        /// <remarks/>
+        public string Cep {
+            get {
+                return this.cepField;
+            }
+            set {
+                this.cepField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Rua {
+            get {
+                return this.ruaField;
+            }
+            set {
+                this.ruaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Numero {
+            get {
+                return this.numeroField;
+            }
+            set {
+                this.numeroField = value;
+            }
+        }
+        
+        /// <remarks/>
         public string Bairro {
             get {
                 return this.bairroField;
@@ -803,22 +875,22 @@ namespace BarberShopTelas.localhost {
         }
         
         /// <remarks/>
-        public string Endereco {
+        public string Cidade {
             get {
-                return this.enderecoField;
+                return this.cidadeField;
             }
             set {
-                this.enderecoField = value;
+                this.cidadeField = value;
             }
         }
         
         /// <remarks/>
-        public string Sexo {
+        public string Uf {
             get {
-                return this.sexoField;
+                return this.ufField;
             }
             set {
-                this.sexoField = value;
+                this.ufField = value;
             }
         }
     }
@@ -831,18 +903,20 @@ namespace BarberShopTelas.localhost {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class Pagamento {
         
-        private System.DateTime dataField;
+        private string dataField;
         
-        private System.DateTime horaField;
+        private string horaField;
         
         private int cod_pagField;
         
         private string metodoField;
         
-        private double valorField;
+        private decimal valorField;
+        
+        private Cliente clienteField;
         
         /// <remarks/>
-        public System.DateTime Data {
+        public string Data {
             get {
                 return this.dataField;
             }
@@ -852,7 +926,7 @@ namespace BarberShopTelas.localhost {
         }
         
         /// <remarks/>
-        public System.DateTime Hora {
+        public string Hora {
             get {
                 return this.horaField;
             }
@@ -882,12 +956,22 @@ namespace BarberShopTelas.localhost {
         }
         
         /// <remarks/>
-        public double Valor {
+        public decimal Valor {
             get {
                 return this.valorField;
             }
             set {
                 this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Cliente Cliente {
+            get {
+                return this.clienteField;
+            }
+            set {
+                this.clienteField = value;
             }
         }
     }
@@ -900,9 +984,9 @@ namespace BarberShopTelas.localhost {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class Agendamento {
         
-        private System.DateTime dataField;
+        private string dataField;
         
-        private System.DateTime horaField;
+        private string horaField;
         
         private Cliente clienteField;
         
@@ -911,7 +995,7 @@ namespace BarberShopTelas.localhost {
         private int cod_agField;
         
         /// <remarks/>
-        public System.DateTime Data {
+        public string Data {
             get {
                 return this.dataField;
             }
@@ -921,7 +1005,7 @@ namespace BarberShopTelas.localhost {
         }
         
         /// <remarks/>
-        public System.DateTime Hora {
+        public string Hora {
             get {
                 return this.horaField;
             }
@@ -1205,6 +1289,32 @@ namespace BarberShopTelas.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void buscarAgendamentoCompletedEventHandler(object sender, buscarAgendamentoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class buscarAgendamentoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal buscarAgendamentoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Agendamento Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Agendamento)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void buscarValorCompletedEventHandler(object sender, buscarValorCompletedEventArgs e);
     
     /// <remarks/>
@@ -1232,10 +1342,6 @@ namespace BarberShopTelas.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void CadastrarPagamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
-    public delegate void RemoverPagamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
