@@ -47,12 +47,14 @@ namespace BarberShopClasses.cliente
             {
                 this.abrirConexao();
 
-                string sql = "INSERT INTO cliente (cpf, nome, telefone, cep, bairro, rua, numero, cidade, uf) VALUES(@cpf, @nome, @telefone, @cep, @bairro, @rua, @numero, @cidade, @uf)";
+                string sql = "INSERT INTO cliente1 (cpf, nome, sexo, telefone, cep, bairro, rua, numero, cidade, uf)";
+                       sql += "VALUES(@cpf, @nome, @sexo, @telefone, @cep, @bairro, @rua, @numero, @cidade, @uf)";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
                 cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
                 cmd.Parameters.Add("@nome", SqlDbType.VarChar);
+                cmd.Parameters.Add("@sexo", SqlDbType.VarChar);
                 cmd.Parameters.Add("@telefone", SqlDbType.VarChar);
                 cmd.Parameters.Add("@cep", SqlDbType.VarChar);
                 cmd.Parameters.Add("@bairro", SqlDbType.VarChar);
@@ -63,13 +65,14 @@ namespace BarberShopClasses.cliente
 
                 cmd.Parameters["@cpf"].Value = c.Cpf;
                 cmd.Parameters["@nome"].Value = c.Nome;
+                cmd.Parameters["@sexo"].Value = c.Sexo;
                 cmd.Parameters["@telefone"].Value = c.Telefone;
-                cmd.Parameters["@cep"].Value = c.Endereco.Cep;
-                cmd.Parameters["@bairro"].Value = c.Endereco.Bairro;
-                cmd.Parameters["@rua"].Value = c.Endereco.Rua;
-                cmd.Parameters["@numero"].Value = c.Endereco.Numero;
-                cmd.Parameters["@cidade"].Value = c.Endereco.Cidade;
-                cmd.Parameters["@uf"].Value = c.Endereco.Uf;
+                cmd.Parameters["@cep"].Value = c.Cep;
+                cmd.Parameters["@bairro"].Value = c.Bairro;
+                cmd.Parameters["@rua"].Value = c.Rua;
+                cmd.Parameters["@numero"].Value = c.Numero;
+                cmd.Parameters["@cidade"].Value = c.Cidade;
+                cmd.Parameters["@uf"].Value = c.Uf;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();

@@ -31,6 +31,10 @@ namespace BarberShopClasses.cliente
                 throw new Exception("Informe o TELEFONE");
             }
 
+            if(c.Cep.Length < 9)
+            {
+                throw new Exception("Informe um CEP Valido");
+            }
             DadosCliente dC = new DadosCliente();
             dC.CadastrarCliente(c);
         }
