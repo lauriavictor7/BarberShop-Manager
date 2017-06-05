@@ -24,8 +24,8 @@ namespace BarberShopTelas
             {
                 localhost.Cliente c = new localhost.Cliente();
                 c.Cpf = maskedTextBox1.Text;
-                c.Nome = textBox2.Text;
-                c.Telefone = textBox3.Text;
+                c.Nome = textBoxNome.Text;
+                c.Telefone = textBoxTelefone.Text;
 
                 Service1 sv = new Service1();
                 sv.atualizarCLiente(c);
@@ -39,6 +39,37 @@ namespace BarberShopTelas
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cpf;
+                Service1 s = new Service1();
+                cpf = maskedTextBox1.Text;
+                Cliente c = new Cliente();
+                c.Endereco1 = new Endereco();
+                c = s.buscarCliente(cpf);
+                textBoxNome.Text = c.Nome;
+                textBoxTelefone.Text = c.Telefone;
+                textBoxBairro.Text = c.Bairro;
+                textBoxCidade.Text = c.Cidade;
+                textBoxNumero.Text = c.Numero.ToString();
+                textBoxCEP.Text = c.Cep;
+                textBoxRua.Text = c.Rua;
+                textBoxUF.Text = c.Uf;
+                textBoxCidade.Text = c.Cidade;            
+                
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+        }
+
+        private void AtualizarCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

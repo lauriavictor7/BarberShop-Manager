@@ -29,6 +29,12 @@
   <wsdl:message name="IService1_listarCliente_OutputMessage">
     <wsdl:part name="parameters" element="tns:listarClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_buscarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_buscarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarClienteResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_inserirServico_InputMessage">
     <wsdl:part name="parameters" element="tns:inserirServico" />
   </wsdl:message>
@@ -118,6 +124,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/listarCliente" message="tns:IService1_listarCliente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/listarClienteResponse" message="tns:IService1_listarCliente_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="buscarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/buscarCliente" message="tns:IService1_buscarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/buscarClienteResponse" message="tns:IService1_buscarCliente_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="inserirServico">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/inserirServico" message="tns:IService1_inserirServico_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/inserirServicoResponse" message="tns:IService1_inserirServico_OutputMessage" />
@@ -198,6 +208,15 @@
     </wsdl:operation>
     <wsdl:operation name="listarCliente">
       <soap:operation soapAction="http://tempuri.org/IService1/listarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCliente">
+      <soap:operation soapAction="http://tempuri.org/IService1/buscarCliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -37,6 +37,8 @@ namespace BarberShopTelas.localhost {
         
         private System.Threading.SendOrPostCallback listarClienteOperationCompleted;
         
+        private System.Threading.SendOrPostCallback buscarClienteOperationCompleted;
+        
         private System.Threading.SendOrPostCallback inserirServicoOperationCompleted;
         
         private System.Threading.SendOrPostCallback removerServicoOperationCompleted;
@@ -110,6 +112,9 @@ namespace BarberShopTelas.localhost {
         
         /// <remarks/>
         public event listarClienteCompletedEventHandler listarClienteCompleted;
+        
+        /// <remarks/>
+        public event buscarClienteCompletedEventHandler buscarClienteCompleted;
         
         /// <remarks/>
         public event inserirServicoCompletedEventHandler inserirServicoCompleted;
@@ -255,6 +260,35 @@ namespace BarberShopTelas.localhost {
             if ((this.listarClienteCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.listarClienteCompleted(this, new listarClienteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/buscarCliente", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Cliente buscarCliente(string cpf) {
+            object[] results = this.Invoke("buscarCliente", new object[] {
+                        cpf});
+            return ((Cliente)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void buscarClienteAsync(string cpf) {
+            this.buscarClienteAsync(cpf, null);
+        }
+        
+        /// <remarks/>
+        public void buscarClienteAsync(string cpf, object userState) {
+            if ((this.buscarClienteOperationCompleted == null)) {
+                this.buscarClienteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnbuscarClienteOperationCompleted);
+            }
+            this.InvokeAsync("buscarCliente", new object[] {
+                        cpf}, this.buscarClienteOperationCompleted, userState);
+        }
+        
+        private void OnbuscarClienteOperationCompleted(object arg) {
+            if ((this.buscarClienteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.buscarClienteCompleted(this, new buscarClienteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -993,6 +1027,32 @@ namespace BarberShopTelas.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Cliente[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void buscarClienteCompletedEventHandler(object sender, buscarClienteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class buscarClienteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal buscarClienteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Cliente Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Cliente)(this.results[0]));
             }
         }
     }

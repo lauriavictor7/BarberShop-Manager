@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BarberShopClasses.cliente;
+using BarberShopTelas.localhost;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,37 @@ namespace BarberShopTelas
         private void ListarCliente_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void listViewCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Service1 s = new Service1();
+                foreach(localhost.Cliente cliente in s.listarCliente())
+                {
+                    cliente.Endereco1 = new Endereco();
+                    ListViewItem linha = listViewCliente.Items.Add(cliente.Cpf);
+                    linha.SubItems.Add(cliente.Nome);
+                    linha.SubItems.Add(cliente.Telefone);
+                    linha.SubItems.Add(cliente.Sexo);
+                    linha.SubItems.Add(cliente.Cep);
+                    linha.SubItems.Add(cliente.Rua);
+                    linha.SubItems.Add(cliente.Numero.ToString());
+                    linha.SubItems.Add(cliente.Bairro);
+                    linha.SubItems.Add(cliente.Cidade);
+                    linha.SubItems.Add(cliente.Uf);
+                }
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
         }
     }
 }

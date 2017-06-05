@@ -30,6 +30,9 @@ namespace BarberShopService
 
         [OperationContract]
         List<Cliente> listarCliente();
+
+        [OperationContract]
+        Cliente buscarCliente(string cpf);
         #endregion
 
         #region Métodos referentes a Serviço.

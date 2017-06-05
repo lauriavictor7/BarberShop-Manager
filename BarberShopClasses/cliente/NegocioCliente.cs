@@ -13,6 +13,15 @@ namespace BarberShopClasses.cliente
             DadosCliente dc = new DadosCliente();
             dc.AtualizarCliente(c);
         }
+        public Cliente buscarCliente(string cpf)
+        {
+            if(cpf.Length < 11)
+            {
+                throw new Exception("Informe um cpf valido");   
+            }
+            DadosCliente dc = new DadosCliente();
+            return dc.buscarCliente(cpf);
+        }
 
         public void CadastrarCliente(Cliente c)
         {

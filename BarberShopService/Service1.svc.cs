@@ -43,6 +43,11 @@ namespace BarberShopService
             NegocioCliente nc = new NegocioCliente();
             return nc.ListarCliente();
         }
+        public Cliente buscarCliente(string cpf)
+        {
+            NegocioCliente nc = new NegocioCliente();
+            return nc.buscarCliente(cpf);
+        }
         #endregion
 
         #region Métodos referentes a Serviço.
@@ -122,6 +127,8 @@ namespace BarberShopService
             NegocioPagamento nP = new NegocioPagamento();
             return nP.ListarPagamento();
         }
+
+        
 
         #endregion
 

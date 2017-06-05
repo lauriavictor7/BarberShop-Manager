@@ -92,7 +92,7 @@ namespace BarberShopClasses.cliente
                 List<Cliente> retorno = new List<Cliente>();
 
                 this.abrirConexao();
-                string sql = "select cpf, nome, telefone from cliente";
+                string sql = "select cpf, nome, telefone, sexo, cep, rua, bairro, numero, cidade, uf from cliente1";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
@@ -101,9 +101,19 @@ namespace BarberShopClasses.cliente
                 while (DbReader.Read())
                 {
                     Cliente c = new Cliente();
+                    c.Endereco = new genericas.Endereco();
+
                     c.Cpf = DbReader.GetString(DbReader.GetOrdinal("cpf"));
                     c.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
                     c.Telefone = DbReader.GetString(DbReader.GetOrdinal("telefone"));
+                    c.Sexo = DbReader.GetString(DbReader.GetOrdinal("sexo"));
+                    c.Cep = DbReader.GetString(DbReader.GetOrdinal("cep"));
+                    c.Rua = DbReader.GetString(DbReader.GetOrdinal("rua"));
+                    c.Bairro = DbReader.GetString(DbReader.GetOrdinal("bairro"));
+                    c.Numero = DbReader.GetInt32(DbReader.GetOrdinal("numero"));
+                    c.Cidade = DbReader.GetString(DbReader.GetOrdinal("cidade"));
+                    c.Uf = DbReader.GetString(DbReader.GetOrdinal("uf"));
+
                     retorno.Add(c);
                 }
 
@@ -143,6 +153,40 @@ namespace BarberShopClasses.cliente
             }
         }
 
+        public Cliente buscarCliente(string cpf)
+        {
+            Cliente c = new Cliente();
+            c.Endereco = new genericas.Endereco();
+            try
+            {
+                this.abrirConexao();
+                string sql = "select nome, telefone, cep, rua, numero, bairro, cidade, uf from cliente1 where cpf = @cpf";
+                SqlCommand cmd = new SqlCommand(sql, sqlConn);
+
+                cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
+
+                cmd.Parameters["@cpf"].Value = cpf;
+
+                SqlDataReader DbReader = cmd.ExecuteReader();
+                while (DbReader.Read())
+                {
+                    c.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
+                    c.Telefone = DbReader.GetString(DbReader.GetOrdinal("telefone"));
+                    c.Cep = DbReader.GetString(DbReader.GetOrdinal("cep"));
+                    c.Rua = DbReader.GetString(DbReader.GetOrdinal("rua"));
+                    c.Bairro = DbReader.GetString(DbReader.GetOrdinal("bairro"));
+                    c.Numero = DbReader.GetInt32(DbReader.GetOrdinal("numero"));
+                    c.Cidade = DbReader.GetString(DbReader.GetOrdinal("cidade"));
+                    c.Uf = DbReader.GetString(DbReader.GetOrdinal("uf"));
+                }
+
+            }catch(Exception ex)
+            {
+                throw new Exception("Error " + ex.Message);
+            }
+            this.fecharConexao();
+            return c;
+        }
 
     }
 }

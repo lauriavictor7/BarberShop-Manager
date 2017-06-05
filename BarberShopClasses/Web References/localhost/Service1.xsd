@@ -68,6 +68,20 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Cliente" nillable="true" type="tns:Cliente" />
     </xs:sequence>
   </xs:complexType>
+  <xs:element name="buscarCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cpf" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="buscarClienteResult" type="tns:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="inserirServico">
     <xs:complexType>
       <xs:sequence>
