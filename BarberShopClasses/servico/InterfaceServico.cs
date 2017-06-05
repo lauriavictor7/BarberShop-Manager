@@ -12,5 +12,6 @@ namespace BarberShopClasses.servico
         void AtualizarServico(Servico s);
         void RemoverServico(Servico s);
         List<Servico> ListarServico();
+        Servico PesquisarServico(int cod);
     }
 }

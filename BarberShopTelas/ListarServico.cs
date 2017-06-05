@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarberShopTelas.localhost;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,25 @@ namespace BarberShopTelas
         private void ListarServico_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Service1 sv = new Service1();
+                foreach (localhost.Servico servico in sv.listarServico())
+                {
+                    ListViewItem item = listView1.Items.Add(servico.Cod_serv.ToString());
+                    item.SubItems.Add(servico.Preco.ToString());
+                    item.SubItems.Add(servico.Descricao);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao listar! " + ex.Message);
+            }
         }
     }
 }

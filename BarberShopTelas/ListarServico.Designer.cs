@@ -48,6 +48,18 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // Código
+            // 
+            this.Código.Text = "Código";
+            // 
+            // Preço
+            // 
+            this.Preço.Text = "Preço";
+            // 
+            // Descrição
+            // 
+            this.Descrição.Text = "Descrição";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(300, 197);
@@ -56,6 +68,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Listar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ListarServico
             // 

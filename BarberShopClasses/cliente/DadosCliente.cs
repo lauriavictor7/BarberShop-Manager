@@ -47,7 +47,7 @@ namespace BarberShopClasses.cliente
             {
                 this.abrirConexao();
 
-                string sql = "INSERT INTO cliente1 (cpf, nome, sexo, telefone, cep, bairro, rua, numero, cidade, uf)";
+                string sql = "INSERT INTO cliente (cpf, nome, sexo, telefone, cep, bairro, rua, numero, cidade, uf)";
                        sql += "VALUES(@cpf, @nome, @sexo, @telefone, @cep, @bairro, @rua, @numero, @cidade, @uf)";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
@@ -59,7 +59,7 @@ namespace BarberShopClasses.cliente
                 cmd.Parameters.Add("@cep", SqlDbType.VarChar);
                 cmd.Parameters.Add("@bairro", SqlDbType.VarChar);
                 cmd.Parameters.Add("@rua", SqlDbType.VarChar);
-                cmd.Parameters.Add("@numero", SqlDbType.Int);
+                cmd.Parameters.Add("@numero", SqlDbType.VarChar);
                 cmd.Parameters.Add("@cidade", SqlDbType.VarChar);
                 cmd.Parameters.Add("@uf", SqlDbType.VarChar);
 
@@ -92,7 +92,7 @@ namespace BarberShopClasses.cliente
                 List<Cliente> retorno = new List<Cliente>();
 
                 this.abrirConexao();
-                string sql = "select cpf, nome, telefone, sexo, cep, rua, bairro, numero, cidade, uf from cliente1";
+                string sql = "select cpf, nome, telefone, sexo, cep, rua, bairro, numero, cidade, uf from cliente";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
@@ -160,7 +160,7 @@ namespace BarberShopClasses.cliente
             try
             {
                 this.abrirConexao();
-                string sql = "select nome, telefone, cep, rua, numero, bairro, cidade, uf from cliente1 where cpf = @cpf";
+                string sql = "select nome, telefone, cep, rua, numero, bairro, cidade, uf from cliente where cpf = @cpf";
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
 
                 cmd.Parameters.Add("@cpf", SqlDbType.VarChar);

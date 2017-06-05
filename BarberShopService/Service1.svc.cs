@@ -74,6 +74,12 @@ namespace BarberShopService
             NegocioServico ns = new NegocioServico();
             return ns.ListarServico();
         }
+
+        public Servico buscarServico(int cod)
+        {
+            NegocioServico ns = new NegocioServico();
+            return ns.PesquisarServico(cod);
+        }
         #endregion
 
         #region Métodos Referentes a Agendamento
@@ -128,7 +134,9 @@ namespace BarberShopService
             return nP.ListarPagamento();
         }
 
-        
+
+
+
 
         #endregion
 

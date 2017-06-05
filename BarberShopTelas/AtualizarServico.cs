@@ -37,5 +37,24 @@ namespace BarberShopTelas
                 MessageBox.Show("Erro. " + ex.Message);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                localhost.Servico s = new localhost.Servico();
+
+                int cod = Convert.ToInt32(textBox1.Text);
+
+                textBox2.Text = Convert.ToString(s.Preco);
+                textBox3.Text = s.Descricao;
+
+                Service1 sv = new Service1();
+                sv.buscarServico(cod); 
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Serviço não encontrado! " + ex.Message);
+            }
+        }
     }
 }

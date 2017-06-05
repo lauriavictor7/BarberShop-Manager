@@ -134,6 +134,20 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Servico" nillable="true" type="tns:Servico" />
     </xs:sequence>
   </xs:complexType>
+  <xs:element name="buscarServico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="cod" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarServicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="buscarServicoResult" type="tns:Servico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CadastrarAgendamento">
     <xs:complexType>
       <xs:sequence>

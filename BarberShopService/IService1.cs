@@ -47,6 +47,9 @@ namespace BarberShopService
 
         [OperationContract]
         List<Servico> listarServico();
+
+        [OperationContract]
+        Servico buscarServico(int cod);
         #endregion
 
         #region Métodos Referentes a Agendamento

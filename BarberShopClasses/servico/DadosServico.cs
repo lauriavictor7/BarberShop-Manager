@@ -17,17 +17,17 @@ namespace BarberShopClasses.servico
             {
                 this.abrirConexao();
 
-                string sql = "UPDATE servico SET preco = @preco, descricao = @descricao WHERE cod = @cod";
+                string sql = "UPDATE Servico SET Preco = @Preco, Descricao = @Descricao WHERE Cod_Serv = @Cod_Serv";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@cod", SqlDbType.Int);
-                cmd.Parameters.Add("@preco", SqlDbType.Int);
-                cmd.Parameters.Add("@descricao", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Cod_Serv", SqlDbType.Int);
+                cmd.Parameters.Add("@Preco", SqlDbType.Int);
+                cmd.Parameters.Add("@Descricao", SqlDbType.VarChar);
 
-                cmd.Parameters["@cod"].Value = s.Cod_serv;
-                cmd.Parameters["@preco"].Value = s.Preco;
-                cmd.Parameters["@descricao"].Value = s.Descricao;
+                cmd.Parameters["@Cod_Serv"].Value = s.Cod_serv;
+                cmd.Parameters["@Preco"].Value = s.Preco;
+                cmd.Parameters["@Descricao"].Value = s.Descricao;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -46,17 +46,17 @@ namespace BarberShopClasses.servico
             {
                 this.abrirConexao();
 
-                string sql = "INSERT INTO servico (cod, preco, descricao) VALUES(@cod, @preco, @descricao)";
+                string sql = "INSERT INTO Servico (Cod_Serv, Preco, Descricao) VALUES(@Cod_Serv, @Preco, @Descricao)";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@cod", SqlDbType.Int);
-                cmd.Parameters.Add("@preco", SqlDbType.Int);
-                cmd.Parameters.Add("@descricao", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Cod_Serv", SqlDbType.Int);
+                cmd.Parameters.Add("@Preco", SqlDbType.Decimal);
+                cmd.Parameters.Add("@Descricao", SqlDbType.VarChar);
 
-                cmd.Parameters["@cod"].Value = s.Cod_serv;
-                cmd.Parameters["@preco"].Value = s.Preco;
-                cmd.Parameters["@descricao"].Value = s.Descricao;
+                cmd.Parameters["@Cod_Serv"].Value = s.Cod_serv;
+                cmd.Parameters["@Preco"].Value = s.Preco;
+                cmd.Parameters["@Descricao"].Value = s.Descricao;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -76,7 +76,7 @@ namespace BarberShopClasses.servico
                 List<Servico> retorno = new List<Servico>();
 
                 this.abrirConexao();
-                string sql = "SELECT cod, preco, descricao FROM servico";
+                string sql = "SELECT Cod_Serv, Preco, Descricao FROM Servico";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
@@ -85,9 +85,9 @@ namespace BarberShopClasses.servico
                 while (DbReader.Read())
                 {
                     Servico s = new Servico();
-                    s.Cod_serv = DbReader.GetInt32(DbReader.GetOrdinal("cod"));
-                    s.Preco = DbReader.GetInt32(DbReader.GetOrdinal("preco"));
-                    s.Descricao = DbReader.GetString(DbReader.GetOrdinal("descricao"));
+                    s.Cod_serv = DbReader.GetInt32(DbReader.GetOrdinal("Cod_Serv"));
+                    s.Preco = Convert.ToDouble(DbReader.GetDecimal(DbReader.GetOrdinal("Preco")));
+                    s.Descricao = DbReader.GetString(DbReader.GetOrdinal("Descricao"));
                     retorno.Add(s);
                 }
 
@@ -108,13 +108,13 @@ namespace BarberShopClasses.servico
             {
                 this.abrirConexao();
 
-                string sql = "DELETE FROM servico WHERE cod = @cod";
+                string sql = "DELETE FROM Servico WHERE Cod_Serv = @Cod_Serv";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@cod", SqlDbType.Int);
+                cmd.Parameters.Add("@Cod_Serv", SqlDbType.Int);
 
-                cmd.Parameters["@cod"].Value = s.Cod_serv;
+                cmd.Parameters["@Cod_Serv"].Value = s.Cod_serv;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -125,6 +125,39 @@ namespace BarberShopClasses.servico
             {
                 throw new Exception("Erro ao remover! " + ex.Message);
             }
+        }
+
+        public Servico PesquisarServico(int cod)
+        {
+            Servico s = new Servico();
+
+            try
+            {
+                this.abrirConexao();
+                string sql = "select Cod_Serv, Preco, Descricao from Servico where Cod_Serv = @Cod_Serv";
+
+                SqlCommand cmd = new SqlCommand(sql, sqlConn);
+
+                cmd.Parameters.Add("@Cod_Serv", SqlDbType.VarChar);
+
+                cmd.Parameters["@Cod_Serv"].Value = cod;
+
+                SqlDataReader DbReader = cmd.ExecuteReader();
+
+                while (DbReader.Read())
+                {
+                    s.Cod_serv = DbReader.GetInt32(DbReader.GetOrdinal("Cod_Serv"));
+                    s.Preco = Convert.ToDouble(DbReader.GetDecimal(DbReader.GetOrdinal("Preco")));
+                    s.Descricao = DbReader.GetString(DbReader.GetOrdinal("Descricao"));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao buscar! " + ex.Message);
+            }
+            this.fecharConexao();
+            return s;
         }
     }
 }

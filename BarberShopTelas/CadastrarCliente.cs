@@ -46,6 +46,7 @@ namespace BarberShopTelas
                 c.Numero = Convert.ToInt32(textBoxNumero.Text);
                 c.Uf = textBoxUF.Text;
                 c.Cidade = textBoxCidade.Text;
+
                 if (comboBoxSexo.SelectedIndex == -1)
                 {
                     MessageBox.Show("Escolha uma opção por favor");

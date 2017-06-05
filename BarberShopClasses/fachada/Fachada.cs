@@ -72,6 +72,11 @@ namespace BarberShopClasses.fachada
             throw new NotImplementedException();
         }
 
+        public Servico PesquisarServico(int cod)
+        {
+            throw new NotImplementedException();
+        }
+
         public void RemoverAgendamento(Agendamento a)
         {
             throw new NotImplementedException();
