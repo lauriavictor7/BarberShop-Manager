@@ -56,6 +56,11 @@ namespace BarberShopClasses.fachada
             throw new NotImplementedException();
         }
 
+        public void CadastrarValor(Caixa cx)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Agendamento> ListarAgendamento()
         {
             throw new NotImplementedException();

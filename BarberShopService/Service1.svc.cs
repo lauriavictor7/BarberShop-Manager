@@ -12,6 +12,7 @@ using System.Data;
 using BarberShopClasses.servico;
 using BarberShopClasses.agendamento;
 using BarberShopClasses.pagamento;
+using BarberShopClasses.caixa;
 
 namespace BarberShopService
 {
@@ -133,12 +134,14 @@ namespace BarberShopService
             NegocioPagamento nP = new NegocioPagamento();
             return nP.ListarPagamento();
         }
-
-
-
-
-
         #endregion
 
+        #region Métodos referentes a Caixa
+        public void iniciarCaixa(Caixa cx)
+        {
+            NegocioCaixa nc = new NegocioCaixa();
+            nc.CadastrarValor(cx);
+        }
+        #endregion
     }
 }

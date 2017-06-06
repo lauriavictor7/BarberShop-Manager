@@ -41,7 +41,8 @@ namespace BarberShopTelas
    
                 Service1 sv = new Service1();
                 sv.CadastrarAgendamento(a);
-                MessageBox.Show("Cadastrou!");
+
+                MessageBox.Show("Sucesso!");
             }catch(Exception ex)
             {
                 MessageBox.Show("Error" + ex.Message);

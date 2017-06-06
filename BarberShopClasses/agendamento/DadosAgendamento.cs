@@ -21,19 +21,21 @@ namespace BarberShopClasses.agendamento
 
                 this.abrirConexao();
 
-                string sql = "INSERT INTO Agendamento (cpf, data, hora, cod_serv) values (@cpf, @data, @hora, @cod_serv)";
+                string sql = "INSERT INTO Agendamento (Cod_AG, CPF, data, hora, Cod_Serv) values (@Cod_AG, @CPF, @data, @hora, @Cod_Serv)";
 
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
 
+                cmd.Parameters.Add("@Cod_AG", SqlDbType.Int);
                 cmd.Parameters.Add("@data", SqlDbType.Date);
                 cmd.Parameters.Add("@hora", SqlDbType.Time);
-                cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
-                cmd.Parameters.Add("@cod_serv", SqlDbType.VarChar);
+                cmd.Parameters.Add("@CPF", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Cod_Serv", SqlDbType.VarChar);
 
+                cmd.Parameters["@Cod_AG"].Value = a.Cod_ag;
                 cmd.Parameters["@data"].Value = a.Data;
                 cmd.Parameters["@hora"].Value = a.Hora;
-                cmd.Parameters["@cpf"].Value = a.Cliente.Cpf;
-                cmd.Parameters["@cod_serv"].Value = a.Servico.Cod_serv;
+                cmd.Parameters["@CPF"].Value = a.Cliente.Cpf;
+                cmd.Parameters["@Cod_Serv"].Value = a.Servico.Cod_serv;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -66,10 +68,9 @@ namespace BarberShopClasses.agendamento
                     Agendamento a = new Agendamento();
                     a.Cliente = new Cliente();
                     a.Servico = new Servico();
-                    a.Cod_ag = DbReader.GetInt32(DbReader.GetOrdinal("cod_ag"));
+                    a.Cod_ag = DbReader.GetInt32(DbReader.GetOrdinal("Cod_AG"));
                     a.Cliente.Cpf = DbReader.GetString(DbReader.GetOrdinal("CPF"));
-                    data = DbReader.GetDateTime(DbReader.GetOrdinal("data"));
-                    a.Data = data.ToShortDateString();
+                    a.Data = DbReader.GetString(DbReader.GetOrdinal("data"));
                     a.Hora = DbReader.GetString(DbReader.GetOrdinal("hora"));
                     a.Servico.Descricao = DbReader.GetString(DbReader.GetOrdinal("descricao"));
                     a.Cliente.Nome = DbReader.GetString(DbReader.GetOrdinal("Nome"));

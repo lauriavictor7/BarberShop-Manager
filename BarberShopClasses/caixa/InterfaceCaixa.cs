@@ -8,5 +8,7 @@ namespace BarberShopClasses.caixa
 {
     public interface InterfaceCaixa
     {
+        void CadastrarValor(Caixa cx);
+
     }
 }

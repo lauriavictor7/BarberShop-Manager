@@ -40,11 +40,11 @@
             // 
             // buttonAgendamento
             // 
-            this.buttonAgendamento.Location = new System.Drawing.Point(232, 196);
+            this.buttonAgendamento.Location = new System.Drawing.Point(303, 206);
             this.buttonAgendamento.Name = "buttonAgendamento";
             this.buttonAgendamento.Size = new System.Drawing.Size(75, 23);
             this.buttonAgendamento.TabIndex = 1;
-            this.buttonAgendamento.Text = "Atualizar";
+            this.buttonAgendamento.Text = "Listar";
             this.buttonAgendamento.UseVisualStyleBackColor = true;
             this.buttonAgendamento.Click += new System.EventHandler(this.buttonAgendamento_Click);
             // 

@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbrirCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbrirCaixa.Designer.cs">
+      <DependentUpon>AbrirCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlterarAgendamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AbrirCaixa.resx">
+      <DependentUpon>AbrirCaixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlterarAgendamento.resx">
       <DependentUpon>AlterarAgendamento.cs</DependentUpon>
     </EmbeddedResource>

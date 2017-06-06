@@ -1,4 +1,5 @@
 ﻿using BarberShopClasses.agendamento;
+using BarberShopClasses.caixa;
 using BarberShopClasses.cliente;
 using BarberShopClasses.pagamento;
 using BarberShopClasses.servico;
@@ -72,6 +73,11 @@ namespace BarberShopService
         void CadastrarPagamento(Pagamento p);
         [OperationContract]
         List<Pagamento> ListarPagamento();
+        #endregion
+
+        #region Métodos Referentes a Caixa
+        [OperationContract]
+        void iniciarCaixa(Caixa cx);
         #endregion
     }
 

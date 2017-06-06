@@ -107,5 +107,11 @@ namespace BarberShopTelas
             AtualizarServico aS = new AtualizarServico();
             aS.Show();
         }
+
+        private void caixaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirCaixa ac = new AbrirCaixa();
+            ac.Show();
+        }
     }
 }
