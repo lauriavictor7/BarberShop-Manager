@@ -46,15 +46,13 @@ namespace BarberShopClasses.servico
             {
                 this.abrirConexao();
 
-                string sql = "INSERT INTO Servico (Cod_Serv, Preco, Descricao) VALUES(@Cod_Serv, @Preco, @Descricao)";
+                string sql = "INSERT INTO Servico (Preco, Descricao) VALUES(@Preco, @Descricao)";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@Cod_Serv", SqlDbType.Int);
                 cmd.Parameters.Add("@Preco", SqlDbType.Decimal);
                 cmd.Parameters.Add("@Descricao", SqlDbType.VarChar);
 
-                cmd.Parameters["@Cod_Serv"].Value = s.Cod_serv;
                 cmd.Parameters["@Preco"].Value = s.Preco;
                 cmd.Parameters["@Descricao"].Value = s.Descricao;
 
@@ -150,7 +148,6 @@ namespace BarberShopClasses.servico
                     s.Preco = Convert.ToDouble(DbReader.GetDecimal(DbReader.GetOrdinal("Preco")));
                     s.Descricao = DbReader.GetString(DbReader.GetOrdinal("Descricao"));
                 }
-
             }
             catch (Exception ex)
             {

@@ -23,7 +23,6 @@ namespace BarberShopTelas
             try
             {
                 localhost.Caixa cx = new localhost.Caixa();
-                cx.Cod_caixa = Convert.ToInt32(textBox1.Text);
                 cx.Valor_inicial = Convert.ToDouble(textBox2.Text);
                 
                 Service1 sv = new Service1();

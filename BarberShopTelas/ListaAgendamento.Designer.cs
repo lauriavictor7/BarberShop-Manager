@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonAgendamento = new System.Windows.Forms.Button();
             this.listViewAg = new System.Windows.Forms.ListView();
             this.Cod_Agendamento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CPF = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,16 +36,6 @@
             this.Data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Hora = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // buttonAgendamento
-            // 
-            this.buttonAgendamento.Location = new System.Drawing.Point(303, 206);
-            this.buttonAgendamento.Name = "buttonAgendamento";
-            this.buttonAgendamento.Size = new System.Drawing.Size(75, 23);
-            this.buttonAgendamento.TabIndex = 1;
-            this.buttonAgendamento.Text = "Listar";
-            this.buttonAgendamento.UseVisualStyleBackColor = true;
-            this.buttonAgendamento.Click += new System.EventHandler(this.buttonAgendamento_Click);
             // 
             // listViewAg
             // 
@@ -96,16 +85,15 @@
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(656, 241);
             this.Controls.Add(this.listViewAg);
-            this.Controls.Add(this.buttonAgendamento);
             this.Name = "ListaAgendamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListaAgendamento";
+            this.Load += new System.EventHandler(this.ListaAgendamento_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonAgendamento;
         private System.Windows.Forms.ListView listViewAg;
         private System.Windows.Forms.ColumnHeader Cod_Agendamento;
         private System.Windows.Forms.ColumnHeader CPF;

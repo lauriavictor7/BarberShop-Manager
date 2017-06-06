@@ -24,7 +24,6 @@ namespace BarberShopTelas
             try
             {
                 localhost.Servico s = new localhost.Servico();
-                s.Cod_serv = Convert.ToInt32(textBox1.Text);
                 s.Preco = Convert.ToInt32(textBox2.Text);
                 s.Descricao = textBox3.Text;
 

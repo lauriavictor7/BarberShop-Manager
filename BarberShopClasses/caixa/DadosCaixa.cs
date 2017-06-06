@@ -17,14 +17,12 @@ namespace BarberShopClasses.caixa
             {
                 this.abrirConexao();
 
-                string sql = "INSERT INTO Caixa (Cod_Caixa, Valor_Inic) VALUES(@Cod_Caixa, @Valor_Inic)";
+                string sql = "INSERT INTO Caixa (Valor_Inic) VALUES(@Valor_Inic)";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@Cod_Caixa", SqlDbType.Int);
                 cmd.Parameters.Add("@Valor_Inic", SqlDbType.Decimal);
 
-                cmd.Parameters["@Cod_Caixa"].Value = cx.Cod_caixa;
                 cmd.Parameters["@Valor_Inic"].Value = cx.Valor_inicial;
 
                 cmd.ExecuteNonQuery();

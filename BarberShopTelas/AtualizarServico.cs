@@ -45,12 +45,12 @@ namespace BarberShopTelas
                 localhost.Servico s = new localhost.Servico();
 
                 int cod = Convert.ToInt32(textBox1.Text);
-
-                textBox2.Text = Convert.ToString(s.Preco);
-                textBox3.Text = s.Descricao;
-
                 Service1 sv = new Service1();
-                sv.buscarServico(cod); 
+                var servico = sv.buscarServico(cod);
+                textBox2.Text = Convert.ToString(servico.Preco);
+                textBox3.Text = servico.Descricao;
+
+                 
             } catch (Exception ex)
             {
                 MessageBox.Show("Serviço não encontrado! " + ex.Message);

@@ -19,10 +19,10 @@ namespace BarberShopTelas
             InitializeComponent();
         }
 
-        private void buttonAgendamento_Click(object sender, EventArgs e)
+        private void ListaAgendamento_Load(object sender, EventArgs e)
         {
             try
-            {                
+            {
                 Service1 sv = new Service1();
                 foreach (localhost.Agendamento agendamento in sv.ListarAgendamento())
                 {
@@ -34,11 +34,11 @@ namespace BarberShopTelas
                     linha.SubItems.Add(agendamento.Hora.ToString());
                 }
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);
             }
-
         }
     }
 }

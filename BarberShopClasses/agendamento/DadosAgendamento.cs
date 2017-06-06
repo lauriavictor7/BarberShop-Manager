@@ -21,17 +21,15 @@ namespace BarberShopClasses.agendamento
 
                 this.abrirConexao();
 
-                string sql = "INSERT INTO Agendamento (Cod_AG, CPF, data, hora, Cod_Serv) values (@Cod_AG, @CPF, @data, @hora, @Cod_Serv)";
+                string sql = "INSERT INTO Agendamento (CPF, data, hora, Cod_Serv) values (@CPF, @data, @hora, @Cod_Serv)";
 
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
 
-                cmd.Parameters.Add("@Cod_AG", SqlDbType.Int);
                 cmd.Parameters.Add("@data", SqlDbType.Date);
                 cmd.Parameters.Add("@hora", SqlDbType.Time);
                 cmd.Parameters.Add("@CPF", SqlDbType.VarChar);
                 cmd.Parameters.Add("@Cod_Serv", SqlDbType.VarChar);
 
-                cmd.Parameters["@Cod_AG"].Value = a.Cod_ag;
                 cmd.Parameters["@data"].Value = a.Data;
                 cmd.Parameters["@hora"].Value = a.Hora;
                 cmd.Parameters["@CPF"].Value = a.Cliente.Cpf;
@@ -58,8 +56,6 @@ namespace BarberShopClasses.agendamento
                 string sql = "select a.cod_ag, c.cpf, c.nome, a.data, a.hora, s.descricao from Agendamento as a   ";
                 sql += " inner join Cliente as c on a.CPF = c.CPF ";
                 sql += " inner join Servico as s on a.Cod_serv = s.Cod_serv;;";
-                DateTime data;
-                
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
                 SqlDataReader DbReader = cmd.ExecuteReader();
@@ -148,7 +144,7 @@ namespace BarberShopClasses.agendamento
             {
                 this.abrirConexao();
                 string sql = "select cod_serv, data, hora from agendamento where cpf = @cpf";
-                DateTime data;
+
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
                 cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
@@ -160,8 +156,7 @@ namespace BarberShopClasses.agendamento
                 {
                     
                     a.Servico.Cod_serv = DbReader.GetInt32(DbReader.GetOrdinal("cod_serv"));
-                    data = DbReader.GetDateTime(DbReader.GetOrdinal("data"));
-                    a.Data = data.ToShortDateString();
+                    a.Data = DbReader.GetString(DbReader.GetOrdinal("data"));
                     a.Hora = DbReader.GetString(DbReader.GetOrdinal("hora"));
                 }
             }catch(Exception ex)
