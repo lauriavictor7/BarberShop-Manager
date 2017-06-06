@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.listViewPG = new System.Windows.Forms.ListView();
-            this.Cod_pag = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Cód = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CPF = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Hora = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,7 +41,7 @@
             // listViewPG
             // 
             this.listViewPG.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Cod_pag,
+            this.Cód,
             this.CPF,
             this.Data,
             this.Hora,
@@ -54,9 +54,9 @@
             this.listViewPG.UseCompatibleStateImageBehavior = false;
             this.listViewPG.View = System.Windows.Forms.View.Details;
             // 
-            // Cod_pag
+            // Cód
             // 
-            this.Cod_pag.Text = "Cod_pag";
+            this.Cód.Text = "Cód";
             // 
             // CPF
             // 
@@ -97,7 +97,9 @@
             this.Controls.Add(this.buttonAtualizar);
             this.Controls.Add(this.listViewPG);
             this.Name = "ListarPagamento";
-            this.Text = "ListarPagamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lista de Pagamentos";
+            this.Load += new System.EventHandler(this.ListarPagamento_Load);
             this.ResumeLayout(false);
 
         }
@@ -106,7 +108,7 @@
 
         private System.Windows.Forms.ListView listViewPG;
         private System.Windows.Forms.Button buttonAtualizar;
-        private System.Windows.Forms.ColumnHeader Cod_pag;
+        private System.Windows.Forms.ColumnHeader Cód;
         private System.Windows.Forms.ColumnHeader CPF;
         private System.Windows.Forms.ColumnHeader Data;
         private System.Windows.Forms.ColumnHeader Hora;

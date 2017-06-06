@@ -34,6 +34,7 @@ namespace BarberShopTelas
             textBoxHoraPg.Text = hora;
             textBoxDataPg.Enabled = false;
             textBoxHoraPg.Enabled = false;
+            textBoxValorPg.Enabled = false;
         }
 
         private void buttonCheckPg_Click(object sender, EventArgs e)
@@ -79,7 +80,7 @@ namespace BarberShopTelas
                 string horastr = textBoxHoraPg.Text.ToString();
                 p.Hora = horastr;
                 p.Data = textBoxDataPg.Text;
-                p.Cliente.Cpf = Convert.ToString(maskedTextBox1.Text);
+                p.Cliente.Cpf = maskedTextBox1.Text;
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
             }
@@ -91,7 +92,7 @@ namespace BarberShopTelas
                 string horastr = textBoxHoraPg.Text.ToString();
                 p.Hora = horastr;
                 p.Data = textBoxDataPg.Text;
-                p.Cliente.Cpf = Convert.ToString(maskedTextBox1.Text);
+                p.Cliente.Cpf = maskedTextBox1.Text;
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
             }
@@ -103,7 +104,7 @@ namespace BarberShopTelas
                 string horastr = textBoxHoraPg.Text.ToString();
                 p.Hora = horastr;
                 p.Data = textBoxDataPg.Text;
-                p.Cliente.Cpf = Convert.ToString(maskedTextBox1.Text);
+                p.Cliente.Cpf = maskedTextBox1.Text;
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
             }

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="inserirCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="c" type="tns:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Cliente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Endereco">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Cpf" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Nome" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Telefone" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Sexo" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Endereco" type="tns:Endereco" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Endereco">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Cep" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Rua" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Numero" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Bairro" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cidade" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Uf" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="inserirClienteResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="removerCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="c" type="tns:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="removerClienteResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="atualizarCLiente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="c" type="tns:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="atualizarCLienteResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="listarCliente">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="listarClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="listarClienteResult" type="tns:ArrayOfCliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cliente" nillable="true" type="tns:Cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="buscarCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cpf" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="buscarClienteResult" type="tns:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="inserirServico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="s" type="tns:Servico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Servico">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Preco" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descricao" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Cod_serv" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="inserirServicoResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="removerServico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="s" type="tns:Servico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="removerServicoResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="atualizarServico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="s" type="tns:Servico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="atualizarServicoResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="listarServico">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="listarServicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="listarServicoResult" type="tns:ArrayOfServico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfServico">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Servico" nillable="true" type="tns:Servico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="buscarServico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="cod" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarServicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="buscarServicoResult" type="tns:Servico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarAgendamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="a" type="tns:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Agendamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Data" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Hora" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cliente" type="tns:Cliente" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Servico" type="tns:Servico" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Cod_ag" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CadastrarAgendamentoResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="RemoverAgendamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="a" type="tns:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverAgendamentoResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ListarAgendamento">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ListarAgendamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ListarAgendamentoResult" type="tns:ArrayOfAgendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfAgendamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Agendamento" nillable="true" type="tns:Agendamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="atualizarAgendamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="a" type="tns:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="atualizarAgendamentoResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="buscarAgendamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cpf" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarAgendamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="buscarAgendamentoResult" type="tns:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarValor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cpf" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarValorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="buscarValorResult" type="tns:Servico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarPagamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="p" type="tns:Pagamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Pagamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Data" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Hora" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Cod_pag" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Metodo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Valor" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cliente" type="tns:Cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CadastrarPagamentoResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ListarPagamento">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ListarPagamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ListarPagamentoResult" type="tns:ArrayOfPagamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfPagamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pagamento" nillable="true" type="tns:Pagamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iniciarCaixa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cx" type="tns:Caixa" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Caixa">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Pagamento" type="tns:Pagamento" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Valor_inicial" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Valor_final" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Valor_atual" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Cod_caixa" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iniciarCaixaResponse">
+    <xs:complexType />
+  </xs:element>
+</xs:schema>

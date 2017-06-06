@@ -103,7 +103,7 @@
             // 
             // buttonPagamento
             // 
-            this.buttonPagamento.Location = new System.Drawing.Point(105, 251);
+            this.buttonPagamento.Location = new System.Drawing.Point(142, 260);
             this.buttonPagamento.Name = "buttonPagamento";
             this.buttonPagamento.Size = new System.Drawing.Size(75, 23);
             this.buttonPagamento.TabIndex = 8;
@@ -127,7 +127,7 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(105, 71);
+            this.maskedTextBox1.Location = new System.Drawing.Point(103, 71);
             this.maskedTextBox1.Mask = "000.000.000-00";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
@@ -175,7 +175,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "InserirPagamento";
-            this.Text = "InserirPagamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Realizar Pagamento";
             this.Load += new System.EventHandler(this.InserirPagamento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

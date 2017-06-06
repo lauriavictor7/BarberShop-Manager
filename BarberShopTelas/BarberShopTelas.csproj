@@ -119,6 +119,12 @@
     <Compile Include="DeleteAgendamento.Designer.cs">
       <DependentUpon>DeleteAgendamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilaDeAgendamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilaDeAgendamentos.Designer.cs">
+      <DependentUpon>FilaDeAgendamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="InserirPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteAgendamento.resx">
       <DependentUpon>DeleteAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilaDeAgendamentos.resx">
+      <DependentUpon>FilaDeAgendamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InserirPagamento.resx">
       <DependentUpon>InserirPagamento.cs</DependentUpon>

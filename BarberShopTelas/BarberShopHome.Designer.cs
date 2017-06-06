@@ -51,6 +51,7 @@
             this.removerServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filaDeAgendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +90,8 @@
             this.agendarToolStripMenuItem,
             this.listaDeAgendamentosToolStripMenuItem,
             this.removerAgendamentosToolStripMenuItem,
-            this.atualizarToolStripMenuItem});
+            this.atualizarToolStripMenuItem,
+            this.filaDeAgendamentosToolStripMenuItem});
             this.agendamentoToolStripMenuItem.Name = "agendamentoToolStripMenuItem";
             this.agendamentoToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.agendamentoToolStripMenuItem.Text = "Agendamento";
@@ -175,7 +177,7 @@
             // 
             this.pagamentoToolStripMenuItem.Name = "pagamentoToolStripMenuItem";
             this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.pagamentoToolStripMenuItem.Text = "Pagamento";
+            this.pagamentoToolStripMenuItem.Text = "Realizar Pagamento";
             this.pagamentoToolStripMenuItem.Click += new System.EventHandler(this.pagamentoToolStripMenuItem_Click);
             // 
             // listaDePagamentosToolStripMenuItem
@@ -231,6 +233,13 @@
             this.caixaToolStripMenuItem.Text = "Abrir Caixa";
             this.caixaToolStripMenuItem.Click += new System.EventHandler(this.caixaToolStripMenuItem_Click);
             // 
+            // filaDeAgendamentosToolStripMenuItem
+            // 
+            this.filaDeAgendamentosToolStripMenuItem.Name = "filaDeAgendamentosToolStripMenuItem";
+            this.filaDeAgendamentosToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.filaDeAgendamentosToolStripMenuItem.Text = "Fila de Agendamentos";
+            this.filaDeAgendamentosToolStripMenuItem.Click += new System.EventHandler(this.filaDeAgendamentosToolStripMenuItem_Click);
+            // 
             // BarberShopHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,6 +283,7 @@
         private System.Windows.Forms.ToolStripMenuItem listaDeServiçosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterarServiçosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filaDeAgendamentosToolStripMenuItem;
     }
 }
 
