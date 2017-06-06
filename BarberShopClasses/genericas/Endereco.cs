@@ -10,7 +10,7 @@ namespace BarberShopClasses.genericas
     {
         private string cep;
         private string rua;
-        private int numero;
+        private string numero;
         private string bairro;
         private string cidade;
         private string uf;
@@ -41,7 +41,7 @@ namespace BarberShopClasses.genericas
             }
         }
 
-        public int Numero
+        public string Numero
         {
             get
             {

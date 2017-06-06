@@ -32,8 +32,8 @@ namespace BarberShopTelas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-           
+
+
 
                 localhost.Cliente c = new localhost.Cliente();
                 c.Endereco1 = new localhost.Endereco();
@@ -43,7 +43,7 @@ namespace BarberShopTelas
                 c.Cep = maskedTextBoxCEP.Text;
                 c.Rua = textBoxRua.Text;
                 c.Bairro = textBoxBairro.Text;
-                c.Numero = Convert.ToInt32(textBoxNumero.Text);
+                c.Numero = textBoxNumero.Text;
                 c.Uf = textBoxUF.Text;
                 c.Cidade = textBoxCidade.Text;
 

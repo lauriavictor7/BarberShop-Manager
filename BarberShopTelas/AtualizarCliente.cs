@@ -22,10 +22,16 @@ namespace BarberShopTelas
         {
             try
             {
-                localhost.Cliente c = new localhost.Cliente();
+                Cliente c = new Cliente();
                 c.Cpf = maskedTextBox1.Text;
                 c.Nome = textBoxNome.Text;
                 c.Telefone = textBoxTelefone.Text;
+                c.Bairro = textBoxBairro.Text;
+                c.Rua = textBoxRua.Text;
+                c.Cep = textBoxCEP.Text;
+                c.Numero = textBoxNumero.Text;
+                c.Cidade = textBoxCidade.Text;
+                c.Uf = textBoxUF.Text;
 
                 Service1 sv = new Service1();
                 sv.atualizarCLiente(c);

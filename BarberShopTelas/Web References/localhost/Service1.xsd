@@ -24,7 +24,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="Cep" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Rua" type="xs:string" />
-      <xs:element minOccurs="1" maxOccurs="1" name="Numero" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Numero" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Bairro" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Cidade" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Uf" type="xs:string" />

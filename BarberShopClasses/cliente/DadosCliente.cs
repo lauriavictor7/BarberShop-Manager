@@ -18,17 +18,30 @@ namespace BarberShopClasses.cliente
             {
                 this.abrirConexao();
 
-                string sql = "UPDATE cliente SET nome = @nome, telefone = @telefone WHERE cpf = @cpf";
+                string sql = "UPDATE cliente SET nome = @nome, telefone = @telefone, bairro = @bairro, rua = @rua, cep = @cep, numero = @numero, cidade = @cidade, uf = @uf WHERE cpf = @cpf";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
                 cmd.Parameters.Add("@nome", SqlDbType.VarChar);
                 cmd.Parameters.Add("@telefone", SqlDbType.VarChar);
+                cmd.Parameters.Add("@bairro", SqlDbType.VarChar);
+                cmd.Parameters.Add("@rua", SqlDbType.VarChar);
+                cmd.Parameters.Add("@cep", SqlDbType.VarChar);
+                cmd.Parameters.Add("@numero", SqlDbType.VarChar);
+                cmd.Parameters.Add("@cidade", SqlDbType.VarChar);
+                cmd.Parameters.Add("@uf", SqlDbType.VarChar);
+                cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
 
-                cmd.Parameters["@cpf"].Value = c.Cpf;
+                
                 cmd.Parameters["@nome"].Value = c.Nome;
                 cmd.Parameters["@telefone"].Value = c.Telefone;
+                cmd.Parameters["@bairro"].Value = c.Bairro;
+                cmd.Parameters["@rua"].Value = c.Rua;
+                cmd.Parameters["@cep"].Value = c.Cep;
+                cmd.Parameters["@numero"].Value = c.Numero;
+                cmd.Parameters["@cidade"].Value = c.Cidade;
+                cmd.Parameters["@uf"].Value = c.Uf;
+                cmd.Parameters["@cpf"].Value = c.Cpf;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -110,7 +123,7 @@ namespace BarberShopClasses.cliente
                     c.Cep = DbReader.GetString(DbReader.GetOrdinal("cep"));
                     c.Rua = DbReader.GetString(DbReader.GetOrdinal("rua"));
                     c.Bairro = DbReader.GetString(DbReader.GetOrdinal("bairro"));
-                    c.Numero = DbReader.GetInt32(DbReader.GetOrdinal("numero"));
+                    c.Numero = DbReader.GetString(DbReader.GetOrdinal("numero"));
                     c.Cidade = DbReader.GetString(DbReader.GetOrdinal("cidade"));
                     c.Uf = DbReader.GetString(DbReader.GetOrdinal("uf"));
 
@@ -175,7 +188,7 @@ namespace BarberShopClasses.cliente
                     c.Cep = DbReader.GetString(DbReader.GetOrdinal("cep"));
                     c.Rua = DbReader.GetString(DbReader.GetOrdinal("rua"));
                     c.Bairro = DbReader.GetString(DbReader.GetOrdinal("bairro"));
-                    c.Numero = DbReader.GetInt32(DbReader.GetOrdinal("numero"));
+                    c.Numero = DbReader.GetString(DbReader.GetOrdinal("numero"));
                     c.Cidade = DbReader.GetString(DbReader.GetOrdinal("cidade"));
                     c.Uf = DbReader.GetString(DbReader.GetOrdinal("uf"));
                 }
