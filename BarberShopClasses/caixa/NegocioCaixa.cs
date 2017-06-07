@@ -13,5 +13,17 @@ namespace BarberShopClasses.caixa
             DadosCaixa dc = new DadosCaixa();
             dc.CadastrarValor(cx);
         }
+
+        public Caixa pesquisarCaixa(int cod)
+        {
+            DadosCaixa dc = new DadosCaixa();
+            return dc.pesquisarCaixa(cod);
+        }
+
+        public void atualizarValorAtual(Caixa cx)
+        {
+            DadosCaixa dc = new DadosCaixa();
+            dc.atualizarValorAtual(cx);
+        }
     }
 }

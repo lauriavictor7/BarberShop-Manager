@@ -109,6 +109,9 @@
     <None Include="Web References\localhost\Agendamento.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\localhost\Caixa.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\localhost\Cliente.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>

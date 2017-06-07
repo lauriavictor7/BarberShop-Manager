@@ -142,6 +142,18 @@ namespace BarberShopService
             NegocioCaixa nc = new NegocioCaixa();
             nc.CadastrarValor(cx);
         }
+
+        public void atualizarValorAtual(Caixa cx)
+        {
+            NegocioCaixa nc = new NegocioCaixa();
+            nc.atualizarValorAtual(cx);
+        }
+
+        public Caixa pesquisarCaixa(int cod)
+        {
+            NegocioCaixa nc = new NegocioCaixa();
+            return nc.pesquisarCaixa(cod);
+        }
         #endregion
     }
 }

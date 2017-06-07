@@ -78,6 +78,12 @@ namespace BarberShopService
         #region Métodos Referentes a Caixa
         [OperationContract]
         void iniciarCaixa(Caixa cx);
+
+        [OperationContract]
+        void atualizarValorAtual(Caixa cx);
+
+        [OperationContract]
+        Caixa pesquisarCaixa(int cod);
         #endregion
     }
 

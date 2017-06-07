@@ -274,14 +274,39 @@
   </xs:element>
   <xs:complexType name="Caixa">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="Pagamento" type="tns:Pagamento" />
-      <xs:element minOccurs="1" maxOccurs="1" name="Valor_inicial" type="xs:double" />
-      <xs:element minOccurs="1" maxOccurs="1" name="Valor_final" type="xs:double" />
-      <xs:element minOccurs="1" maxOccurs="1" name="Valor_atual" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Valor_inicial" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Valor_final" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Valor_atual" type="xs:decimal" />
       <xs:element minOccurs="1" maxOccurs="1" name="Cod_caixa" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Data" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Hora" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="iniciarCaixaResponse">
     <xs:complexType />
+  </xs:element>
+  <xs:element name="atualizarValorAtual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cx" type="tns:Caixa" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="atualizarValorAtualResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="pesquisarCaixa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="cod" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pesquisarCaixaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="pesquisarCaixaResult" type="tns:Caixa" />
+      </xs:sequence>
+    </xs:complexType>
   </xs:element>
 </xs:schema>

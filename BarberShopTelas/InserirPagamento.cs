@@ -108,6 +108,19 @@ namespace BarberShopTelas
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
             }
+            
+
+            Caixa cx = new Caixa();
+            int cod = Convert.ToInt16(textBoxCodCaixa.Text);
+         
+            Service1 s = new Service1();
+            cx = s.pesquisarCaixa(cod);
+
+            cx.Valor_atual += p.Valor;
+            cx.Valor_final += p.Valor + cx.Valor_inicial;
+
+            s.atualizarValorAtual(cx);
+
             MessageBox.Show("Sucesso !");
 
         }

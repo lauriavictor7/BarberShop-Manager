@@ -23,7 +23,9 @@ namespace BarberShopTelas
             try
             {
                 localhost.Caixa cx = new localhost.Caixa();
-                cx.Valor_inicial = Convert.ToDouble(textBox2.Text);
+                cx.Valor_inicial = Convert.ToDecimal(textBox2.Text);
+                cx.Data = textBoxData.Text;
+                cx.Hora = textBoxHora.Text;
                 
                 Service1 sv = new Service1();
                 sv.iniciarCaixa(cx);
@@ -33,6 +35,19 @@ namespace BarberShopTelas
             {
                 MessageBox.Show("Erro. " + ex.Message);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string date;
+            string hora;
+            date = DateTime.Now.ToShortDateString();
+            hora = DateTime.Now.ToLongTimeString();
+            textBoxData.Text = date;
+            textBoxHora.Text = hora;
+            textBoxData.Enabled = false;
+            textBoxHora.Enabled = false;
+          
         }
     }
 }

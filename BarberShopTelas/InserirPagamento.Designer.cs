@@ -42,6 +42,8 @@
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.buttonCheckPg = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxCodCaixa = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -156,12 +158,30 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 12;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(10, 44);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Codigo do caixa :";
+            // 
+            // textBoxCodCaixa
+            // 
+            this.textBoxCodCaixa.Location = new System.Drawing.Point(103, 41);
+            this.textBoxCodCaixa.Name = "textBoxCodCaixa";
+            this.textBoxCodCaixa.Size = new System.Drawing.Size(37, 20);
+            this.textBoxCodCaixa.TabIndex = 14;
+            // 
             // InserirPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(362, 341);
+            this.Controls.Add(this.textBoxCodCaixa);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonCheckPg);
             this.Controls.Add(this.maskedTextBox1);
@@ -198,5 +218,7 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Button buttonCheckPg;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxCodCaixa;
     }
 }

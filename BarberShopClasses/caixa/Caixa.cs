@@ -10,25 +10,14 @@ namespace BarberShopClasses.caixa
     public class Caixa
     {
         private int cod_caixa;
-        private Pagamento pagamento;
-        private double valor_inicial;
-        private double valor_final;
-        private double valor_atual;
+        private decimal valor_inicial;
+        private decimal valor_final;
+        private decimal valor_atual;
+        private string data;
+        private string hora;
 
-        public Pagamento Pagamento
-        {
-            get
-            {
-                return pagamento;
-            }
 
-            set
-            {
-                pagamento = value;
-            }
-        }
-
-        public double Valor_inicial
+        public decimal Valor_inicial
         {
             get
             {
@@ -41,7 +30,7 @@ namespace BarberShopClasses.caixa
             }
         }
 
-        public double Valor_final
+        public decimal Valor_final
         {
             get
             {
@@ -54,7 +43,7 @@ namespace BarberShopClasses.caixa
             }
         }
 
-        public double Valor_atual
+        public decimal Valor_atual
         {
             get
             {
@@ -77,6 +66,32 @@ namespace BarberShopClasses.caixa
             set
             {
                 cod_caixa = value;
+            }
+        }
+
+        public string Data
+        {
+            get
+            {
+                return data;
+            }
+
+            set
+            {
+                data = value;
+            }
+        }
+
+        public string Hora
+        {
+            get
+            {
+                return hora;
+            }
+
+            set
+            {
+                hora = value;
             }
         }
     }

@@ -119,6 +119,18 @@
   <wsdl:message name="IService1_iniciarCaixa_OutputMessage">
     <wsdl:part name="parameters" element="tns:iniciarCaixaResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_atualizarValorAtual_InputMessage">
+    <wsdl:part name="parameters" element="tns:atualizarValorAtual" />
+  </wsdl:message>
+  <wsdl:message name="IService1_atualizarValorAtual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:atualizarValorAtualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_pesquisarCaixa_InputMessage">
+    <wsdl:part name="parameters" element="tns:pesquisarCaixa" />
+  </wsdl:message>
+  <wsdl:message name="IService1_pesquisarCaixa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:pesquisarCaixaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="inserirCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/inserirCliente" message="tns:IService1_inserirCliente_InputMessage" />
@@ -195,6 +207,14 @@
     <wsdl:operation name="iniciarCaixa">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/iniciarCaixa" message="tns:IService1_iniciarCaixa_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/iniciarCaixaResponse" message="tns:IService1_iniciarCaixa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="atualizarValorAtual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/atualizarValorAtual" message="tns:IService1_atualizarValorAtual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/atualizarValorAtualResponse" message="tns:IService1_atualizarValorAtual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="pesquisarCaixa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/pesquisarCaixa" message="tns:IService1_pesquisarCaixa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/pesquisarCaixaResponse" message="tns:IService1_pesquisarCaixa_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -363,6 +383,24 @@
     </wsdl:operation>
     <wsdl:operation name="iniciarCaixa">
       <soap:operation soapAction="http://tempuri.org/IService1/iniciarCaixa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="atualizarValorAtual">
+      <soap:operation soapAction="http://tempuri.org/IService1/atualizarValorAtual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pesquisarCaixa">
+      <soap:operation soapAction="http://tempuri.org/IService1/pesquisarCaixa" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
