@@ -196,6 +196,7 @@
             // 
             // maskedTextBoxCPF
             // 
+            this.maskedTextBoxCPF.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.maskedTextBoxCPF.Location = new System.Drawing.Point(88, 42);
             this.maskedTextBoxCPF.Mask = "000.000.000-00";
             this.maskedTextBoxCPF.Name = "maskedTextBoxCPF";
@@ -274,6 +275,8 @@
             this.Name = "CadastrarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastrarCliente";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CadastrarCliente_FormClosed);
+            this.Load += new System.EventHandler(this.CadastrarCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -46,7 +46,7 @@ namespace BarberShopClasses.caixa
             {
                 this.abrirConexao();
 
-                string sql = "select valor_inic, valor_atu, valor_fin, hora, data from caixa where cod_caixa = @cod_caixa";
+                string sql = "select cod_caixa, valor_inic, valor_atu, valor_fin, hora, data from caixa where cod_caixa = @cod_caixa";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
@@ -57,6 +57,7 @@ namespace BarberShopClasses.caixa
 
                 while (DbReader.Read())
                 {
+                    cx.Cod_caixa = DbReader.GetInt32(DbReader.GetOrdinal("cod_caixa"));
                     cx.Valor_inicial = DbReader.GetDecimal(DbReader.GetOrdinal("valor_inic"));
                     cx.Valor_atual = DbReader.GetDecimal(DbReader.GetOrdinal("valor_atu"));
                     cx.Valor_final = DbReader.GetDecimal(DbReader.GetOrdinal("valor_fin"));
@@ -75,6 +76,8 @@ namespace BarberShopClasses.caixa
         {
             try
             {
+                decimal valoratu = cx.Valor_atual;
+                decimal valorfin = cx.Valor_final;
                 this.abrirConexao();
 
                 string sql = "UPDATE caixa SET valor_atu = @valor_atu, valor_fin = @valor_fin WHERE cod_caixa = @cod_caixa";
@@ -85,8 +88,8 @@ namespace BarberShopClasses.caixa
                 cmd.Parameters.Add("@valor_fin", SqlDbType.Decimal);
                 cmd.Parameters.Add("@cod_caixa", SqlDbType.Int);
 
-                cmd.Parameters["@valor_atu"].Value = cx.Valor_atual;
-                cmd.Parameters["@valor_fin"].Value = cx.Valor_final;
+                cmd.Parameters["@valor_atu"].Value = valoratu;
+                cmd.Parameters["@valor_fin"].Value = valorfin;
                 cmd.Parameters["@cod_caixa"].Value = cx.Cod_caixa;
 
                 cmd.ExecuteNonQuery();

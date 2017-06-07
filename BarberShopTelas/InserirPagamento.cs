@@ -1,4 +1,4 @@
-﻿using BarberShopClasses.localhost;
+﻿using BarberShopTelas.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -110,7 +110,7 @@ namespace BarberShopTelas
             }
             
 
-            Caixa cx = new Caixa();
+            localhost.Caixa cx = new localhost.Caixa();
             int cod = Convert.ToInt16(textBoxCodCaixa.Text);
          
             Service1 s = new Service1();
