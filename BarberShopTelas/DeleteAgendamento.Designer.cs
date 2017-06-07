@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteAgendamento));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonDeleteAg = new System.Windows.Forms.Button();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
@@ -48,7 +49,7 @@
             this.buttonDeleteAg.Name = "buttonDeleteAg";
             this.buttonDeleteAg.Size = new System.Drawing.Size(75, 23);
             this.buttonDeleteAg.TabIndex = 2;
-            this.buttonDeleteAg.Text = "Deletar";
+            this.buttonDeleteAg.Text = "Remover";
             this.buttonDeleteAg.UseVisualStyleBackColor = true;
             this.buttonDeleteAg.Click += new System.EventHandler(this.buttonDeleteAg_Click);
             // 
@@ -71,8 +72,10 @@
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.buttonDeleteAg);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteAgendamento";
-            this.Text = "DeleteAgendamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Remover Agendamento";
             this.ResumeLayout(false);
             this.PerformLayout();
 

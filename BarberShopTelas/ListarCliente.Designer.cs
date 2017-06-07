@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarCliente));
             this.listViewCliente = new System.Windows.Forms.ListView();
             this.CPF = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -121,9 +122,10 @@
             this.ClientSize = new System.Drawing.Size(656, 215);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listViewCliente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ListarCliente";
+            this.Text = "Lista de Cliente";
             this.Load += new System.EventHandler(this.ListarCliente_Load);
             this.ResumeLayout(false);
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoverCliente));
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.buttonRemoverCliente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,9 +71,10 @@
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.buttonRemoverCliente);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RemoverCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RemoverCliente";
+            this.Text = "Remover Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

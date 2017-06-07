@@ -42,7 +42,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(66, 151);
+            this.button1.Location = new System.Drawing.Point(97, 146);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 40);
+            this.label2.Location = new System.Drawing.Point(47, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 2;
@@ -61,7 +61,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(83, 37);
+            this.textBox2.Location = new System.Drawing.Point(88, 20);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(58, 20);
             this.textBox2.TabIndex = 4;
@@ -69,7 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 77);
+            this.label1.Location = new System.Drawing.Point(45, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 5;
@@ -78,7 +78,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 111);
+            this.label3.Location = new System.Drawing.Point(45, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 6;
@@ -86,14 +86,14 @@
             // 
             // textBoxData
             // 
-            this.textBoxData.Location = new System.Drawing.Point(82, 74);
+            this.textBoxData.Location = new System.Drawing.Point(87, 57);
             this.textBoxData.Name = "textBoxData";
             this.textBoxData.Size = new System.Drawing.Size(100, 20);
             this.textBoxData.TabIndex = 7;
             // 
             // textBoxHora
             // 
-            this.textBoxHora.Location = new System.Drawing.Point(82, 108);
+            this.textBoxHora.Location = new System.Drawing.Point(87, 91);
             this.textBoxHora.Name = "textBoxHora";
             this.textBoxHora.Size = new System.Drawing.Size(100, 20);
             this.textBoxHora.TabIndex = 8;
@@ -109,7 +109,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(252, 268);
+            this.ClientSize = new System.Drawing.Size(252, 195);
             this.Controls.Add(this.textBoxHora);
             this.Controls.Add(this.textBoxData);
             this.Controls.Add(this.label3);
@@ -117,6 +117,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AbrirCaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Abrir Caixa";

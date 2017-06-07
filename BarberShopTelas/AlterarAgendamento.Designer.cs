@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlterarAgendamento));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +44,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 61);
+            this.label1.Location = new System.Drawing.Point(33, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 0;
@@ -52,7 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 105);
+            this.label2.Location = new System.Drawing.Point(30, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 1;
@@ -61,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 151);
+            this.label3.Location = new System.Drawing.Point(30, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 2;
@@ -70,7 +71,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(-1, 188);
+            this.label4.Location = new System.Drawing.Point(16, 184);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 3;
@@ -78,7 +79,7 @@
             // 
             // maskedTextBoxCPF
             // 
-            this.maskedTextBoxCPF.Location = new System.Drawing.Point(55, 58);
+            this.maskedTextBoxCPF.Location = new System.Drawing.Point(72, 54);
             this.maskedTextBoxCPF.Mask = "000.000.000-00";
             this.maskedTextBoxCPF.Name = "maskedTextBoxCPF";
             this.maskedTextBoxCPF.Size = new System.Drawing.Size(100, 20);
@@ -87,38 +88,38 @@
             // 
             // textBoxData
             // 
-            this.textBoxData.Location = new System.Drawing.Point(55, 102);
+            this.textBoxData.Location = new System.Drawing.Point(72, 98);
             this.textBoxData.Name = "textBoxData";
             this.textBoxData.Size = new System.Drawing.Size(100, 20);
             this.textBoxData.TabIndex = 5;
             // 
             // textBoxHora
             // 
-            this.textBoxHora.Location = new System.Drawing.Point(55, 148);
+            this.textBoxHora.Location = new System.Drawing.Point(72, 144);
             this.textBoxHora.Name = "textBoxHora";
             this.textBoxHora.Size = new System.Drawing.Size(100, 20);
             this.textBoxHora.TabIndex = 6;
             // 
             // textBoxServico
             // 
-            this.textBoxServico.Location = new System.Drawing.Point(55, 185);
+            this.textBoxServico.Location = new System.Drawing.Point(72, 181);
             this.textBoxServico.Name = "textBoxServico";
             this.textBoxServico.Size = new System.Drawing.Size(26, 20);
             this.textBoxServico.TabIndex = 7;
             // 
             // buttonAtualizar
             // 
-            this.buttonAtualizar.Location = new System.Drawing.Point(55, 235);
+            this.buttonAtualizar.Location = new System.Drawing.Point(113, 238);
             this.buttonAtualizar.Name = "buttonAtualizar";
             this.buttonAtualizar.Size = new System.Drawing.Size(75, 23);
             this.buttonAtualizar.TabIndex = 8;
-            this.buttonAtualizar.Text = "Atualizar";
+            this.buttonAtualizar.Text = "Alterar";
             this.buttonAtualizar.UseVisualStyleBackColor = true;
             this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
             // buttonPesquisar
             // 
-            this.buttonPesquisar.Location = new System.Drawing.Point(161, 58);
+            this.buttonPesquisar.Location = new System.Drawing.Point(178, 54);
             this.buttonPesquisar.Name = "buttonPesquisar";
             this.buttonPesquisar.Size = new System.Drawing.Size(82, 21);
             this.buttonPesquisar.TabIndex = 9;
@@ -131,7 +132,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(336, 362);
+            this.ClientSize = new System.Drawing.Size(297, 273);
             this.Controls.Add(this.buttonPesquisar);
             this.Controls.Add(this.buttonAtualizar);
             this.Controls.Add(this.textBoxServico);
@@ -142,8 +143,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AlterarAgendamento";
-            this.Text = "AlterarAgendamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " Alterar Agendamento";
             this.ResumeLayout(false);
             this.PerformLayout();
 
