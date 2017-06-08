@@ -40,7 +40,6 @@
             this.Bairro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Cidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UF = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewCliente
@@ -57,9 +56,9 @@
             this.Cidade,
             this.UF});
             this.listViewCliente.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.listViewCliente.Location = new System.Drawing.Point(12, 39);
+            this.listViewCliente.Location = new System.Drawing.Point(3, 2);
             this.listViewCliente.Name = "listViewCliente";
-            this.listViewCliente.Size = new System.Drawing.Size(629, 135);
+            this.listViewCliente.Size = new System.Drawing.Size(655, 172);
             this.listViewCliente.TabIndex = 0;
             this.listViewCliente.UseCompatibleStateImageBehavior = false;
             this.listViewCliente.View = System.Windows.Forms.View.Details;
@@ -105,22 +104,11 @@
             // 
             this.UF.Text = "UF";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(281, 180);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Listar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // ListarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 215);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(656, 173);
             this.Controls.Add(this.listViewCliente);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListarCliente";
@@ -144,6 +132,5 @@
         private System.Windows.Forms.ColumnHeader Bairro;
         private System.Windows.Forms.ColumnHeader Cidade;
         private System.Windows.Forms.ColumnHeader UF;
-        private System.Windows.Forms.Button button1;
     }
 }

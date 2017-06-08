@@ -131,6 +131,12 @@
   <wsdl:message name="IService1_pesquisarCaixa_OutputMessage">
     <wsdl:part name="parameters" element="tns:pesquisarCaixaResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_listarCaixa_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarCaixa" />
+  </wsdl:message>
+  <wsdl:message name="IService1_listarCaixa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarCaixaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="inserirCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/inserirCliente" message="tns:IService1_inserirCliente_InputMessage" />
@@ -215,6 +221,10 @@
     <wsdl:operation name="pesquisarCaixa">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/pesquisarCaixa" message="tns:IService1_pesquisarCaixa_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/pesquisarCaixaResponse" message="tns:IService1_pesquisarCaixa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarCaixa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/listarCaixa" message="tns:IService1_listarCaixa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/listarCaixaResponse" message="tns:IService1_listarCaixa_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -401,6 +411,15 @@
     </wsdl:operation>
     <wsdl:operation name="pesquisarCaixa">
       <soap:operation soapAction="http://tempuri.org/IService1/pesquisarCaixa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarCaixa">
+      <soap:operation soapAction="http://tempuri.org/IService1/listarCaixa" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

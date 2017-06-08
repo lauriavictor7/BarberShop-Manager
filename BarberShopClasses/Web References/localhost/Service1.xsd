@@ -15,7 +15,6 @@
           <xs:element minOccurs="0" maxOccurs="1" name="Nome" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="Telefone" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="Sexo" type="xs:string" />
-          <xs:element minOccurs="0" maxOccurs="1" name="Endereco" type="tns:Endereco" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -243,7 +242,6 @@
         <xs:sequence>
           <xs:element minOccurs="0" maxOccurs="1" name="Data" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="Hora" type="xs:string" />
-          <xs:element minOccurs="1" maxOccurs="1" name="Cod_pag" type="xs:int" />
           <xs:element minOccurs="0" maxOccurs="1" name="Metodo" type="xs:string" />
           <xs:element minOccurs="1" maxOccurs="1" name="Valor" type="xs:decimal" />
           <xs:element minOccurs="1" maxOccurs="1" name="Cod_caixa" type="xs:int" />
@@ -313,4 +311,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="listarCaixa">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="listarCaixaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="listarCaixaResult" type="tns:ArrayOfCaixa" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfCaixa">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Caixa" nillable="true" type="tns:Caixa" />
+    </xs:sequence>
+  </xs:complexType>
 </xs:schema>

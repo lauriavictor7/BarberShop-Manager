@@ -25,5 +25,11 @@ namespace BarberShopClasses.caixa
             DadosCaixa dc = new DadosCaixa();
             dc.atualizarValorAtual(cx);
         }
+
+        public List<Caixa> listarCaixa()
+        {
+            DadosCaixa dc = new DadosCaixa();
+            return dc.listarCaixa();
+        }
     }
 }

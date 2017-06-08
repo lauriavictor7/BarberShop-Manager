@@ -119,5 +119,17 @@ namespace BarberShopTelas
             FilaDeAgendamentos la = new FilaDeAgendamentos();
             la.Show();
         }
+
+        private void listarCaixaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarCaixa lc = new ListarCaixa();
+            lc.Show();
+        }
+
+        private void balancoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Balanco b = new Balanco();
+            b.Show();
+        }
     }
 }

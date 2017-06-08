@@ -19,7 +19,6 @@ namespace BarberShopClasses.pagamento
         private string metodo;
         private string data;
         private string hora;
-        [XmlIgnore]
         private int cod_pag;
 
         public new string ToXML()

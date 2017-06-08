@@ -43,15 +43,17 @@
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaDePagamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.servicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removerServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDePagamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarCaixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.balancoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,37 +172,6 @@
             this.alterarClientesToolStripMenuItem.Text = "Alterar Clientes";
             this.alterarClientesToolStripMenuItem.Click += new System.EventHandler(this.alterarClientesToolStripMenuItem_Click);
             // 
-            // financeiroToolStripMenuItem
-            // 
-            this.financeiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pagamentoToolStripMenuItem,
-            this.listaDePagamentosToolStripMenuItem,
-            this.caixaToolStripMenuItem});
-            this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
-            this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.financeiroToolStripMenuItem.Text = "Financeiro";
-            // 
-            // pagamentoToolStripMenuItem
-            // 
-            this.pagamentoToolStripMenuItem.Name = "pagamentoToolStripMenuItem";
-            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.pagamentoToolStripMenuItem.Text = "Realizar Pagamento";
-            this.pagamentoToolStripMenuItem.Click += new System.EventHandler(this.pagamentoToolStripMenuItem_Click);
-            // 
-            // listaDePagamentosToolStripMenuItem
-            // 
-            this.listaDePagamentosToolStripMenuItem.Name = "listaDePagamentosToolStripMenuItem";
-            this.listaDePagamentosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.listaDePagamentosToolStripMenuItem.Text = "Lista de Pagamentos";
-            this.listaDePagamentosToolStripMenuItem.Click += new System.EventHandler(this.listaDePagamentosToolStripMenuItem_Click);
-            // 
-            // caixaToolStripMenuItem
-            // 
-            this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
-            this.caixaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.caixaToolStripMenuItem.Text = "Abrir Caixa";
-            this.caixaToolStripMenuItem.Click += new System.EventHandler(this.caixaToolStripMenuItem_Click);
-            // 
             // servicoToolStripMenuItem
             // 
             this.servicoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -239,6 +210,53 @@
             this.alterarServiçosToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.alterarServiçosToolStripMenuItem.Text = "Alterar Serviços";
             this.alterarServiçosToolStripMenuItem.Click += new System.EventHandler(this.alterarServiçosToolStripMenuItem_Click);
+            // 
+            // financeiroToolStripMenuItem
+            // 
+            this.financeiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pagamentoToolStripMenuItem,
+            this.listaDePagamentosToolStripMenuItem,
+            this.caixaToolStripMenuItem,
+            this.listarCaixaToolStripMenuItem,
+            this.balancoToolStripMenuItem});
+            this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
+            this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.financeiroToolStripMenuItem.Text = "Financeiro";
+            // 
+            // pagamentoToolStripMenuItem
+            // 
+            this.pagamentoToolStripMenuItem.Name = "pagamentoToolStripMenuItem";
+            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.pagamentoToolStripMenuItem.Text = "Realizar Pagamento";
+            this.pagamentoToolStripMenuItem.Click += new System.EventHandler(this.pagamentoToolStripMenuItem_Click);
+            // 
+            // listaDePagamentosToolStripMenuItem
+            // 
+            this.listaDePagamentosToolStripMenuItem.Name = "listaDePagamentosToolStripMenuItem";
+            this.listaDePagamentosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.listaDePagamentosToolStripMenuItem.Text = "Lista de Pagamentos";
+            this.listaDePagamentosToolStripMenuItem.Click += new System.EventHandler(this.listaDePagamentosToolStripMenuItem_Click);
+            // 
+            // caixaToolStripMenuItem
+            // 
+            this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
+            this.caixaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.caixaToolStripMenuItem.Text = "Abrir Caixa";
+            this.caixaToolStripMenuItem.Click += new System.EventHandler(this.caixaToolStripMenuItem_Click);
+            // 
+            // listarCaixaToolStripMenuItem
+            // 
+            this.listarCaixaToolStripMenuItem.Name = "listarCaixaToolStripMenuItem";
+            this.listarCaixaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.listarCaixaToolStripMenuItem.Text = "Listar Caixa";
+            this.listarCaixaToolStripMenuItem.Click += new System.EventHandler(this.listarCaixaToolStripMenuItem_Click);
+            // 
+            // balancoToolStripMenuItem
+            // 
+            this.balancoToolStripMenuItem.Name = "balancoToolStripMenuItem";
+            this.balancoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.balancoToolStripMenuItem.Text = "Balanco";
+            this.balancoToolStripMenuItem.Click += new System.EventHandler(this.balancoToolStripMenuItem_Click);
             // 
             // BarberShopHome
             // 
@@ -284,6 +302,8 @@
         private System.Windows.Forms.ToolStripMenuItem alterarServiçosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filaDeAgendamentosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listarCaixaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem balancoToolStripMenuItem;
     }
 }
 

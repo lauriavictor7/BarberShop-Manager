@@ -84,6 +84,9 @@ namespace BarberShopService
 
         [OperationContract]
         Caixa pesquisarCaixa(int cod);
+
+        [OperationContract]
+        List<Caixa> listarCaixa();
         #endregion
     }
 

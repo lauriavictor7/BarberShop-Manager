@@ -27,6 +27,7 @@ namespace BarberShopTelas.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Endereco))]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback inserirClienteOperationCompleted;
@@ -70,6 +71,8 @@ namespace BarberShopTelas.localhost {
         private System.Threading.SendOrPostCallback atualizarValorAtualOperationCompleted;
         
         private System.Threading.SendOrPostCallback pesquisarCaixaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback listarCaixaOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -171,6 +174,9 @@ namespace BarberShopTelas.localhost {
         
         /// <remarks/>
         public event pesquisarCaixaCompletedEventHandler pesquisarCaixaCompleted;
+        
+        /// <remarks/>
+        public event listarCaixaCompletedEventHandler listarCaixaCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/inserirCliente", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -762,6 +768,33 @@ namespace BarberShopTelas.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/listarCaixa", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Caixa[] listarCaixa() {
+            object[] results = this.Invoke("listarCaixa", new object[0]);
+            return ((Caixa[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void listarCaixaAsync() {
+            this.listarCaixaAsync(null);
+        }
+        
+        /// <remarks/>
+        public void listarCaixaAsync(object userState) {
+            if ((this.listarCaixaOperationCompleted == null)) {
+                this.listarCaixaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnlistarCaixaOperationCompleted);
+            }
+            this.InvokeAsync("listarCaixa", new object[0], this.listarCaixaOperationCompleted, userState);
+        }
+        
+        private void OnlistarCaixaOperationCompleted(object arg) {
+            if ((this.listarCaixaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.listarCaixaCompleted(this, new listarCaixaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -796,8 +829,6 @@ namespace BarberShopTelas.localhost {
         private string telefoneField;
         
         private string sexoField;
-        
-        private Endereco endereco1Field;
         
         /// <remarks/>
         public string Cpf {
@@ -836,17 +867,6 @@ namespace BarberShopTelas.localhost {
             }
             set {
                 this.sexoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Endereco")]
-        public Endereco Endereco1 {
-            get {
-                return this.endereco1Field;
-            }
-            set {
-                this.endereco1Field = value;
             }
         }
     }
@@ -1141,8 +1161,6 @@ namespace BarberShopTelas.localhost {
         
         private string horaField;
         
-        private int cod_pagField;
-        
         private string metodoField;
         
         private decimal valorField;
@@ -1166,16 +1184,6 @@ namespace BarberShopTelas.localhost {
             }
             set {
                 this.horaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Cod_pag {
-            get {
-                return this.cod_pagField;
-            }
-            set {
-                this.cod_pagField = value;
             }
         }
         
@@ -1488,6 +1496,32 @@ namespace BarberShopTelas.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Caixa)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void listarCaixaCompletedEventHandler(object sender, listarCaixaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class listarCaixaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal listarCaixaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Caixa[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Caixa[])(this.results[0]));
             }
         }
     }

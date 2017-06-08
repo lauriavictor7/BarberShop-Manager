@@ -89,6 +89,12 @@
     <Compile Include="AtualizarServico.Designer.cs">
       <DependentUpon>AtualizarServico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Balanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Balanco.Designer.cs">
+      <DependentUpon>Balanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="BarberShopHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,12 @@
     </Compile>
     <Compile Include="ListaAgendamento.Designer.cs">
       <DependentUpon>ListaAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListarCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarCaixa.Designer.cs">
+      <DependentUpon>ListarCaixa.cs</DependentUpon>
     </Compile>
     <Compile Include="ListarCliente.cs">
       <SubType>Form</SubType>
@@ -191,6 +203,9 @@
     <EmbeddedResource Include="AtualizarServico.resx">
       <DependentUpon>AtualizarServico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Balanco.resx">
+      <DependentUpon>Balanco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BarberShopHome.resx">
       <DependentUpon>BarberShopHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaAgendamento.resx">
       <DependentUpon>ListaAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarCaixa.resx">
+      <DependentUpon>ListarCaixa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarCliente.resx">
       <DependentUpon>ListarCliente.cs</DependentUpon>

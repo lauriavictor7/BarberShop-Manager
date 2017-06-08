@@ -52,7 +52,6 @@ namespace BarberShopTelas
                 Service1 s = new Service1();
                 cpf = maskedTextBox1.Text;
                 Cliente c = new Cliente();
-                c.Endereco1 = new Endereco();
                 c = s.buscarCliente(cpf);
                 textBoxNome.Text = c.Nome;
                 textBoxTelefone.Text = c.Telefone;

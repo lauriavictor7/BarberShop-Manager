@@ -21,22 +21,12 @@ namespace BarberShopTelas
 
         private void ListarCliente_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void listViewCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             try
             {
                 Service1 s = new Service1();
-                foreach(localhost.Cliente cliente in s.listarCliente())
+                foreach (localhost.Cliente cliente in s.listarCliente())
                 {
-                    cliente.Endereco1 = new Endereco();
+
                     ListViewItem linha = listViewCliente.Items.Add(cliente.Cpf);
                     linha.SubItems.Add(cliente.Nome);
                     linha.SubItems.Add(cliente.Telefone);
@@ -49,10 +39,17 @@ namespace BarberShopTelas
                     linha.SubItems.Add(cliente.Uf);
                 }
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);
             }
         }
+
+        private void listViewCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -40,5 +40,10 @@ namespace BarberShopTelas
                 MessageBox.Show("Error " + ex.Message);
             }
         }
+
+        private void listViewAg_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

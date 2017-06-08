@@ -101,5 +101,40 @@ namespace BarberShopClasses.caixa
                 throw new Exception("Error " + ex.Message);
             }
         }
+        public List<Caixa> listarCaixa()
+        {
+            try
+            {
+                List<Caixa> retorno = new List<Caixa>();
+
+                this.abrirConexao();
+                string sql = "select cod_caixa, valor_inic, valor_atu, valor_fin, data, hora from caixa";
+                SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+                SqlDataReader DbReader = cmd.ExecuteReader();
+                while (DbReader.Read())
+                {
+                    Caixa cx = new Caixa();
+
+                    cx.Cod_caixa = DbReader.GetInt32(DbReader.GetOrdinal("cod_caixa"));
+                    cx.Valor_inicial = DbReader.GetDecimal(DbReader.GetOrdinal("valor_inic"));
+                    cx.Valor_atual = DbReader.GetDecimal(DbReader.GetOrdinal("valor_atu"));
+                    cx.Valor_final = DbReader.GetDecimal(DbReader.GetOrdinal("valor_fin"));
+                    cx.Hora = DbReader.GetString(DbReader.GetOrdinal("hora"));
+                    cx.Data = DbReader.GetString(DbReader.GetOrdinal("data"));
+
+                    retorno.Add(cx);
+                }
+                DbReader.Close();
+                cmd.Dispose();
+                this.fecharConexao();
+                return retorno;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error " + ex.Message);
+            }
+        }
     }
-}
+    }
+

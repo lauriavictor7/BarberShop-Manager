@@ -54,6 +54,7 @@
             this.listViewAg.TabIndex = 2;
             this.listViewAg.UseCompatibleStateImageBehavior = false;
             this.listViewAg.View = System.Windows.Forms.View.Details;
+            this.listViewAg.SelectedIndexChanged += new System.EventHandler(this.listViewAg_SelectedIndexChanged);
             // 
             // Cod_Agendamento
             // 

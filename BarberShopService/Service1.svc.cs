@@ -154,6 +154,12 @@ namespace BarberShopService
             NegocioCaixa nc = new NegocioCaixa();
             return nc.pesquisarCaixa(cod);
         }
+
+        public List<Caixa> listarCaixa()
+        {
+            NegocioCaixa nc = new NegocioCaixa();
+            return nc.listarCaixa();
+        }
         #endregion
     }
 }

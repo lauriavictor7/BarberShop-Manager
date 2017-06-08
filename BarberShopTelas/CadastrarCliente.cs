@@ -43,23 +43,21 @@ namespace BarberShopTelas
         {
 
 
+                localhost.Cliente c = new localhost.Cliente();
+                c.Cpf = maskedTextBoxCPF.Text;
+                c.Nome = textBoxNome.Text;
+                c.Telefone = textBoxTelefone.Text;
+                c.Cep = maskedTextBoxCEP.Text;
+                c.Rua = textBoxRua.Text;
+                c.Bairro = textBoxBairro.Text;
+                c.Numero = textBoxNumero.Text;
+                c.Uf = textBoxUF.Text;
+                c.Cidade = textBoxCidade.Text;
+                c.Sexo = textBox1.Text;
 
-            localhost.Cliente c = new localhost.Cliente();
-            c.Endereco1 = new localhost.Endereco();
-            c.Cpf = maskedTextBoxCPF.Text;
-            c.Nome = textBoxNome.Text;
-            c.Telefone = textBoxTelefone.Text;
-            c.Cep = maskedTextBoxCEP.Text;
-            c.Rua = textBoxRua.Text;
-            c.Bairro = textBoxBairro.Text;
-            c.Numero = textBoxNumero.Text;
-            c.Uf = textBoxUF.Text;
-            c.Cidade = textBoxCidade.Text;
-            c.Sexo = textBox1.Text;
-
-            Service1 sv = new Service1();
-            sv.inserirCliente(c);
-
+                Service1 sv = new Service1();
+                sv.inserirCliente(c);
+            
             MessageBox.Show("Sucesso!");
 
 
