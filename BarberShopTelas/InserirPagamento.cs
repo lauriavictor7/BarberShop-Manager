@@ -85,6 +85,13 @@ namespace BarberShopTelas
                 textBoxNome.Enabled = false;
                 textBoxValorPg.Text = valor;
                 textBoxValorPg.Enabled = false;
+                if (textBoxValorPg.Text.Equals("0"))
+                {
+                    textBoxValorPg.Text = " ";
+                    maskedTextBox1.Text = " ";
+                    textBoxNome.Enabled = true;
+                    MessageBox.Show("Insira um cliente valido");
+                }
             }catch(Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);
