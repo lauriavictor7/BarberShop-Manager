@@ -237,7 +237,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(247, 82);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.Size = new System.Drawing.Size(79, 20);
             this.textBox1.TabIndex = 28;
             // 
             // buttonLimpar

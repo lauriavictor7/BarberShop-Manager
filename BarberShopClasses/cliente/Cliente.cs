@@ -16,7 +16,7 @@ namespace BarberShopClasses.cliente
         private string nome;
         private string telefone;
         private string sexo;
-        private Endereco endereco;
+
 
         public string ToXML()
         {
@@ -31,10 +31,7 @@ namespace BarberShopClasses.cliente
             return stringWriter.ToString();
         }
 
-        public Cliente ()
-        {
-            this.endereco = new Endereco();
-        }
+      
 
         public string Cpf
         {
@@ -88,18 +85,7 @@ namespace BarberShopClasses.cliente
             }
         }
 
-        public Endereco Endereco
-        {
-            get
-            {
-                return endereco;
-            }
 
-            set
-            {
-                endereco = value;
-            }
-        }
     }
 }
 

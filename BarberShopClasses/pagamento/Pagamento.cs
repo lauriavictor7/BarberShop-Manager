@@ -13,12 +13,14 @@ namespace BarberShopClasses.pagamento
 {
     public class Pagamento : Cliente
     {
-        private int cod_pag;
+        
         private int cod_caixa;
         private decimal valor;
         private string metodo;
         private string data;
         private string hora;
+        [XmlIgnore]
+        private int cod_pag;
 
         public new string ToXML()
         {
@@ -60,7 +62,7 @@ namespace BarberShopClasses.pagamento
                 hora = value;
             }
         }
-
+        [XmlIgnore]
         public int Cod_pag
         {
             get
@@ -100,7 +102,7 @@ namespace BarberShopClasses.pagamento
             }
         }
 
-
+        
         public int Cod_caixa
         {
             get

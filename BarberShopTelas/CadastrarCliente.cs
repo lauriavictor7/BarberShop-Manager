@@ -107,7 +107,7 @@ namespace BarberShopTelas
                 Console.WriteLine();
             }
 
-            //Após carregar todos os dados, inicia a thread de salvar dados
+            
             TSalvarDados.Start();
             Console.WriteLine(maskedTextBoxCPF.Text);
 
@@ -145,7 +145,7 @@ namespace BarberShopTelas
 
             if (!cliente.Equals(newCliente))
             {
-                //altera o cliente para um novo
+                
                 cliente = newCliente;
 
                 documento.LoadXml(cliente.ToXML());

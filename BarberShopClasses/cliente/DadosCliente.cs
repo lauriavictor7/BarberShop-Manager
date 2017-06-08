@@ -114,7 +114,7 @@ namespace BarberShopClasses.cliente
                 while (DbReader.Read())
                 {
                     Cliente c = new Cliente();
-                    c.Endereco = new genericas.Endereco();
+                   
 
                     c.Cpf = DbReader.GetString(DbReader.GetOrdinal("cpf"));
                     c.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
@@ -169,7 +169,7 @@ namespace BarberShopClasses.cliente
         public Cliente buscarCliente(string cpf)
         {
             Cliente c = new Cliente();
-            c.Endereco = new genericas.Endereco();
+            
             try
             {
                 this.abrirConexao();

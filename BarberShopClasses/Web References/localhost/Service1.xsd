@@ -238,14 +238,18 @@
     </xs:complexType>
   </xs:element>
   <xs:complexType name="Pagamento">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="Data" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Hora" type="xs:string" />
-      <xs:element minOccurs="1" maxOccurs="1" name="Cod_pag" type="xs:int" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Metodo" type="xs:string" />
-      <xs:element minOccurs="1" maxOccurs="1" name="Valor" type="xs:decimal" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Cliente" type="tns:Cliente" />
-    </xs:sequence>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Cliente">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Data" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Hora" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Cod_pag" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Metodo" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Valor" type="xs:decimal" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Cod_caixa" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:element name="CadastrarPagamentoResponse">
     <xs:complexType />

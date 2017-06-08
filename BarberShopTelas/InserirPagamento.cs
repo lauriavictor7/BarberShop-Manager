@@ -19,7 +19,6 @@ namespace BarberShopTelas
 
         Random randNum = new Random();
         private new string Location;
-        private BarberShopClasses.pagamento.Pagamento pagamento;
         private static XmlDocument documento;
 
         public InserirPagamento()
@@ -29,32 +28,32 @@ namespace BarberShopTelas
        
         private void InserirPagamento_Load(object sender, EventArgs e)
         {
-
-            //Ao carregar o Form, criar um cliente, documento XML, thread para salvar dados
-            pagamento = new BarberShopClasses.pagamento.Pagamento();
             documento = new XmlDocument();
-            
+
         }
 
 
         private void SaveXML()
         {
+            
+            
             BarberShopClasses.pagamento.Pagamento newPagamento = new BarberShopClasses.pagamento.Pagamento()
             {
                
                Cod_caixa = Convert.ToInt32(textBoxCodCaixa.Text),
                Cpf = maskedTextBox1.Text,
+               Nome = textBoxNome.Text,
                Data = textBoxDataPg.Text,
                Hora = textBoxHoraPg.Text,
-               Valor = Convert.ToDecimal(textBoxValorPg.Text),
-              
+               Valor = Convert.ToDecimal(textBoxValorPg.Text)
+               
             };
 
             #region Colocando numero randomico na Notafiscal
             int rand = randNum.Next(50);
             Location = @"C:\Users\luizd\Desktop\Estudos\Persistindo os dados no XML\SalvandoDadosEmXML\NF" + rand + ".xml";
             #endregion
-            documento.LoadXml(pagamento.ToXML());
+            documento.LoadXml(newPagamento.ToXML());
             documento.Save(Location);
             }
         
@@ -75,12 +74,15 @@ namespace BarberShopTelas
         {
             try
             {
+                Service1 sv = new Service1();
                 string cpf = maskedTextBox1.Text;
                 string valor;
-                Service1 sv = new Service1();
+                var cliente = sv.buscarCliente(cpf);
                 Servico s = new Servico();
                 s = sv.buscarValor(cpf);
                 valor = Convert.ToString(s.Preco);
+                textBoxNome.Text = cliente.Nome;
+                textBoxNome.Enabled = false;
                 textBoxValorPg.Text = valor;
                 textBoxValorPg.Enabled = false;
             }catch(Exception ex)
@@ -92,7 +94,8 @@ namespace BarberShopTelas
         private void buttonPagamento_Click(object sender, EventArgs e)
         {
             Pagamento p = new Pagamento();
-            
+            Agendamento a = new Agendamento();
+            a.Cliente = new Cliente();
             
             if(maskedTextBox1.Equals(" "))
             {
@@ -108,39 +111,45 @@ namespace BarberShopTelas
             }
             if(comboBox1.SelectedIndex == 0)
             {
-                p.Cliente = new Cliente();
+                
                 p.Metodo = "Db";
                 p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
                 string horastr = textBoxHoraPg.Text.ToString();
                 p.Hora = horastr;
                 p.Data = textBoxDataPg.Text;
-                p.Cliente.Cpf = maskedTextBox1.Text;
+                p.Cpf = maskedTextBox1.Text;
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
+                a.Cliente.Cpf = p.Cpf;
+                sv.RemoverAgendamento(a);
             }
             if(comboBox1.SelectedIndex == 1)
             {
-                p.Cliente = new Cliente();
+                
                 p.Metodo = "Cd";
                 p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
                 string horastr = textBoxHoraPg.Text.ToString();
                 p.Hora = horastr;
                 p.Data = textBoxDataPg.Text;
-                p.Cliente.Cpf = maskedTextBox1.Text;
+                p.Cpf = maskedTextBox1.Text;
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
+                a.Cliente.Cpf = p.Cpf;
+                sv.RemoverAgendamento(a);
             }
             if(comboBox1.SelectedIndex == 2)
             {
-                p.Cliente = new Cliente();
+                
                 p.Metodo = "Av";
                 p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
                 string horastr = textBoxHoraPg.Text.ToString();
                 p.Hora = horastr;
                 p.Data = textBoxDataPg.Text;
-                p.Cliente.Cpf = maskedTextBox1.Text;
+                p.Cpf = maskedTextBox1.Text;
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
+                a.Cliente.Cpf = p.Cpf;
+                sv.RemoverAgendamento(a);
             }
             
 

@@ -781,6 +781,7 @@ namespace BarberShopTelas.localhost {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Pagamento))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -852,6 +853,7 @@ namespace BarberShopTelas.localhost {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Cliente))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Pagamento))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1019,87 +1021,6 @@ namespace BarberShopTelas.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Pagamento {
-        
-        private string dataField;
-        
-        private string horaField;
-        
-        private int cod_pagField;
-        
-        private string metodoField;
-        
-        private decimal valorField;
-        
-        private Cliente clienteField;
-        
-        /// <remarks/>
-        public string Data {
-            get {
-                return this.dataField;
-            }
-            set {
-                this.dataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Hora {
-            get {
-                return this.horaField;
-            }
-            set {
-                this.horaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Cod_pag {
-            get {
-                return this.cod_pagField;
-            }
-            set {
-                this.cod_pagField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Metodo {
-            get {
-                return this.metodoField;
-            }
-            set {
-                this.metodoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public decimal Valor {
-            get {
-                return this.valorField;
-            }
-            set {
-                this.valorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Cliente Cliente {
-            get {
-                return this.clienteField;
-            }
-            set {
-                this.clienteField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class Agendamento {
         
         private string dataField;
@@ -1204,6 +1125,87 @@ namespace BarberShopTelas.localhost {
             }
             set {
                 this.cod_servField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Pagamento : Cliente {
+        
+        private string dataField;
+        
+        private string horaField;
+        
+        private int cod_pagField;
+        
+        private string metodoField;
+        
+        private decimal valorField;
+        
+        private int cod_caixaField;
+        
+        /// <remarks/>
+        public string Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Hora {
+            get {
+                return this.horaField;
+            }
+            set {
+                this.horaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Cod_pag {
+            get {
+                return this.cod_pagField;
+            }
+            set {
+                this.cod_pagField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Metodo {
+            get {
+                return this.metodoField;
+            }
+            set {
+                this.metodoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Cod_caixa {
+            get {
+                return this.cod_caixaField;
+            }
+            set {
+                this.cod_caixaField = value;
             }
         }
     }
