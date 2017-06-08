@@ -29,6 +29,7 @@ namespace BarberShopTelas
             Caixa cx = new Caixa();
             int cod = Convert.ToInt32(textBoxCod.Text);
             cx = sv.pesquisarCaixa(cod);
+            sv.atualizarValorAtual(cx);
 
             label4.Text = "R$" + cx.Valor_inicial.ToString();
             label5.Text = "R$" + cx.Valor_atual.ToString();

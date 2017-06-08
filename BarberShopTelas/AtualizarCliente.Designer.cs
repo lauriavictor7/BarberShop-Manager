@@ -48,7 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBoxCEP = new System.Windows.Forms.TextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -211,12 +211,13 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBoxCEP
+            // maskedTextBox2
             // 
-            this.textBoxCEP.Location = new System.Drawing.Point(73, 175);
-            this.textBoxCEP.Name = "textBoxCEP";
-            this.textBoxCEP.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCEP.TabIndex = 44;
+            this.maskedTextBox2.Location = new System.Drawing.Point(80, 178);
+            this.maskedTextBox2.Mask = "00000-000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox2.TabIndex = 44;
             // 
             // AtualizarCliente
             // 
@@ -224,7 +225,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(524, 313);
-            this.Controls.Add(this.textBoxCEP);
+            this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.textBoxUF);
@@ -275,6 +276,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBoxCEP;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
     }
 }

@@ -18,19 +18,25 @@ namespace BarberShopTelas
             InitializeComponent();
         }
 
+        private void limpaTxt()
+        {
+            textBox2.Clear();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
                 localhost.Caixa cx = new localhost.Caixa();
                 cx.Valor_inicial = Convert.ToDecimal(textBox2.Text);
-                cx.Data = textBoxData.Text;
-                cx.Hora = textBoxHora.Text;
-                
+                cx.Data = maskedTextBox1.Text;
+                cx.Hora = maskedTextBox2.Text;
+                              
                 Service1 sv = new Service1();
                 sv.iniciarCaixa(cx);
 
                 MessageBox.Show("Sucesso!");
+                limpaTxt();
             } catch (Exception ex)
             {
                 MessageBox.Show("Erro. " + ex.Message);
@@ -43,10 +49,10 @@ namespace BarberShopTelas
             string hora;
             date = DateTime.Now.ToShortDateString();
             hora = DateTime.Now.ToLongTimeString();
-            textBoxData.Text = date;
-            textBoxHora.Text = hora;
-            textBoxData.Enabled = false;
-            textBoxHora.Enabled = false;
+            maskedTextBox1.Text = date;
+            maskedTextBox2.Text = hora;
+            maskedTextBox1.Enabled = false;
+            maskedTextBox2.Enabled = false;
           
         }
     }

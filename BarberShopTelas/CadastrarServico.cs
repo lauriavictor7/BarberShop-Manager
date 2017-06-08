@@ -19,6 +19,12 @@ namespace BarberShopTelas
             InitializeComponent();
         }
 
+        private void limpaTxt()
+        {
+            textBox2.Clear();
+            textBox3.Clear();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -31,6 +37,8 @@ namespace BarberShopTelas
                 sv.inserirServico(s);
 
                 MessageBox.Show("Sucesso!");
+                limpaTxt();
+
             }
             catch (Exception ex)
             {

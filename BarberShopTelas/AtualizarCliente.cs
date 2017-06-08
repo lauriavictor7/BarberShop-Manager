@@ -18,6 +18,18 @@ namespace BarberShopTelas
             InitializeComponent();
         }
 
+        private void limpaTxt()
+        {
+            maskedTextBox1.Clear();
+            textBoxBairro.Clear();
+            maskedTextBox2.Clear();
+            textBoxNome.Clear();
+            textBoxNumero.Clear();
+            textBoxRua.Clear();
+            textBoxTelefone.Clear();
+            textBoxUF.Clear();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -28,7 +40,7 @@ namespace BarberShopTelas
                 c.Telefone = textBoxTelefone.Text;
                 c.Bairro = textBoxBairro.Text;
                 c.Rua = textBoxRua.Text;
-                c.Cep = textBoxCEP.Text;
+                c.Cep = maskedTextBox2.Text;
                 c.Numero = textBoxNumero.Text;
                 c.Cidade = textBoxCidade.Text;
                 c.Uf = textBoxUF.Text;
@@ -37,6 +49,8 @@ namespace BarberShopTelas
                 sv.atualizarCLiente(c);
 
                 MessageBox.Show("Sucesso!");
+                limpaTxt();
+
             }
             catch (Exception ex)
             {
@@ -58,7 +72,7 @@ namespace BarberShopTelas
                 textBoxBairro.Text = c.Bairro;
                 textBoxCidade.Text = c.Cidade;
                 textBoxNumero.Text = c.Numero.ToString();
-                textBoxCEP.Text = c.Cep;
+                maskedTextBox2.Text = c.Cep;
                 textBoxRua.Text = c.Rua;
                 textBoxUF.Text = c.Uf;
                 textBoxCidade.Text = c.Cidade;            

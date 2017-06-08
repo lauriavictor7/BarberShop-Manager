@@ -17,7 +17,13 @@ namespace BarberShopTelas
         {
             InitializeComponent();
         }
-
+        private void limpaTxt()
+        {
+            maskedTextBoxCPF.Clear();
+            textBoxData.Clear();
+            textBoxHora.Clear();
+            textBoxServico.Clear();
+        }
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
             try
@@ -57,7 +63,9 @@ namespace BarberShopTelas
                 a.Servico.Cod_serv = Convert.ToInt32(textBoxServico.Text);
                 Service1 s = new Service1();
                 s.atualizarAgendamento(a);
+
                 MessageBox.Show("Sucesso !");
+                limpaTxt();
             }catch(Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);

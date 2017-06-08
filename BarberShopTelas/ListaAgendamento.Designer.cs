@@ -48,9 +48,9 @@
             this.Data,
             this.Hora});
             this.listViewAg.FullRowSelect = true;
-            this.listViewAg.Location = new System.Drawing.Point(12, 39);
+            this.listViewAg.Location = new System.Drawing.Point(0, 0);
             this.listViewAg.Name = "listViewAg";
-            this.listViewAg.Size = new System.Drawing.Size(629, 135);
+            this.listViewAg.Size = new System.Drawing.Size(657, 137);
             this.listViewAg.TabIndex = 2;
             this.listViewAg.UseCompatibleStateImageBehavior = false;
             this.listViewAg.View = System.Windows.Forms.View.Details;
@@ -85,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(656, 241);
+            this.ClientSize = new System.Drawing.Size(656, 135);
             this.Controls.Add(this.listViewAg);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListaAgendamento";

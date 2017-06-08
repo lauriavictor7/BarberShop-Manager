@@ -20,6 +20,11 @@ namespace BarberShopTelas
             InitializeComponent();
         }
 
+        private void limpaTxt()
+        {
+            maskedTextBox1.Clear();
+        }
+
         private void buttonDeleteAg_Click(object sender, EventArgs e)
         {
             try
@@ -30,7 +35,10 @@ namespace BarberShopTelas
                 a.Cliente.Cpf = maskedTextBox1.Text;
                 Service1 sv = new Service1();
                 sv.RemoverAgendamento(a);
-                MessageBox.Show("Agendamento Apagado com Sucesso !");
+
+                MessageBox.Show("Sucesso!");
+                limpaTxt();
+
             }catch(Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);

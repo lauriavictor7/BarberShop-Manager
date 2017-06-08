@@ -37,7 +37,6 @@
             this.listaDeAgendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removerAgendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filaDeAgendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,8 +62,8 @@
             this.arquivoToolStripMenuItem,
             this.agendamentoToolStripMenuItem,
             this.clienteToolStripMenuItem,
-            this.servicoToolStripMenuItem,
-            this.financeiroToolStripMenuItem});
+            this.financeiroToolStripMenuItem,
+            this.servicoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
@@ -92,8 +91,7 @@
             this.agendarToolStripMenuItem,
             this.listaDeAgendamentosToolStripMenuItem,
             this.removerAgendamentosToolStripMenuItem,
-            this.atualizarToolStripMenuItem,
-            this.filaDeAgendamentosToolStripMenuItem});
+            this.atualizarToolStripMenuItem});
             this.agendamentoToolStripMenuItem.Name = "agendamentoToolStripMenuItem";
             this.agendamentoToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.agendamentoToolStripMenuItem.Text = "Agendamento";
@@ -125,13 +123,6 @@
             this.atualizarToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.atualizarToolStripMenuItem.Text = "Alterar Agendamento";
             this.atualizarToolStripMenuItem.Click += new System.EventHandler(this.atualizarToolStripMenuItem_Click);
-            // 
-            // filaDeAgendamentosToolStripMenuItem
-            // 
-            this.filaDeAgendamentosToolStripMenuItem.Name = "filaDeAgendamentosToolStripMenuItem";
-            this.filaDeAgendamentosToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.filaDeAgendamentosToolStripMenuItem.Text = "Fila de Agendamentos";
-            this.filaDeAgendamentosToolStripMenuItem.Click += new System.EventHandler(this.filaDeAgendamentosToolStripMenuItem_Click);
             // 
             // clienteToolStripMenuItem
             // 
@@ -180,8 +171,8 @@
             this.removerServiçosToolStripMenuItem,
             this.alterarServiçosToolStripMenuItem});
             this.servicoToolStripMenuItem.Name = "servicoToolStripMenuItem";
-            this.servicoToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.servicoToolStripMenuItem.Text = "Servico";
+            this.servicoToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.servicoToolStripMenuItem.Text = "Serviços";
             // 
             // cadastrarToolStripMenuItem2
             // 
@@ -301,7 +292,6 @@
         private System.Windows.Forms.ToolStripMenuItem listaDeServiçosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterarServiçosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem filaDeAgendamentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarCaixaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem balancoToolStripMenuItem;
     }

@@ -18,6 +18,11 @@ namespace BarberShopTelas
             InitializeComponent();
         }
 
+        private void limpaTxt()
+        {
+            maskedTextBox1.Clear();
+        }
+
         private void buttonRemoverCliente_Click(object sender, EventArgs e)
         {
             try
@@ -29,6 +34,8 @@ namespace BarberShopTelas
                 sv.removerCliente(c);
 
                 MessageBox.Show("Sucesso!");
+                limpaTxt();
+
             }
             catch (Exception ex)
             {

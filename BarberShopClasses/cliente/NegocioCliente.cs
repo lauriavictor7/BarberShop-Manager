@@ -69,11 +69,6 @@ namespace BarberShopClasses.cliente
                 throw new Exception ("Informe o CPF. ");
             }
 
-            if (c.Cpf.Length < 14)
-            {
-                throw new Exception("Informe um CPF válido. ");
-            }
-
             if (c.Nome == "")
             {
                 throw new Exception("Informe o NOME. ");
@@ -84,7 +79,7 @@ namespace BarberShopClasses.cliente
                 throw new Exception("Informe o TELEFONE. ");
             }
 
-            if (c.Telefone.Length < 12)
+            if (c.Telefone.Length < 8)
             {
                 throw new Exception("Informe um TELEFONE válido. ");
             }
@@ -130,7 +125,7 @@ namespace BarberShopClasses.cliente
                 throw new Exception("Informe o CPF. ");
             }
 
-            if(c.Cpf.Length < 14)
+            if (c.Cpf.Length > 14)
             {
                 throw new Exception("Informe um CPF válido. ");
             }

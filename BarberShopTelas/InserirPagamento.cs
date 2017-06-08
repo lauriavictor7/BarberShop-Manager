@@ -25,6 +25,17 @@ namespace BarberShopTelas
         {
             InitializeComponent();
         }
+
+        private void limpaTxt()
+        {
+            maskedTextBox1.Clear();
+            textBoxCodCaixa.Clear();
+            textBoxDataPg.Clear();
+            textBoxHoraPg.Clear();
+            textBoxNome.Clear();
+            textBoxValorPg.Clear();
+            comboBox1.Items.Clear();
+        }
        
         private void InserirPagamento_Load(object sender, EventArgs e)
         {
@@ -51,7 +62,7 @@ namespace BarberShopTelas
 
             #region Colocando numero randomico na Notafiscal
             int rand = randNum.Next(50);
-            Location = @"C:\Users\luizd\Desktop\Estudos\Persistindo os dados no XML\SalvandoDadosEmXML\NF" + rand + ".xml";
+            Location = @"C:\Users\victo\Desktop\NotasSalvas\NF" + rand + ".xml";
             #endregion
             documento.LoadXml(newPagamento.ToXML());
             documento.Save(Location);
@@ -125,8 +136,10 @@ namespace BarberShopTelas
                 p.Hora = horastr;
                 p.Data = textBoxDataPg.Text;
                 p.Cpf = maskedTextBox1.Text;
+
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
+
                 a.Cliente.Cpf = p.Cpf;
                 sv.RemoverAgendamento(a);
             }
@@ -139,8 +152,10 @@ namespace BarberShopTelas
                 p.Hora = horastr;
                 p.Data = textBoxDataPg.Text;
                 p.Cpf = maskedTextBox1.Text;
+
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
+
                 a.Cliente.Cpf = p.Cpf;
                 sv.RemoverAgendamento(a);
             }
@@ -153,10 +168,14 @@ namespace BarberShopTelas
                 p.Hora = horastr;
                 p.Data = textBoxDataPg.Text;
                 p.Cpf = maskedTextBox1.Text;
+
+
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
+
                 a.Cliente.Cpf = p.Cpf;
                 sv.RemoverAgendamento(a);
+
             }
             
 
@@ -171,9 +190,10 @@ namespace BarberShopTelas
 
             s.atualizarValorAtual(cx);
 
-            MessageBox.Show("Sucesso !");
+            MessageBox.Show("Sucesso!");
+            
             SaveXML();
-
+            limpaTxt();
         }
     }
 }

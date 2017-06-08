@@ -172,7 +172,7 @@
             // 
             // textBoxCodCaixa
             // 
-            this.textBoxCodCaixa.Location = new System.Drawing.Point(103, 41);
+            this.textBoxCodCaixa.Location = new System.Drawing.Point(107, 41);
             this.textBoxCodCaixa.Name = "textBoxCodCaixa";
             this.textBoxCodCaixa.Size = new System.Drawing.Size(37, 20);
             this.textBoxCodCaixa.TabIndex = 14;

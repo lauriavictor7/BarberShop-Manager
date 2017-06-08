@@ -21,6 +21,14 @@ namespace BarberShopTelas
             InitializeComponent();
         }
 
+        private void limpaTxt()
+        {
+            maskedTextBox1.Clear();
+            maskedTextBoxDataAg.Clear();
+            maskedTextBoxHoraAg.Clear();
+            textBoxServiAg.Clear();
+        }
+
         private void CadastrarAgendamento_Load(object sender, EventArgs e)
         {
 
@@ -43,6 +51,8 @@ namespace BarberShopTelas
                 sv.CadastrarAgendamento(a);
 
                 MessageBox.Show("Sucesso!");
+                limpaTxt();
+
             }catch(Exception ex)
             {
                 MessageBox.Show("Error" + ex.Message);

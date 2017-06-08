@@ -15,19 +15,28 @@ namespace BarberShopClasses.caixa
         {
             try
             {
+                decimal valoratu = 0;
+                cx.Valor_atual = valoratu;
+                decimal valorfin = 0;
+                cx.Valor_final = valorfin;
+
                 this.abrirConexao();
 
-                string sql = "INSERT INTO Caixa (Valor_Inic, data, hora) VALUES(@Valor_Inic, @data, @hora)";
+                string sql = "INSERT INTO Caixa (Valor_Inic, data, hora, Valor_Atu, Valor_Fin) VALUES(@Valor_Inic, @data, @hora, @Valor_Atu, @Valor_Fin)";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
                 cmd.Parameters.Add("@Valor_Inic", SqlDbType.Decimal);
                 cmd.Parameters.Add("@data", SqlDbType.VarChar);
                 cmd.Parameters.Add("@hora", SqlDbType.VarChar);
+                cmd.Parameters.Add("@valor_atu", SqlDbType.Decimal);
+                cmd.Parameters.Add("@valor_fin", SqlDbType.Decimal);
 
                 cmd.Parameters["@Valor_Inic"].Value = cx.Valor_inicial;
                 cmd.Parameters["@data"].Value = cx.Data;
                 cmd.Parameters["@hora"].Value = cx.Hora;
+                cmd.Parameters["@valor_atu"].Value = cx.Valor_atual;
+                cmd.Parameters["@valor_fin"].Value = cx.Valor_final;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -51,6 +60,7 @@ namespace BarberShopClasses.caixa
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
                 cmd.Parameters.Add("@cod_caixa", SqlDbType.Int);
+
                 cmd.Parameters["@cod_caixa"].Value = cod;
 
                 SqlDataReader DbReader = cmd.ExecuteReader();
@@ -76,8 +86,9 @@ namespace BarberShopClasses.caixa
         {
             try
             {
-                decimal valoratu = cx.Valor_atual;
-                decimal valorfin = cx.Valor_final;
+               decimal valoratu = cx.Valor_atual;
+               decimal valorfin = cx.Valor_final;
+
                 this.abrirConexao();
 
                 string sql = "UPDATE caixa SET valor_atu = @valor_atu, valor_fin = @valor_fin WHERE cod_caixa = @cod_caixa";
@@ -88,9 +99,9 @@ namespace BarberShopClasses.caixa
                 cmd.Parameters.Add("@valor_fin", SqlDbType.Decimal);
                 cmd.Parameters.Add("@cod_caixa", SqlDbType.Int);
 
-                cmd.Parameters["@valor_atu"].Value = valoratu;
+                cmd.Parameters["@valor_atu"].Value = cx.Valor_atual;
                 cmd.Parameters["@valor_fin"].Value = valorfin;
-                cmd.Parameters["@cod_caixa"].Value = cx.Cod_caixa;
+                cmd.Parameters["@cod_caixa"].Value = valoratu;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
