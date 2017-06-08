@@ -4,15 +4,24 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace BarberShopTelas
 {
     public partial class InserirPagamento : Form
     {
+
+        Random randNum = new Random();
+        private new string Location;
+        private BarberShopClasses.pagamento.Pagamento pagamento;
+        private static XmlDocument documento;
+
         public InserirPagamento()
         {
             InitializeComponent();
@@ -20,10 +29,35 @@ namespace BarberShopTelas
        
         private void InserirPagamento_Load(object sender, EventArgs e)
         {
-           
 
+            //Ao carregar o Form, criar um cliente, documento XML, thread para salvar dados
+            pagamento = new BarberShopClasses.pagamento.Pagamento();
+            documento = new XmlDocument();
+            
         }
 
+
+        private void SaveXML()
+        {
+            BarberShopClasses.pagamento.Pagamento newPagamento = new BarberShopClasses.pagamento.Pagamento()
+            {
+               
+               Cod_caixa = Convert.ToInt32(textBoxCodCaixa.Text),
+               Cpf = maskedTextBox1.Text,
+               Data = textBoxDataPg.Text,
+               Hora = textBoxHoraPg.Text,
+               Valor = Convert.ToDecimal(textBoxValorPg.Text),
+              
+            };
+
+            #region Colocando numero randomico na Notafiscal
+            int rand = randNum.Next(50);
+            Location = @"C:\Users\luizd\Desktop\Estudos\Persistindo os dados no XML\SalvandoDadosEmXML\NF" + rand + ".xml";
+            #endregion
+            documento.LoadXml(pagamento.ToXML());
+            documento.Save(Location);
+            }
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             string date;
@@ -122,6 +156,7 @@ namespace BarberShopTelas
             s.atualizarValorAtual(cx);
 
             MessageBox.Show("Sucesso !");
+            SaveXML();
 
         }
     }

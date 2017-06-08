@@ -2,20 +2,37 @@
 using BarberShopClasses.notaFiscal;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace BarberShopClasses.pagamento
 {
-    public class Pagamento
+    public class Pagamento : Cliente
     {
         private int cod_pag;
+        private int cod_caixa;
         private decimal valor;
         private string metodo;
         private string data;
         private string hora;
-        private Cliente cliente;
+
+        public new string ToXML()
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(GetType());
+            StringWriter stringWriter = new StringWriter();
+
+            using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter))
+            {
+                xmlSerializer.Serialize(xmlWriter, this);
+            }
+
+            return stringWriter.ToString();
+        }
+
 
 
         public string Data
@@ -83,16 +100,17 @@ namespace BarberShopClasses.pagamento
             }
         }
 
-        public Cliente Cliente
+
+        public int Cod_caixa
         {
             get
             {
-                return cliente;
+                return cod_caixa;
             }
 
             set
             {
-                cliente = value;
+                cod_caixa = value;
             }
         }
     }

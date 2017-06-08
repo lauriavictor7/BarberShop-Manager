@@ -24,11 +24,10 @@ namespace BarberShopTelas
     public partial class CadastrarCliente : Form
     {
 
-        private string Location = @"Cliente.xml";
+        private new string Location = @"Cliente1.xml";
         private BarberShopClasses.cliente.Cliente cliente;
         private Thread TSalvarDados;
         private static XmlDocument documento;
-
 
         public CadastrarCliente()
         {
@@ -56,23 +55,7 @@ namespace BarberShopTelas
             c.Numero = textBoxNumero.Text;
             c.Uf = textBoxUF.Text;
             c.Cidade = textBoxCidade.Text;
-
-            if (comboBoxSexo.SelectedIndex == -1)
-            {
-                MessageBox.Show("Escolha uma opção por favor");
-            }
-            if (comboBoxSexo.SelectedIndex == 0)
-            {
-
-                c.Sexo = "M";
-
-
-            } if (comboBoxSexo.SelectedIndex == 1)
-            {
-
-                c.Sexo = "F";
-
-            }
+            c.Sexo = textBox1.Text;
 
             Service1 sv = new Service1();
             sv.inserirCliente(c);
@@ -110,7 +93,7 @@ namespace BarberShopTelas
                 documento.Load(Location);
 
                 textBoxNome.Text = documento.SelectSingleNode("/Cliente/Nome").InnerText;
-                maskedTextBoxCEP.Text = documento.SelectSingleNode("/Cliente/Cpf").InnerText;
+                maskedTextBoxCPF.Text = documento.SelectSingleNode("/Cliente/Cpf").InnerText;
                 textBoxTelefone.Text = documento.SelectSingleNode("/Cliente/Telefone").InnerText;
                 maskedTextBoxCEP.Text = documento.SelectSingleNode("/Cliente/Cep").InnerText;
                 textBoxRua.Text = documento.SelectSingleNode("/Cliente/Rua").InnerText;
@@ -118,12 +101,16 @@ namespace BarberShopTelas
                 textBoxCidade.Text = documento.SelectSingleNode("/Cliente/Cidade").InnerText;
                 textBoxNumero.Text = documento.SelectSingleNode("/Cliente/Numero").InnerText;
                 textBoxUF.Text = documento.SelectSingleNode("/Cliente/Uf").InnerText;
+                textBox1.Text = documento.SelectSingleNode("/Cliente/Sexo").InnerText;
+              
+
+                Console.WriteLine();
             }
 
             //Após carregar todos os dados, inicia a thread de salvar dados
             TSalvarDados.Start();
+            Console.WriteLine(maskedTextBoxCPF.Text);
 
-            
         }
 
         private void SalvarDados()
@@ -137,19 +124,24 @@ namespace BarberShopTelas
 
        private void SaveXML()
         {
-            BarberShopClasses.cliente.Cliente newCliente = new BarberShopClasses.cliente.Cliente
+
+            BarberShopClasses.cliente.Cliente newCliente = new BarberShopClasses.cliente.Cliente()
             {
-                Nome = textBoxNome.Text,
-                Cpf = maskedTextBoxCEP.Text,
-                Telefone = textBoxTelefone.Text,
-                Cep = maskedTextBoxCEP.Text,
-                Rua = textBoxRua.Text,
-                Bairro = textBoxBairro.Text,
-                Cidade = textBoxCidade.Text,
-                Numero = textBoxNumero.Text,
-                Uf = textBoxUF.Text
+
+
+               Nome = textBoxNome.Text,
+               Cpf = maskedTextBoxCPF.Text,
+               Telefone = textBoxTelefone.Text,
+               Cep = maskedTextBoxCEP.Text,
+               Rua = textBoxRua.Text,
+               Bairro = textBoxBairro.Text,
+               Cidade = textBoxCidade.Text,
+               Numero = textBoxNumero.Text,
+               Uf = textBoxUF.Text,
+               Sexo = textBox1.Text
 
             };
+
 
             if (!cliente.Equals(newCliente))
             {
@@ -164,6 +156,20 @@ namespace BarberShopTelas
         private void CadastrarCliente_FormClosed(object sender, FormClosedEventArgs e)
         {
             SaveXML();
+        }
+
+        private void buttonLimpar_Click(object sender, EventArgs e)
+        {
+            textBoxNome.Text = " ";
+            maskedTextBoxCPF.Text = " ";
+            textBoxTelefone.Text = " ";
+            maskedTextBoxCEP.Text = " ";
+            textBoxRua.Text = " ";
+            textBoxBairro.Text = " ";
+            textBoxCidade.Text = " ";
+            textBoxNumero.Text = " ";
+            textBoxUF.Text = " ";
+            textBox1.Text = " ";
         }
     }
 }

@@ -56,7 +56,7 @@ namespace BarberShopClasses.pagamento
                 cmd.Parameters.Add("@hora", SqlDbType.VarChar);
                 cmd.Parameters.Add("@metodo", SqlDbType.VarChar);
                 
-                cmd.Parameters["@cpf"].Value = p.Cliente.Cpf;
+                cmd.Parameters["@cpf"].Value = p.Cpf;
                 cmd.Parameters["@valor"].Value = p.Valor;
                 cmd.Parameters["@data"].Value = p.Data;
                 cmd.Parameters["@hora"].Value = p.Hora;
@@ -86,9 +86,9 @@ namespace BarberShopClasses.pagamento
                 while (DbReader.Read())
                 {
                     Pagamento p = new Pagamento();
-                    p.Cliente = new Cliente();
+                    
                     p.Cod_pag = DbReader.GetInt32(DbReader.GetOrdinal("Cod_Pag"));
-                    p.Cliente.Cpf = DbReader.GetString(DbReader.GetOrdinal("CPF"));
+                    p.Cpf = DbReader.GetString(DbReader.GetOrdinal("CPF"));
                     p.Valor = DbReader.GetDecimal(DbReader.GetOrdinal("Valor"));
                     p.Data = DbReader.GetString(DbReader.GetOrdinal("Data"));
                     p.Hora = DbReader.GetString(DbReader.GetOrdinal("Hora"));
