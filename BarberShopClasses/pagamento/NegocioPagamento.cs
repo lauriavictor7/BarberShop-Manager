@@ -11,13 +11,13 @@ namespace BarberShopClasses.pagamento
     public class NegocioPagamento : InterfacePagamento
     {
         public Servico buscarValor(string cpf)
-        {
-            
-            DadosPagamento dp = new DadosPagamento();
+        { 
             if (cpf == " ")
             {
-                throw new Exception("Por favor preencha o cpf");
+                throw new Exception("Por favor preencha o CPF. ");
             }
+
+            DadosPagamento dp = new DadosPagamento();
             return dp.buscarValor(cpf);
 
         }
@@ -26,8 +26,9 @@ namespace BarberShopClasses.pagamento
         {
             if (p.Metodo == " ")
             {
-                throw new Exception("Por favor Escolha um metodo de pagamento");
+                throw new Exception("Por favor escolha um MÉTODO DE PAGAMENTO. ");
             }
+
             DadosPagamento dP = new DadosPagamento();
             dP.CadastrarPagamento(p);
         }

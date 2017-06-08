@@ -12,42 +12,42 @@ namespace BarberShopClasses.cliente
         {
             if (c.Cpf == "")
             {
-                throw new Exception("Informe o CPF");
+                throw new Exception("Informe o CPF. ");
             }
 
             if (c.Nome == "")
             {
-                throw new Exception("Informe o NOME");
+                throw new Exception("Informe o NOME. " );
             }
 
             if (c.Telefone == "")
             {
-                throw new Exception("Informe o TELEFONE");
+                throw new Exception("Informe o TELEFONE. ");
             }
 
             if (c.Cep.Length < 9)
             {
-                throw new Exception("Informe um CEP Valido");
+                throw new Exception("Informe um CEP válido. ");
             }
             if(c.Bairro.Length == 0)
             {
-                throw new Exception("Preencha o campo de Bairro");
+                throw new Exception("Preencha o campo BAIRRO. ");
             }
             if(c.Cidade.Length == 0)
             {
-                throw new Exception("Preencha o campo de Cidade");
+                throw new Exception("Preencha o campo CIDADE. ");
             }
             if (c.Rua.Length == 0)
             {
-                throw new Exception("Preencha o campo de Rua");
+                throw new Exception("Preencha o campo RUA. ");
             }
             if (c.Numero.Length == 0)
             {
-                throw new Exception("Preencha o campo de Numero");
+                throw new Exception("Preencha o campo NÚMERO. ");
             }
             if (c.Uf.Length == 0)
             {
-                throw new Exception("Preencha o campo de Uf");
+                throw new Exception("Preencha o campo UF. ");
             }
             DadosCliente dc = new DadosCliente();
             dc.AtualizarCliente(c);
@@ -56,7 +56,7 @@ namespace BarberShopClasses.cliente
         {
             if(cpf.Length < 11)
             {
-                throw new Exception("Informe um cpf valido");   
+                throw new Exception("Informe um CPF válido. ");   
             }
             DadosCliente dc = new DadosCliente();
             return dc.buscarCliente(cpf);
@@ -66,42 +66,52 @@ namespace BarberShopClasses.cliente
         {
             if (c.Cpf == "")
             {
-                throw new Exception ("Informe o CPF");
+                throw new Exception ("Informe o CPF. ");
+            }
+
+            if (c.Cpf.Length < 14)
+            {
+                throw new Exception("Informe um CPF válido. ");
             }
 
             if (c.Nome == "")
             {
-                throw new Exception("Informe o NOME");
+                throw new Exception("Informe o NOME. ");
             }
 
             if (c.Telefone == "")
             {
-                throw new Exception("Informe o TELEFONE");
+                throw new Exception("Informe o TELEFONE. ");
             }
 
-            if(c.Cep.Length < 9)
+            if (c.Telefone.Length < 12)
             {
-                throw new Exception("Informe um CEP Valido");
+                throw new Exception("Informe um TELEFONE válido. ");
+            }
+
+            if (c.Cep.Length < 9)
+            {
+                throw new Exception("Informe um CEP válido. ");
             }
             if (c.Bairro.Length == 0)
             {
-                throw new Exception("Preencha o campo de Bairro");
+                throw new Exception("Preencha o campo BAIRRO. ");
             }
             if (c.Cidade.Length == 0)
             {
-                throw new Exception("Preencha o campo de Cidade");
+                throw new Exception("Preencha o campo CIDADE. ");
             }
             if (c.Rua.Length == 0)
             {
-                throw new Exception("Preencha o campo de Rua");
+                throw new Exception("Preencha o campo RUA.");
             }
             if (c.Numero.Length == 0)
             {
-                throw new Exception("Preencha o campo de Numero");
+                throw new Exception("Preencha o campo NÚMERO. ");
             }
             if (c.Uf.Length == 0)
             {
-                throw new Exception("Preencha o campo de Uf");
+                throw new Exception("Preencha o campo UF. ");
             }
             DadosCliente dC = new DadosCliente();
             dC.CadastrarCliente(c);
@@ -115,6 +125,16 @@ namespace BarberShopClasses.cliente
 
         public void RemoverCLiente(Cliente c)
         {
+            if (c.Cpf == "")
+            {
+                throw new Exception("Informe o CPF. ");
+            }
+
+            if(c.Cpf.Length < 14)
+            {
+                throw new Exception("Informe um CPF válido. ");
+            }
+
             DadosCliente dC = new DadosCliente();
             dC.RemoverCLiente(c);
         }

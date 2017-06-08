@@ -10,29 +10,19 @@ namespace BarberShopClasses.servico
     {
         public void AtualizarServico(Servico s)
         {
-            if (s.Cod_serv < 0)
-            {
-                throw new Exception("Informe o Código do Serviço!");
-            }
-
-            if (Convert.ToString(s.Cod_serv) == "")
-            {
-                throw new Exception("Informe o Código do Serviço!");
-            }
-
             if (s.Preco < 0)
             {
-                throw new Exception("Informe o Preço do Serviço!");
+                throw new Exception("Informe o PREÇO do Serviço. ");
             }
 
             if (Convert.ToString(s.Preco) == "")
             {
-                throw new Exception("Informe o Preço do Serviço!");
+                throw new Exception("Informe o PREÇO do serviço. ");
             }
 
             if (s.Descricao == "")
             {
-                throw new Exception("Informe a Descrição do Serviço!");
+                throw new Exception("Informe a DESCRIÇÃO do serviço. ");
             }
 
             DadosServico ds = new DadosServico();
@@ -43,27 +33,27 @@ namespace BarberShopClasses.servico
         {
             if (s.Cod_serv < 0)
             {
-                throw new Exception("Informe o Código do Serviço!");
+                throw new Exception("Informe o CÓDIGO do serviço. ");
             }
 
             if (Convert.ToString(s.Cod_serv) == "")
             {
-                throw new Exception("Informe o Código do Serviço!");
+                throw new Exception("Informe o CÓDIGO do Serviço. ");
             }
 
             if (s.Preco < 0)
             {
-                throw new Exception("Informe o Preço do Serviço!");
+                throw new Exception("Informe o PREÇO do Serviço. ");
             }
 
             if (Convert.ToString(s.Preco) == "")
             {
-                throw new Exception("Informe o Preço do Serviço!");
+                throw new Exception("Informe o PREÇO do serviço. ");
             }
 
             if (s.Descricao == "")
             {
-                throw new Exception("Informe a Descrição do Serviço!");
+                throw new Exception("Informe a DESCRIÇÃO do serviço. ");
             }
 
             DadosServico ds = new DadosServico();
@@ -80,12 +70,12 @@ namespace BarberShopClasses.servico
         {
             if (cod < 0)
             {
-                throw new Exception("Informe o Código do Serviço!");
+                throw new Exception("Informe o CÓDIGO do serviço. ");
             }
 
             if (Convert.ToString(cod) == "")
             {
-                throw new Exception("Informe o Código do Serviço!");
+                throw new Exception("Informe o CÓDIGO do Serviço. ");
             }
 
             DadosServico ds = new DadosServico();
@@ -96,12 +86,12 @@ namespace BarberShopClasses.servico
         {
             if (s.Cod_serv < 0)
             {
-                throw new Exception("Informe o Código do Serviço!");
+                throw new Exception("Informe o CÓDIGO do serviço. ");
             }
 
             if (Convert.ToString(s.Cod_serv) == "")
             {
-                throw new Exception("Informe o Código do Serviço!");
+                throw new Exception("Informe o CÓDIGO do Serviço. ");
             }
 
             DadosServico ds = new DadosServico();

@@ -17,27 +17,27 @@ namespace BarberShopClasses.agendamento
             DateTime data1 = Convert.ToDateTime(a.Data);
             if (data1.CompareTo(data) < 0)
             {
-                throw new Exception("Data Atrasada ");
+                throw new Exception("Data atrasada. ");
             }
             if (a.Hora.ToString().Equals("  :  :  ") == true)
             {
-                throw new Exception("Por favor preencha o campo de Hora");
+                throw new Exception("Por favor preencha o campo de hora. ");
             }
             if (a.Data.ToString().Equals("  /  /  ") == true)
             {
-                throw new Exception("Por favor preencha o campo de hora");
+                throw new Exception("Por favor preencha o campo de hora. ");
             }
             if (a.Servico == null)
             {
-                throw new Exception("Informe um codigo de serviço valido");
+                throw new Exception("Informe um codigo de serviço valido. ");
             }
             if (a.Servico.Cod_serv < 0)
             {
-                throw new Exception("Informe um codigo de serviço valido");
+                throw new Exception("Informe um codigo de serviço valido. ");
             }
             if (a.Cliente == null)
             {
-                throw new Exception("Por favor preencha o cpf");
+                throw new Exception("Por favor preencha o CPF. ");
             }
             
             DadosAgendamento dA = new DadosAgendamento();
@@ -55,8 +55,9 @@ namespace BarberShopClasses.agendamento
         {
             if (a.Cliente.Cpf == "   .   .   -  ")
             {
-                throw new Exception("Por favor preencha o cpf");
+                throw new Exception("Por favor preencha o CPF. ");
             }
+
             DadosAgendamento dA = new DadosAgendamento();
             dA.RemoverAgendamento(a);
         }
@@ -65,7 +66,7 @@ namespace BarberShopClasses.agendamento
             
             if (cpf == "   .   .   -  ")
             {
-                throw new Exception("Por favor preencha o cpf");
+                throw new Exception("Por favor preencha o CPF. ");
             }else
             {
                 DadosAgendamento dA = new DadosAgendamento();
@@ -77,33 +78,34 @@ namespace BarberShopClasses.agendamento
            string datastr = DateTime.Now.ToShortDateString();
             DateTime data = Convert.ToDateTime(datastr);
             DateTime data1 = Convert.ToDateTime(a.Data);
+
             if (data1.CompareTo(data) < 0)
             {
-                throw new Exception("Data Atrasada ");
+                throw new Exception("Data atrasada. ");
             }
             if (a.Hora.ToString().Equals("  :  :  ") == true)
             {
-                throw new Exception("Por favor preencha o campo de Hora");
+                throw new Exception("Por favor preencha o campo de hora. ");
             }
             if (a.Data.ToString().Equals("  /  /  ") == true)
             {
-                throw new Exception("Por favor preencha o campo de hora");
+                throw new Exception("Por favor preencha o campo de hora. ");
             }
             if (a.Servico == null)
             {
-                throw new Exception("Informe um codigo de serviço valido");
+                throw new Exception("Informe um codigo de serviço valido. ");
             }
             if (a.Servico.Cod_serv < 0)
             {
-                throw new Exception("Informe um codigo de serviço valido");
+                throw new Exception("Informe um codigo de serviço valido. ");
             }
             if(a.Hora.Length < 5)
             {
-                throw new Exception("Informe uma hora compativel");
+                throw new Exception("Informe uma hora compatível. ");
             }
             if (a.Data.Length < 8 )
             {
-                throw new Exception("Informe uma data compativel");
+                throw new Exception("Informe uma data compatível. ");
             }
             DadosAgendamento dA = new DadosAgendamento();
             dA.AtualizarAgendamento(a);
