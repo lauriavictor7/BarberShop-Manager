@@ -99,9 +99,9 @@ namespace BarberShopClasses.caixa
                 cmd.Parameters.Add("@valor_fin", SqlDbType.Decimal);
                 cmd.Parameters.Add("@cod_caixa", SqlDbType.Int);
 
-                cmd.Parameters["@valor_atu"].Value = cx.Valor_atual;
+                cmd.Parameters["@valor_atu"].Value = valoratu;
                 cmd.Parameters["@valor_fin"].Value = valorfin;
-                cmd.Parameters["@cod_caixa"].Value = valoratu;
+                cmd.Parameters["@cod_caixa"].Value = cx.Cod_caixa;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();

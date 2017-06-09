@@ -18,6 +18,7 @@ namespace BarberShopTelas
     {
 
         Random randNum = new Random();
+        
         private new string Location;
         private static XmlDocument documento;
 
@@ -44,7 +45,7 @@ namespace BarberShopTelas
         }
 
 
-        private void SaveXML()
+        private void SaveXML(int rand)
         {
             
             
@@ -61,8 +62,9 @@ namespace BarberShopTelas
             };
 
             #region Colocando numero randomico na Notafiscal
-            int rand = randNum.Next(50);
-            Location = @"C:\Users\victo\Desktop\NotasSalvas\NF" + rand + ".xml";
+            
+            //Location = @"C:\Users\victo\Desktop\NotasSalvas\NF" + rand + ".xml";
+            Location = @"C:\Users\luizd\Desktop\Estudos\Persistindo os dados no XML\NF" + rand + ".xml";
             #endregion
             documento.LoadXml(newPagamento.ToXML());
             documento.Save(Location);
@@ -111,89 +113,95 @@ namespace BarberShopTelas
 
         private void buttonPagamento_Click(object sender, EventArgs e)
         {
+            
             Pagamento p = new Pagamento();
             Agendamento a = new Agendamento();
             a.Cliente = new Cliente();
-            
-            if(maskedTextBox1.Equals(" "))
-            {
-                MessageBox.Show("Informe o CPF, e click no Check !");
-            }
-            if(textBoxValorPg.Enabled == true)
-            {
-                MessageBox.Show("Por favor de um check no cpf, os campos preencheram automaticamente !");
-            }
-            if(comboBox1.SelectedIndex == -1)
-            {
-                MessageBox.Show("Escolha o tipo de pagamento!");
-            }
-            if(comboBox1.SelectedIndex == 0)
-            {
-                
-                p.Metodo = "Db";
-                p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
-                string horastr = textBoxHoraPg.Text.ToString();
-                p.Hora = horastr;
-                p.Data = textBoxDataPg.Text;
-                p.Cpf = maskedTextBox1.Text;
 
+            try
+            {
+                if (maskedTextBox1.Equals(" "))
+                {
+                    MessageBox.Show("Informe o CPF, e click no Check !");
+                }
+                if (textBoxValorPg.Enabled == true)
+                {
+                    MessageBox.Show("Por favor de um check no cpf, os campos preencheram automaticamente !");
+                }
+                if (comboBox1.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Escolha o tipo de pagamento!");
+                }
+                if (comboBox1.SelectedIndex == 0)
+                {
+
+                    p.Metodo = "Db";
+                    p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
+                    string horastr = textBoxHoraPg.Text.ToString();
+                    p.Hora = horastr;
+                    p.Data = textBoxDataPg.Text;
+                    p.Cpf = maskedTextBox1.Text;
+
+                }
+                if (comboBox1.SelectedIndex == 1)
+                {
+
+                    p.Metodo = "Cd";
+                    p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
+                    string horastr = textBoxHoraPg.Text.ToString();
+                    p.Hora = horastr;
+                    p.Data = textBoxDataPg.Text;
+                    p.Cpf = maskedTextBox1.Text;
+
+                }
+                if (comboBox1.SelectedIndex == 2)
+                {
+
+                    p.Metodo = "Av";
+                    p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
+                    string horastr = textBoxHoraPg.Text.ToString();
+                    p.Hora = horastr;
+                    p.Data = textBoxDataPg.Text;
+                    p.Cpf = maskedTextBox1.Text;
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Algum campo incompleto");
+            }
+
+            try
+            {
                 Service1 sv = new Service1();
                 sv.CadastrarPagamento(p);
 
                 a.Cliente.Cpf = p.Cpf;
                 sv.RemoverAgendamento(a);
+
+                localhost.Caixa cx = new localhost.Caixa();
+                int cod = Convert.ToInt16(textBoxCodCaixa.Text);
+
+                Service1 s = new Service1();
+                cx = s.pesquisarCaixa(cod);
+
+                cx.Valor_atual += p.Valor;
+                cx.Valor_final += p.Valor + cx.Valor_inicial;
+
+                s.atualizarValorAtual(cx);
+
+
+                int rand = randNum.Next(50);
+                SaveXML(rand);
+                limpaTxt();
+                MessageBox.Show("Sucesso!. Numero da Nota Fiscal : " + rand);
             }
-            if(comboBox1.SelectedIndex == 1)
+            catch (Exception)
             {
-                
-                p.Metodo = "Cd";
-                p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
-                string horastr = textBoxHoraPg.Text.ToString();
-                p.Hora = horastr;
-                p.Data = textBoxDataPg.Text;
-                p.Cpf = maskedTextBox1.Text;
-
-                Service1 sv = new Service1();
-                sv.CadastrarPagamento(p);
-
-                a.Cliente.Cpf = p.Cpf;
-                sv.RemoverAgendamento(a);
+                MessageBox.Show("Ocorreu algum problema no cadastro");
             }
-            if(comboBox1.SelectedIndex == 2)
-            {
-                
-                p.Metodo = "Av";
-                p.Valor = Convert.ToDecimal(textBoxValorPg.Text);
-                string horastr = textBoxHoraPg.Text.ToString();
-                p.Hora = horastr;
-                p.Data = textBoxDataPg.Text;
-                p.Cpf = maskedTextBox1.Text;
 
 
-                Service1 sv = new Service1();
-                sv.CadastrarPagamento(p);
-
-                a.Cliente.Cpf = p.Cpf;
-                sv.RemoverAgendamento(a);
-
-            }
-            
-
-            localhost.Caixa cx = new localhost.Caixa();
-            int cod = Convert.ToInt16(textBoxCodCaixa.Text);
-         
-            Service1 s = new Service1();
-            cx = s.pesquisarCaixa(cod);
-
-            cx.Valor_atual += p.Valor;
-            cx.Valor_final += p.Valor + cx.Valor_inicial;
-
-            s.atualizarValorAtual(cx);
-
-            MessageBox.Show("Sucesso!");
-            
-            SaveXML();
-            limpaTxt();
         }
     }
 }
